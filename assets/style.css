@@ -223,8 +223,8 @@ fieldset {
     text-overflow: ellipsis;
 }
 
-.charts>table th:not(:first-child),
-.charts>table td:not(:first-child) {
+.charts>table th:not(:first-child):not(:last-child),
+.charts>table td:not(:first-child):not(:last-child) {
     width: 40px;
 }
 
@@ -407,24 +407,7 @@ label:has(input[type="radio"]:checked) {
     padding: var(--spacing-xl);
     background: var(--bg-dark);
     border-radius: var(--radius-sm);
-}
-
-.score-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-block-end: var(--spacing-sm);
-    padding: var(--spacing-xs) 0;
-}
-
-.score-label {
-    font-weight: var(--font-weight-medium);
-}
-
-.score-value {
-    font-weight: var(--font-weight-semibold);
-    color: var(--primary-color);
-    font-size: var(--font-size-lg);
+    width: 100%;
 }
 
 .heat_1 {
@@ -441,6 +424,18 @@ label:has(input[type="radio"]:checked) {
 
 .heat_4 {
     background-color: var(--heat-4);
+}
+
+.score-cell,
+.score-header {
+    text-align: right;
+    font-weight: var(--font-weight-semibold);
+    padding-inline: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.score-header {
+    color: var(--text-heading);
 }
 
 .question-advice-grid {

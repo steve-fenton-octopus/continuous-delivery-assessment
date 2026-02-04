@@ -368,14 +368,16 @@ let answerState = {};
     }
   }
 
-  function drawRow(category, values) {
+  function drawRow(category, categoryId, values) {
     let row = `<tr><td>${category}</td>`;
 
     for (let i = 1; i <= maxValue; i++) {
       row += `<td class="heat_${values[i.toString()]}"> </td>`;
     }
 
-    row += "</td>";
+    const score = scores[categoryId] || 0;
+    row += `<td class="score-cell">${score}</td>`;
+    row += "</tr>";
 
     return row;
   }
@@ -387,10 +389,11 @@ let answerState = {};
       table += `<th width="40">${i}</th>`;
     }
 
+    table += `<th width="80" class="score-header">Score</th>`;
     table += `</thead><tbody>`;
 
     for (let category in categories) {
-      table += drawRow(categories[category], counts[category]);
+      table += drawRow(categories[category], category, counts[category]);
     }
 
     table += `</tbody>`;
@@ -398,20 +401,9 @@ let answerState = {};
     matrix.innerHTML = table;
   }
 
-  function drawScores() {
-    let html = "";
-
-    for (var category in categories) {
-      html += `<div class="score-item"><span class="score-label">${categories[category]}:</span><span class="score-value" id="investmentScore">${scores[category]}</span></div>`;
-    }
-
-    scoreList.innerHTML = html;
-  }
-
   function draw() {
     drawSpiderChart();
     drawMatrix();
-    drawScores();
   }
 
   function calculateCategoryScore(category) {
