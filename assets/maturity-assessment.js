@@ -11,19 +11,12 @@ let answerState = {};
   // YAML data storage
   let questionsData = null;
 
-  function getLanguageCode() {
-    const params = new URLSearchParams(window.location.search);
-    const urlLang = params.get('lang');
-    return urlLang || 'en';
-  }
-
   // Load JSON data
   async function loadQuestionsData() {
-    langCode = getLanguageCode();
-    let loadSuccess = false;
+    const scriptTag = document.querySelector('script[data-questions]');
+    const jsonPath = scriptTag ? scriptTag.getAttribute('data-questions') : './data/questions-en.json';
 
-    // Build filename dynamically
-    const jsonPath = `./data/questions-${langCode}.json`;
+    let loadSuccess = false;
 
     try {
       const response = await fetch(jsonPath);
@@ -31,10 +24,12 @@ let answerState = {};
       if (response.ok) {
         questionsData = await response.json();
 
-        // Only update document language once language successfully loaded
-        document.documentElement.lang = langCode;
-        loadSuccess = true;
+        // Update document language if metadata provides it
+        if (questionsData.metadata?.language) {
+          document.documentElement.lang = questionsData.metadata.language;
+        }
 
+        loadSuccess = true;
         return questionsData;
       }
     } catch { }
