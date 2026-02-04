@@ -108,9 +108,22 @@ let answerState = {};
     document.querySelectorAll('[data-text]').forEach(elem => {
       const key = elem.getAttribute('data-text');
       if (data.metadata[key]) {
-        elem.innerHTML = data.metadata[key];
+        // Handle array for intro or other fields if needed
+        if (Array.isArray(data.metadata[key])) {
+          elem.innerHTML = data.metadata[key].map(p => `<p>${p}</p>`).join('');
+        } else {
+          elem.innerHTML = data.metadata[key];
+        }
       }
     });
+
+    // Special handling for intro-content if it exists
+    const introContent = document.getElementById('intro-content');
+    if (introContent && Array.isArray(data.metadata.intro)) {
+      introContent.innerHTML = data.metadata.intro.map(p => `
+        <p>${p}</p>
+      `).join('');
+    }
 
     // Store categories for pagination
     categoryPages = data.categories.sort((a, b) => a.order - b.order);

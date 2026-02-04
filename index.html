@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" id="app-html">
+<html>
 
 <head>
   <meta charset="UTF-8" />
@@ -18,14 +17,13 @@
         </div>
       </header>
       <div class="intro" id="intro-section">
-        <p>TODO: Add intro text here</p>
+        <h2 data-text="introTitle"></h2>
+        <div id="intro-content"></div>
       </div>
 
-      <div id="page-content">
-        <form id="maturity-form">
-          <!-- Questions will be dynamically loaded from YAML data -->
-        </form>
-      </div>
+      <form id="maturity-form">
+        <!-- Questions will be dynamically loaded from YAML data -->
+      </form>
 
       <div class="pagination-controls">
         <button type="button" id="prev-btn" onclick="previousPage()" disabled>← Previous</button>
