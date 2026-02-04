@@ -29,18 +29,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "Next week or beyond"
+              "level": "Next week or beyond",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Some time this week"
+              "level": "Some time this week",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "Today"
+              "level": "Today",
+              "description": ""
             }
           ]
         },
@@ -51,18 +51,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "Most weeks"
+              "level": "Most weeks",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "A couple of times a month"
+              "level": "A couple of times a month",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "Rarely"
+              "level": "Rarely",
+              "description": ""
             }
           ]
         },
@@ -73,18 +73,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "More than a day"
+              "level": "More than a day",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "More than an hour but less than a day"
+              "level": "More than an hour but less than a day",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "Less than an hour"
+              "level": "Less than an hour",
+              "description": ""
             }
           ]
         },
@@ -95,18 +95,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "When we prepare the next software version"
+              "level": "When we prepare the next software version",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Once we finish whatever we're working on"
+              "level": "Once we finish whatever we're working on",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "We pause everything and fix it straight away"
+              "level": "We pause everything and fix it straight away",
+              "description": ""
             }
           ]
         },
@@ -117,18 +117,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "When we prepare the next software version"
+              "level": "When we prepare the next software version",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Once we finish whatever we're working on"
+              "level": "Once we finish whatever we're working on",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "We pause everything and fix it straight away"
+              "level": "We pause everything and fix it straight away",
+              "description": ""
             }
           ]
         },
@@ -139,18 +139,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "More than two"
+              "level": "More than two",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "One or two"
+              "level": "One or two",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "None"
+              "level": "None",
+              "description": ""
             }
           ]
         },
@@ -161,18 +161,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "No, they need to obtain sigh-off, or raise a ticket, or ask someone else to trigger the deployment"
+              "level": "No, they need to obtain sigh-off, or raise a ticket, or ask someone else to trigger the deployment",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Yes, if they co-ordinate with others to avoid deploying when someone is using an environment"
+              "level": "Yes, if they co-ordinate with others to avoid deploying when someone is using an environment",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "Yes, they can deploy to a pre-live environment on demand without co-ordination or approval"
+              "level": "Yes, they can deploy to a pre-live environment on demand without co-ordination or approval",
+              "description": ""
             }
           ]
         }
@@ -190,18 +190,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "Less often than every day"
+              "level": "Less often than every day",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Each day"
+              "level": "Each day",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "Every hour or two"
+              "level": "Every hour or two",
+              "description": ""
             }
           ]
         },
@@ -212,18 +212,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "Less often than every day"
+              "level": "Less often than every day",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Each day"
+              "level": "Each day",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "Every hour or two"
+              "level": "Every hour or two",
+              "description": ""
             }
           ]
         },
@@ -234,18 +234,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "Longer than 20 minutes"
+              "level": "Longer than 20 minutes",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Between 5 and 20 minutes"
+              "level": "Between 5 and 20 minutes",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "In about 5 minutes or less"
+              "level": "In about 5 minutes or less",
+              "description": ""
             }
           ]
         }
@@ -263,18 +263,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "We deploy manually to all environments"
+              "level": "We deploy manually to all environments",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "We have automated deployments to pre-production environments but a different process is used to deploy to production"
+              "level": "We have automated deployments to pre-production environments but a different process is used to deploy to production",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "The exact same automated/push-button process deploys to all environments"
+              "level": "The exact same automated/push-button process deploys to all environments",
+              "description": ""
             }
           ]
         },
@@ -285,18 +285,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "We would have to build and deploy that version of the software to test it"
+              "level": "We would have to build and deploy that version of the software to test it",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "We could manually re-deploy that version from a store of software versions"
+              "level": "We could manually re-deploy that version from a store of software versions",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "Our automated push-button process could deploy that version to a test environment"
+              "level": "Our automated push-button process could deploy that version to a test environment",
+              "description": ""
             }
           ]
         },
@@ -307,18 +307,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "The deployment pipeline is mostly manual"
+              "level": "The deployment pipeline is mostly manual",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "The deployment pipeline has some automation and some manual stages"
+              "level": "The deployment pipeline has some automation and some manual stages",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "We aggressively automate all stages of the deployment pipeline unless we can find no economic way to do it"
+              "level": "We aggressively automate all stages of the deployment pipeline unless we can find no economic way to do it",
+              "description": ""
             }
           ]
         },
@@ -329,18 +329,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "Many stages are out of band, such as security testing, capacity testing, or vulnerability scanning."
+              "level": "Many stages are out of band, such as security testing, capacity testing, or vulnerability scanning.",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Most stages are done as part of the deployment pipeline"
+              "level": "Most stages are done as part of the deployment pipeline",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "All checks happen as part of the deployment pipeline"
+              "level": "All checks happen as part of the deployment pipeline",
+              "description": ""
             }
           ]
         },
@@ -351,13 +351,13 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "The build step creates a new package each time the software is promoted to the next environment"
+              "level": "The build step creates a new package each time the software is promoted to the next environment",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "The package is built once and the same package is used each time the software is promoted to the next environment"
+              "level": "The package is built once and the same package is used each time the software is promoted to the next environment",
+              "description": ""
             }
           ]
         },
@@ -368,13 +368,13 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "The deployment process might be updated between environments, for example if we find a step was missing or a config value had changed"
+              "level": "The deployment process might be updated between environments, for example if we find a step was missing or a config value had changed",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "The deployment process is versioned alongside the package to keep it the same on all environments, changes would mean starting from the first environment again"
+              "level": "The deployment process is versioned alongside the package to keep it the same on all environments, changes would mean starting from the first environment again",
+              "description": ""
             }
           ]
         }
@@ -392,13 +392,13 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "We depend on testers to check it's working"
+              "level": "We depend on testers to check it's working",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "An automated test or script checks the application is running and its dependencies are available"
+              "level": "An automated test or script checks the application is running and its dependencies are available",
+              "description": ""
             }
           ]
         },
@@ -409,18 +409,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "Our pre-production environments have significant differences to the production environment"
+              "level": "Our pre-production environments have significant differences to the production environment",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Our pre-production environments are mostly the same as production, with non-critical differences, like not needing the application firewall or load-balancers we use in production"
+              "level": "Our pre-production environments are mostly the same as production, with non-critical differences, like not needing the application firewall or load-balancers we use in production",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "Our pre-productions are very similar to the production environment"
+              "level": "Our pre-productions are very similar to the production environment",
+              "description": ""
             }
           ]
         },
@@ -431,18 +431,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "All changes are manual and we're not certain environments are kept in sync when changes are made"
+              "level": "All changes are manual and we're not certain environments are kept in sync when changes are made",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "All changes are manual but we progress changes through our environments like we do code changes to keep them in sync and test our changes"
+              "level": "All changes are manual but we progress changes through our environments like we do code changes to keep them in sync and test our changes",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "Our environments use version-controlled configuration that keeps them identical, though we may use smaller instances for pre-production"
+              "level": "Our environments use version-controlled configuration that keeps them identical, though we may use smaller instances for pre-production",
+              "description": ""
             }
           ]
         },
@@ -453,18 +453,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "New features appear when we deploy"
+              "level": "New features appear when we deploy",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "We use coding techniques that keep new features hidden until they're ready (like keystoning)"
+              "level": "We use coding techniques that keep new features hidden until they're ready (like keystoning)",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "We use feature flags to control visibility of new features"
+              "level": "We use feature flags to control visibility of new features",
+              "description": ""
             }
           ]
         },
@@ -475,18 +475,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "All users get a new feature at the same time"
+              "level": "All users get a new feature at the same time",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "Users on a specific instance get new features before our general users (for example, a beta instance)"
+              "level": "Users on a specific instance get new features before our general users (for example, a beta instance)",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "We can expose a new feature to specific users or groups of users"
+              "level": "We can expose a new feature to specific users or groups of users",
+              "description": ""
             }
           ]
         },
@@ -497,18 +497,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "We track this manually, for example on a whiteboard or wiki page"
+              "level": "We track this manually, for example on a whiteboard or wiki page",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "This is tracked automatically and we can find a version by looking up that component's deployment information"
+              "level": "This is tracked automatically and we can find a version by looking up that component's deployment information",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "This is tracked automatically and we can see this information for a set of related components all on a single dashboard"
+              "level": "This is tracked automatically and we can see this information for a set of related components all on a single dashboard",
+              "description": ""
             }
           ]
         },
@@ -519,18 +519,18 @@
           "options": [
             {
               "value": 1,
-              "level": "Level 1",
-              "description": "We signal this manually, for example in our internal chat tools or by email"
+              "level": "We signal this manually, for example in our internal chat tools or by email",
+              "description": ""
             },
             {
               "value": 2,
-              "level": "Level 2",
-              "description": "This is tracked automatically and we can see running deployments by looking up that component's deployment information"
+              "level": "This is tracked automatically and we can see running deployments by looking up that component's deployment information",
+              "description": ""
             },
             {
               "value": 3,
-              "level": "Level 3",
-              "description": "This is tracked automatically and we can see running deployments for a set of related components all on a single dashboard"
+              "level": "This is tracked automatically and we can see running deployments for a set of related components all on a single dashboard",
+              "description": ""
             }
           ]
         }
