@@ -345,7 +345,7 @@ let answerState = {};
         const [categoryId, categoryName] = entries[i];
         const score = scores[categoryId] || 0;
         const angle = (i * 2 * Math.PI) / entries.length - Math.PI / 2;
-        const distance = (score / maxValue) * radius;
+        const distance = (score / 100) * radius;
         const x = centerX + Math.cos(angle) * distance;
         const y = centerY + Math.sin(angle) * distance;
 
@@ -365,7 +365,7 @@ let answerState = {};
         const [categoryId, categoryName] = entries[i];
         const score = scores[categoryId] || 0;
         const angle = (i * 2 * Math.PI) / entries.length - Math.PI / 2;
-        const distance = (score / maxValue) * radius;
+        const distance = (score / 100) * radius;
         const x = centerX + Math.cos(angle) * distance;
         const y = centerY + Math.sin(angle) * distance;
 
@@ -397,7 +397,7 @@ let answerState = {};
       table += `<th width="40">${i}</th>`;
     }
 
-    table += `<th width="80" class="score-header">Score</th>`;
+    table += `<th width="80" class="score-header">%</th>`;
     table += `</thead><tbody>`;
 
     for (let category in categories) {
@@ -431,7 +431,8 @@ let answerState = {};
     }
 
     if (answeredQuestions.length === 0) return 0;
-    return (total / answeredQuestions.length).toFixed(2);
+    const average = total / answeredQuestions.length;
+    return Math.round((average / maxValue) * 100);
   }
 
   function calculateCategoryCount(category) {
