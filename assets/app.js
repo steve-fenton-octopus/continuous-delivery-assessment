@@ -231,8 +231,8 @@ let answerState = {};
   });
 
   // Set canvas size
-  canvas.width = 350;
-  canvas.height = 350;
+  canvas.width = 700;
+  canvas.height = 700;
 
   // Helper: draw label with simple two-line wrap if text exceeds maxWidth
   function drawWrappedText(ctx, text, x, y, maxWidth) {
@@ -280,7 +280,7 @@ let answerState = {};
 
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
-    const radius = 120;
+    const radius = 240;
 
     // Draw grid circles
     ctx.strokeStyle = '#c4c4c4';
@@ -294,7 +294,7 @@ let answerState = {};
     // Draw grid lines and labels
     ctx.strokeStyle = '#c4c4c4';
     ctx.fillStyle = '#4a5568';
-    ctx.font = '12px Arial';
+    ctx.font = '14px Arial';
     ctx.textAlign = 'center';
 
     const displayNames = Object.values(categories);
@@ -314,14 +314,14 @@ let answerState = {};
       ctx.stroke();
 
       // Draw label with simple two-line wrap for long text
-      const labelX = centerX + Math.cos(angle) * (radius + 20);
-      const labelY = centerY + Math.sin(angle) * (radius + 20);
-      drawWrappedText(ctx, categoryName, labelX, labelY, 90);
+      const labelX = centerX + Math.cos(angle) * (radius + 40);
+      const labelY = centerY + Math.sin(angle) * (radius + 40);
+      drawWrappedText(ctx, categoryName, labelX, labelY, 150);
     }
 
     // Draw level numbers
     ctx.fillStyle = '#c4c4c4';
-    ctx.font = '10px Arial';
+    ctx.font = '12px Arial';
     for (let i = 1; i <= maxValue; i++) {
       ctx.fillText(i.toString(), centerX + 5, centerY - (radius / maxValue) * i + 3);
     }

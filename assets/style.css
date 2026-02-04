@@ -60,7 +60,7 @@
 
     /* Layout Values */
     --container-max-width: 1000px;
-    --chart-height: 350px;
+    --chart-height: 700px;
     --table-width: 100%;
 
     /* Input Sizes */
@@ -197,6 +197,8 @@ fieldset {
 .charts>canvas {
     display: block;
     width: 100%;
+    max-width: var(--chart-height);
+    margin: 0 auto;
 }
 
 .charts>table {
