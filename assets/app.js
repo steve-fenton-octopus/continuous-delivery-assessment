@@ -282,9 +282,9 @@ let answerState = {};
     // Draw grid circles
     ctx.strokeStyle = '#c4c4c4';
     ctx.lineWidth = 1;
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= maxValue; i++) {
       ctx.beginPath();
-      ctx.arc(centerX, centerY, (radius / 4) * i, 0, 2 * Math.PI);
+      ctx.arc(centerX, centerY, (radius / maxValue) * i, 0, 2 * Math.PI);
       ctx.stroke();
     }
 
@@ -319,8 +319,8 @@ let answerState = {};
     // Draw level numbers
     ctx.fillStyle = '#c4c4c4';
     ctx.font = '10px Arial';
-    for (let i = 1; i <= 4; i++) {
-      ctx.fillText(i.toString(), centerX + 5, centerY - (radius / 4) * i + 3);
+    for (let i = 1; i <= maxValue; i++) {
+      ctx.fillText(i.toString(), centerX + 5, centerY - (radius / maxValue) * i + 3);
     }
 
     // Draw data polygon
@@ -334,7 +334,7 @@ let answerState = {};
         const [categoryId, categoryName] = entries[i];
         const score = scores[categoryId] || 0;
         const angle = (i * 2 * Math.PI) / entries.length - Math.PI / 2;
-        const distance = (score / 4) * radius;
+        const distance = (score / maxValue) * radius;
         const x = centerX + Math.cos(angle) * distance;
         const y = centerY + Math.sin(angle) * distance;
 
@@ -354,7 +354,7 @@ let answerState = {};
         const [categoryId, categoryName] = entries[i];
         const score = scores[categoryId] || 0;
         const angle = (i * 2 * Math.PI) / entries.length - Math.PI / 2;
-        const distance = (score / 4) * radius;
+        const distance = (score / maxValue) * radius;
         const x = centerX + Math.cos(angle) * distance;
         const y = centerY + Math.sin(angle) * distance;
 
