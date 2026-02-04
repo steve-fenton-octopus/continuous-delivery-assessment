@@ -325,7 +325,7 @@ let answerState = {};
 
     // Draw data polygon
     if (Object.values(scores).some((score) => score > 0)) {
-      ctx.strokeStyle = '#d62293';
+      ctx.strokeStyle = '#0E83C6';
       ctx.fillStyle = 'rgba(120, 120, 120, 0.2)';
       ctx.lineWidth = 3;
 
@@ -349,7 +349,7 @@ let answerState = {};
       ctx.stroke();
 
       // Draw data points
-      ctx.fillStyle = "#d62293";
+      ctx.fillStyle = "#0E83C6";
       for (let i = 0; i < entries.length; i++) {
         const [categoryId, categoryName] = entries[i];
         const score = scores[categoryId] || 0;
