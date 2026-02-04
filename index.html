@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" id="app-html">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-text="title">Platform Engineering Maturity Model Assessment</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+  <nav class="languages">
+    <span data-text="language_label">Language:</span>
+    <ul>
+      <a href="./">English</a>
+      <a href="./?lang=zh">中文</a>
+      <a href="./?lang=pt">Portuguese</a>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <article class="form-section">
+      <header>
+        <h1 data-text="title">Assessment</h1>
+        <div class="progress-indicator">
+          <span id="page-indicator">Page 1 of 5</span>
+        </div>
+      </header>
+      <div class="intro" id="intro-section">
+        <p>TODO: Add intro text here</p>
+      </div>
+
+      <div id="page-content">
+        <form id="maturity-form">
+          <!-- Questions will be dynamically loaded from YAML data -->
+        </form>
+      </div>
+
+      <div class="pagination-controls">
+        <button type="button" id="prev-btn" onclick="previousPage()" disabled>← Previous</button>
+        <button type="button" id="next-btn" onclick="nextPage()">Next →</button>
+        <button type="button" id="submit-btn" onclick="submitAssessment()" style="display: none;">Submit
+          Assessment</button>
+      </div>
+    </article>
+
+    <article class="chart-section" id="results-section" style="display: none;">
+      <header>
+        <h1 data-text="results_title">Assessment Results</h1>
+      </header>
+
+      <div class="charts">
+        <canvas id="maturity-spider"></canvas>
+        <table id="maturity-matrix"></table>
+      </div>
+
+      <div id="maturity-scores" class="scores"></div>
+
+      <div class="action-buttons">
+        <button onclick="returnToAssessment()" class="return-button" id="app-return-button">← Back to
+          Assessment</button>
+      </div>
+
+      <div class="share-button">
+        <a onclick="copyURLToClipboard(this)" data-text="copy_link_text">📋 Copy Shareable Link</a>
+      </div>
+    </article>
+  </main>
+
+  <script src="./assets/app.js"></script>
+</body>
+
+</html>
