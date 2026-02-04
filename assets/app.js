@@ -2,6 +2,7 @@
 let currentPage = 0;
 let totalPages = 0;
 let categoryPages = [];
+let loadedData = null;
 
 // Global state to track all answers
 let answerState = {};
@@ -95,6 +96,8 @@ let answerState = {};
       console.warn('No data provided for form generation');
       return;
     }
+
+    loadedData = data;
 
     const form = document.getElementById('maturity-form');
     if (!form) {
@@ -601,12 +604,12 @@ let answerState = {};
   window.copyURLToClipboard = copyURLToClipboard;
 
   document.addEventListener("DOMContentLoaded", async function () {
-    // Try to load YAML data first
-    const yamlData = await loadQuestionsData();
+    // Try to load data first
+    const data = await loadQuestionsData();
 
-    if (yamlData) {
-      // Generate form from YAML data
-      await generateFormFromData(yamlData);
+    if (data) {
+      // Generate form from data
+      await generateFormFromData(data);
     } else {
       // Fallback to existing HTML structure
       loadStateFromURL();
@@ -773,4 +776,68 @@ function showResults() {
   // Trigger the existing chart and scores calculation
   window.draw();
   window.updateScores();
+
+  // Render targeted advice
+  renderAdvice();
+}
+
+/**
+ * Render targeted advice based on the lowest scoring category
+ */
+function renderAdvice() {
+  const adviceSection = document.getElementById('advice-section');
+  const categoryAdviceEl = document.getElementById('category-advice');
+  const questionAdviceEl = document.getElementById('question-advice');
+
+  if (!adviceSection || !categoryAdviceEl || !questionAdviceEl || !categoryPages.length) return;
+
+  // 1. Find the lowest scoring category
+  let lowestCategory = null;
+  let lowestScore = Infinity;
+
+  categoryPages.forEach(cat => {
+    const score = parseFloat(calculateCategoryScore(cat.id));
+    if (score < lowestScore) {
+      lowestScore = score;
+      lowestCategory = cat;
+    }
+  });
+
+  if (!lowestCategory) return;
+
+  // 2. Find the 3 lowest scoring questions in that category
+  const qScores = lowestCategory.questions.map(q => {
+    const val = answerState[q.field_name];
+    return {
+      question: q,
+      score: val ? parseInt(val) : 0
+    };
+  });
+
+  // Sort by score ascending
+  qScores.sort((a, b) => a.score - b.score);
+  const lowestQuestions = qScores.slice(0, 3);
+
+  // 3. Render Category Advice
+  const categoryTitle = loadedData.metadata.advice_category_title;
+  const questionsTitle = loadedData.metadata.advice_questions_title;
+  categoryAdviceEl.innerHTML = `
+    <h3>${categoryTitle}: ${lowestCategory.name}</h3>
+    <p>${lowestCategory.advice}</p>
+    <h4>${questionsTitle}</h4>
+  `;
+
+  // 4. Render Question Advice
+  let questionsHtml = '';
+  lowestQuestions.forEach(item => {
+    questionsHtml += `
+      <div class="advice-card question-card">
+        <h5>${item.question.text}</h5>
+        <p>${item.question.advice}</p>
+      </div>
+    `;
+  });
+  questionAdviceEl.innerHTML = questionsHtml;
+
+  adviceSection.style.display = 'block';
 }

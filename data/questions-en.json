@@ -14,7 +14,10 @@
     "previous_button_text": "Previous",
     "next_button_text": "Next",
     "submit_button_text": "Submit assessment",
-    "back_to_assessment": "Return to assessment"
+    "back_to_assessment": "Return to assessment",
+    "advice_title": "Targeted Recommendations",
+    "advice_questions_title": "Key Actions",
+    "advice_category_title": "How to improve"
   },
   "categories": [
     {
@@ -42,7 +45,8 @@
               "level": "Today",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Reducing the time to fix production bugs is critical for maintaining user trust and system reliability."
         },
         {
           "id": 2,
@@ -64,7 +68,8 @@
               "level": "Rarely",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Frequent deployment blocks indicate instability in your CI/CD pipeline or environment management."
         },
         {
           "id": 3,
@@ -86,7 +91,8 @@
               "level": "Less than an hour",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Reducing the duration of deployment blocks improves developer productivity and delivery predictability."
         },
         {
           "id": 4,
@@ -108,7 +114,8 @@
               "level": "We pause everything and fix it straight away",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Prioritizing build failure fixes ensures the team always has a reliable base to work from."
         },
         {
           "id": 5,
@@ -130,7 +137,8 @@
               "level": "We pause everything and fix it straight away",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Fixing pre-production bugs early prevents expensive and risky late-stage discoveries."
         },
         {
           "id": 6,
@@ -152,7 +160,8 @@
               "level": "None",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Reducing external sign-offs increases deployment autonomy and reduces lead time for changes."
         },
         {
           "id": 7,
@@ -174,9 +183,11 @@
               "level": "Yes, they can deploy to a pre-live environment on demand without co-ordination or approval",
               "description": ""
             }
-          ]
+          ],
+          "advice": "On-demand deployment to pre-live environments is essential for rapid feedback and thorough testing."
         }
-      ]
+      ],
+      "advice": "Deployability is the foundation of CD. Improving these metrics reduces the risk of deployment failure and increases the speed at which you can deliver value to users."
     },
     {
       "id": "feedback",
@@ -203,7 +214,8 @@
               "level": "Every hour or two",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Frequent merging reduces integration pain and ensures the team is always working on the most recent version of the code."
         },
         {
           "id": 2,
@@ -225,7 +237,8 @@
               "level": "Every hour or two",
               "description": ""
             }
-          ]
+          ],
+          "advice": "High merge frequency across the team indicates a healthy, collaborative development workflow."
         },
         {
           "id": 3,
@@ -247,9 +260,11 @@
               "level": "In about 5 minutes or less",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Rapid feedback from builds and tests is crucial for maintaining developer momentum and confidence."
         }
-      ]
+      ],
+      "advice": "Shortening feedback loops allows teams to detect and resolve issues faster, leading to higher quality software and faster learning."
     },
     {
       "id": "automation",
@@ -276,7 +291,8 @@
               "level": "The exact same automated/push-button process deploys to all environments",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Consistent automated deployment processes across all environments reduce the risk of environment-specific failures."
         },
         {
           "id": 2,
@@ -298,7 +314,8 @@
               "level": "Our automated push-button process could deploy that version to a test environment",
               "description": ""
             }
-          ]
+          ],
+          "advice": "The ability to easily re-deploy specific versions is critical for rapid recovery and debugging."
         },
         {
           "id": 3,
@@ -320,7 +337,8 @@
               "level": "We aggressively automate all stages of the deployment pipeline unless we can find no economic way to do it",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Removing manual stage gates reduces human error and accelerates the delivery pipeline."
         },
         {
           "id": 4,
@@ -342,7 +360,8 @@
               "level": "All checks happen as part of the deployment pipeline",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Moving checks into the deployment pipeline ensures they are run consistently and provides immediate feedback."
         },
         {
           "id": 5,
@@ -359,7 +378,8 @@
               "level": "The package is built once and the same package is used each time the software is promoted to the next environment",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Building artifacts once and promoting them ensures that what you tested is exactly what you deploy to production."
         },
         {
           "id": 6,
@@ -376,9 +396,11 @@
               "level": "The deployment process is versioned alongside the package to keep it the same on all environments, changes would mean starting from the first environment again",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Version-controlled deployment processes ensure that your infrastructure and code evolve together reliably."
         }
-      ]
+      ],
+      "advice": "Automation eliminates manual errors, ensures consistency across environments, and enables team scalability."
     },
     {
       "id": "agility",
@@ -400,7 +422,8 @@
               "level": "An automated test or script checks the application is running and its dependencies are available",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Automated post-deployment verification ensures the application is healthy before users encounter issues."
         },
         {
           "id": 2,
@@ -422,7 +445,8 @@
               "level": "Our pre-productions are very similar to the production environment",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Keeping environments identical reduces the chance of issues that only appear in production."
         },
         {
           "id": 3,
@@ -444,7 +468,8 @@
               "level": "Our environments use version-controlled configuration that keeps them identical, though we may use smaller instances for pre-production",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Using version-controlled configuration for infrastructure ensures consistency and enables rapid recovery."
         },
         {
           "id": 4,
@@ -466,7 +491,8 @@
               "level": "We use feature flags to control visibility of new features",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Decoupling deployment from release via keystoning or flags allows for more controlled and safer feature rollouts."
         },
         {
           "id": 5,
@@ -488,7 +514,8 @@
               "level": "We can expose a new feature to specific users or groups of users",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Gradual feature exposure allows for A/B testing and reduces the blast radius of potential issues."
         },
         {
           "id": 6,
@@ -510,7 +537,8 @@
               "level": "This is tracked automatically and we can see this information for a set of related components all on a single dashboard",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Real-time visibility into deployed versions is essential for effective operations and debugging."
         },
         {
           "id": 7,
@@ -532,9 +560,11 @@
               "level": "This is tracked automatically and we can see running deployments for a set of related components all on a single dashboard",
               "description": ""
             }
-          ]
+          ],
+          "advice": "Observability into active deployments prevents overlapping changes and helps in identifying deployment issues."
         }
-      ]
+      ],
+      "advice": "Agility in operation and delivery allows your organization to respond quickly to market changes and user needs."
     }
   ]
 }

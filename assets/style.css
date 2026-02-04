@@ -442,3 +442,23 @@ label:has(input[type="radio"]:checked) {
 .heat_4 {
     background-color: var(--heat-4);
 }
+
+.question-advice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.advice-card {
+    margin-block: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--bg-dark);
+    border-radius: var(--radius-sm);
+}
+
+.advice-container h3,
+.advice-container h4,
+.advice-container h5,
+.advice-container p {
+    margin-block-end: var(--spacing-xl);
+}
