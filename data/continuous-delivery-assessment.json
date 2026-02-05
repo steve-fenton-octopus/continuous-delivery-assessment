@@ -32,7 +32,7 @@
       "questions": [
         {
           "id": 1,
-          "text": "You just found a bug in production, when will it be fixed in production?",
+          "text": "You just found a bug in production, when will a fix be deployed to production?",
           "field_name": "deployability_1",
           "options": [
             {
@@ -78,7 +78,7 @@
         },
         {
           "id": 3,
-          "text": "How long is a deployment typically blocked when there's an issue with builds or tests",
+          "text": "How long is a deployment typically blocked when there's an issue with builds or tests?",
           "field_name": "deployability_3",
           "options": [
             {
@@ -170,7 +170,7 @@
         },
         {
           "id": 7,
-          "text": "Can developers and testers deploy to a pre-live environment on demand",
+          "text": "Can developers and testers deploy to a pre-live environment on demand?",
           "field_name": "deployability_7",
           "options": [
             {
@@ -278,7 +278,7 @@
       "questions": [
         {
           "id": 1,
-          "text": "How do changes progress through environments",
+          "text": "How do changes progress through environments?",
           "field_name": "automation_1",
           "options": [
             {
@@ -301,7 +301,7 @@
         },
         {
           "id": 2,
-          "text": "If a bug was reported in a specific version of your software",
+          "text": "If a bug was reported in a specific version of your software, what would happen?",
           "field_name": "automation_2",
           "options": [
             {
@@ -324,7 +324,7 @@
         },
         {
           "id": 3,
-          "text": "How much of your deployment pipeline, from code commit to running in production, depends on a manual stage gate? For example, manual testing, security, packaging, moving files around, configuration, etc.",
+          "text": "How much of your deployment pipeline, from code commit to running in production, depends on a manual stage gate? For example, manual testing, security, packaging, moving files around, configuration, etc?",
           "field_name": "automation_3",
           "options": [
             {
@@ -370,7 +370,7 @@
         },
         {
           "id": 5,
-          "text": "Build artifacts",
+          "text": "When do you create build artifacts?",
           "field_name": "automation_5",
           "options": [
             {
@@ -388,7 +388,7 @@
         },
         {
           "id": 6,
-          "text": "Deployment process",
+          "text": "What best describes your deployment process?",
           "field_name": "automation_6",
           "options": [
             {
@@ -414,7 +414,7 @@
       "questions": [
         {
           "id": 1,
-          "text": "After you deploy to an environment",
+          "text": "After you deploy to an environment, how do you verify the software works?",
           "field_name": "agility_1",
           "options": [
             {
@@ -432,7 +432,7 @@
         },
         {
           "id": 2,
-          "text": "Environment similarity",
+          "text": "How do your pre-production environments compare to production?",
           "field_name": "agility_2",
           "options": [
             {
@@ -455,7 +455,7 @@
         },
         {
           "id": 3,
-          "text": "Infrastructure changes",
+          "text": "How do you manage infrastructure changes?",
           "field_name": "agility_3",
           "options": [
             {
@@ -478,7 +478,7 @@
         },
         {
           "id": 4,
-          "text": "New features",
+          "text": "When do users see new features?",
           "field_name": "agility_4",
           "options": [
             {
@@ -501,7 +501,7 @@
         },
         {
           "id": 5,
-          "text": "New features",
+          "text": "How are new features rolled out?",
           "field_name": "agility_5",
           "options": [
             {
