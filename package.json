@@ -1,0 +1,24 @@
+{
+  "name": "continuous-delivery-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steve-fenton-octopus/continuous-delivery-assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/steve-fenton-octopus/continuous-delivery-assessment/issues"
+  },
+  "homepage": "https://github.com/steve-fenton-octopus/continuous-delivery-assessment#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
