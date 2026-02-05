@@ -426,7 +426,7 @@ function renderAdvice() {
 
     group.innerHTML = `
       <div class="category-advice">
-        <h3>${loadedData.metadata.advice_category_title}: ${cat.name}</h3>
+        <h3>${loadedData.metadata.advice_category_title}: ${cat.name} (${cat.score}%)</h3>
         <p>${cat.advice}</p>
       </div>
       <div class="question-advice-grid">
