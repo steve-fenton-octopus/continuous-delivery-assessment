@@ -3,21 +3,21 @@
     --primary-color: #0E83C6;
     --primary-dark: #274B66;
     --highlight: #0E83C6;
-    --bg-dark: #f4f4f4;
-    --bg-light: #fdfdfd;
 
     /* Text Colors */
     --text-primary: #282F38;
     --text-heading: #274B66;
 
     /* Background Colors */
+    --bg-dark: #f4f4f4;
+    --bg-light: #fdfdfd;
+    --bg-white: white;
     --bg-gradient-start: #0E83C6;
     --bg-gradient-end: #274B66;
     --bg-white-translucent: rgba(255, 255, 255, 0.90);
     --bg-primary-light: rgba(14, 131, 198, 0.05);
     --bg-primary-medium: rgba(14, 131, 198, 0.1);
     --bg-primary-hover: rgba(14, 131, 198, 0.2);
-    --bg-white: white;
 
     /* Heat Map Colors */
     --heat-1: rgba(14, 131, 198, 0.15);
@@ -25,31 +25,6 @@
     --heat-3: rgba(14, 131, 198, 0.55);
     --heat-4: rgba(14, 131, 198, 0.75);
     --heat-5: rgba(14, 131, 198, 1.0);
-
-
-
-    /* Border Colors */
-    --border-silver: silver;
-    --border-transparent: transparent;
-
-    /* Shadow Colors */
-    --shadow-light: rgba(0, 0, 0, 0.1);
-
-    /* Spacing Values */
-    --spacing-xs: 8px;
-    --spacing-sm: 10px;
-    --spacing-md: 12px;
-    --spacing-lg: 15px;
-    --spacing-xl: 20px;
-    --spacing-2xl: 25px;
-    --spacing-3xl: 30px;
-    --spacing-4xl: 40px;
-
-    /* Border Radius */
-    --radius-xs: 4px;
-    --radius-sm: 10px;
-    --radius-md: 15px;
-    --radius-lg: 20px;
 
     /* Status Colors */
     --color-disabled: #ccc;
@@ -66,12 +41,37 @@
     --chart-point: var(--primary-color);
 
     /* Confetti Colors */
-    --confetti-1: var(--primary-color);
-    --confetti-2: var(--primary-dark);
-    --confetti-3: var(--color-warning);
-    --confetti-4: var(--color-danger);
-    --confetti-5: var(--color-success);
-    --confetti-6: var(--color-info);
+    --confetti-1: #0E83C6;
+    --confetti-2: #274B66;
+    --confetti-3: #FFD700;
+    --confetti-4: #FF6347;
+    --confetti-5: #32CD32;
+    --confetti-6: #9370DB;
+
+    /* Border Colors */
+    --border-silver: silver;
+    --border-transparent: transparent;
+
+    /* Shadow Colors */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 20px 40px var(--shadow-light);
+    --shadow-hover: 0 5px 15px var(--bg-primary-hover);
+
+    /* Spacing Values */
+    --spacing-xs: 8px;
+    --spacing-sm: 10px;
+    --spacing-md: 12px;
+    --spacing-lg: 15px;
+    --spacing-xl: 20px;
+    --spacing-2xl: 25px;
+    --spacing-3xl: 30px;
+    --spacing-4xl: 40px;
+
+    /* Border Radius */
+    --radius-xs: 4px;
+    --radius-sm: 10px;
+    --radius-md: 15px;
+    --radius-lg: 20px;
 
     /* Font Weights */
     --font-weight-medium: 600;
@@ -94,10 +94,6 @@
 
     /* Transitions */
     --transition-smooth: all 0.3s ease;
-
-    /* Box Shadows */
-    --shadow-card: 0 20px 40px var(--shadow-light);
-    --shadow-hover: 0 5px 15px var(--bg-primary-hover);
 }
 
 * {
