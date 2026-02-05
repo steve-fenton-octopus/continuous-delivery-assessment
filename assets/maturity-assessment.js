@@ -773,7 +773,7 @@ let answerState = {};
 
       container.appendChild(particle);
 
-      const animationDuration = Math.random() * 3 + 2;
+      const animationDuration = Math.random() * 4 + 4;
       const horizontalShift = (Math.random() - 0.5) * 20;
 
       particle.animate([
@@ -784,10 +784,10 @@ let answerState = {};
         easing: 'cubic-bezier(0, .9, .57, 1)'
       }).onfinish = () => particle.remove();
 
-      setTimeout(createParticle, 50);
+      setTimeout(createParticle, 200);
     }
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 10; i++) {
       setTimeout(createParticle, Math.random() * 1000);
     }
   }
