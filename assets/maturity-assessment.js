@@ -379,9 +379,22 @@ let answerState = {};
   function drawRow(category, categoryId, values) {
     let row = `<tr><td>${category}</td>`;
 
+    // Total counts for this category to calculate percentages
+    let totalAnswers = 0;
     for (let i = 1; i <= maxValue; i++) {
-      const heatValue = Math.min(values[i.toString()] || 0, 7);
-      row += `<td class="heat_${heatValue}"> </td>`;
+      totalAnswers += values[i.toString()] || 0;
+    }
+
+    for (let i = 1; i <= maxValue; i++) {
+      const count = values[i.toString()] || 0;
+      let heatLevel = 0;
+      if (count > 0 && totalAnswers > 0) {
+        const percentage = count / totalAnswers;
+        // Map percentage to 1-5 scale
+        // Ensure even very low percentages (like 1/7) get at least level 1
+        heatLevel = Math.ceil(percentage * 5);
+      }
+      row += `<td class="heat_${heatLevel}"> </td>`;
     }
 
     const score = scores[categoryId] || 0;
