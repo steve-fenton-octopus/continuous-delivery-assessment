@@ -21,9 +21,13 @@
 
     /* Heat Map Colors */
     --heat-1: rgba(14, 131, 198, 0.1);
-    --heat-2: rgba(14, 131, 198, 0.3);
-    --heat-3: rgba(14, 131, 198, 0.6);
-    --heat-4: rgba(14, 131, 198, 0.9);
+    --heat-2: rgba(14, 131, 198, 0.25);
+    --heat-3: rgba(14, 131, 198, 0.4);
+    --heat-4: rgba(14, 131, 198, 0.55);
+    --heat-5: rgba(14, 131, 198, 0.7);
+    --heat-6: rgba(14, 131, 198, 0.85);
+    --heat-7: rgba(14, 131, 198, 1.0);
+
 
     /* Border Colors */
     --border-silver: silver;
@@ -421,6 +425,18 @@ label:has(input[type="radio"]:checked) {
     background-color: var(--heat-4);
 }
 
+.heat_5 {
+    background-color: var(--heat-5);
+}
+
+.heat_6 {
+    background-color: var(--heat-6);
+}
+
+.heat_7 {
+    background-color: var(--heat-7);
+}
+
 .score-cell,
 .score-header {
     text-align: right;
@@ -476,8 +492,15 @@ label:has(input[type="radio"]:checked) {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Confetti Particles */

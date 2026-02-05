@@ -380,7 +380,8 @@ let answerState = {};
     let row = `<tr><td>${category}</td>`;
 
     for (let i = 1; i <= maxValue; i++) {
-      row += `<td class="heat_${values[i.toString()]}"> </td>`;
+      const heatValue = Math.min(values[i.toString()] || 0, 7);
+      row += `<td class="heat_${heatValue}"> </td>`;
     }
 
     const score = scores[categoryId] || 0;
@@ -872,31 +873,31 @@ function triggerConfetti(duration) {
   const colors = ['#0E83C6', '#274B66', '#FFD700', '#FF6347', '#32CD32', '#9370DB'];
   const particleCount = 100;
   const container = document.body;
-  
+
   const startTime = Date.now();
-  
+
   function createParticle() {
     if (Date.now() - startTime > duration) return;
-    
+
     const particle = document.createElement('div');
     particle.className = 'confetti-particle';
-    
+
     const size = Math.random() * 10 + 5;
     const color = colors[Math.floor(Math.random() * colors.length)];
     const left = Math.random() * 100;
     const rotation = Math.random() * 360;
-    
+
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
     particle.style.backgroundColor = color;
     particle.style.left = `${left}vw`;
     particle.style.transform = `rotate(${rotation}deg)`;
-    
+
     container.appendChild(particle);
-    
+
     const animationDuration = Math.random() * 3 + 2;
     const horizontalShift = (Math.random() - 0.5) * 20;
-    
+
     particle.animate([
       { transform: `translateY(0) rotate(${rotation}deg)`, opacity: 1 },
       { transform: `translateY(110vh) translateX(${horizontalShift}vw) rotate(${rotation + 360}deg)`, opacity: 0 }
@@ -904,10 +905,10 @@ function triggerConfetti(duration) {
       duration: animationDuration * 1000,
       easing: 'cubic-bezier(0, .9, .57, 1)'
     }).onfinish = () => particle.remove();
-    
+
     setTimeout(createParticle, 50);
   }
-  
+
   for (let i = 0; i < 20; i++) {
     setTimeout(createParticle, Math.random() * 1000);
   }
