@@ -222,7 +222,7 @@ function drawSpiderChart() {
   const radius = 240;
 
   // Grid Circles
-  ctx.strokeStyle = '#c4c4c4';
+  ctx.strokeStyle = getCSSVariable('chart-grid');
   ctx.lineWidth = 1;
   for (let i = 1; i <= maxValue; i++) {
     ctx.beginPath();
@@ -232,7 +232,7 @@ function drawSpiderChart() {
 
   // Grid Lines & Labels
   const entries = Object.entries(categories);
-  ctx.fillStyle = '#4a5568';
+  ctx.fillStyle = getCSSVariable('chart-label');
   ctx.font = '14px Arial';
   ctx.textAlign = 'center';
 
@@ -253,8 +253,8 @@ function drawSpiderChart() {
 
   // Data Polygon
   if (Object.values(scores).some(s => s > 0)) {
-    ctx.strokeStyle = '#0E83C6';
-    ctx.fillStyle = 'rgba(120, 120, 120, 0.2)';
+    ctx.strokeStyle = getCSSVariable('chart-line');
+    ctx.fillStyle = getCSSVariable('chart-fill');
     ctx.lineWidth = 3;
     ctx.beginPath();
 
@@ -291,7 +291,7 @@ function drawSpiderChart() {
     ctx.stroke();
 
     // Points
-    ctx.fillStyle = "#0E83C6";
+    ctx.fillStyle = getCSSVariable('chart-point');
     entries.forEach(([id], i) => {
       const angle = (i * 2 * Math.PI) / entries.length - Math.PI / 2;
       const distance = ((scores[id] || 0) / 100) * radius;
@@ -332,6 +332,14 @@ function drawMatrix() {
 function draw() {
   drawSpiderChart();
   drawMatrix();
+}
+
+/**
+ * Helper to fetch CSS variables from the :root.
+ * @param {string} name Variable name without -- prefix.
+ */
+function getCSSVariable(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(`--${name}`).trim();
 }
 
 // ============================================================================
@@ -480,7 +488,14 @@ function showResults() {
  * Triggers the confetti effect.
  */
 function triggerConfetti(duration) {
-  const colors = ['#0E83C6', '#274B66', '#FFD700', '#FF6347', '#32CD32', '#9370DB'];
+  const colors = [
+    getCSSVariable('confetti-1'),
+    getCSSVariable('confetti-2'),
+    getCSSVariable('confetti-3'),
+    getCSSVariable('confetti-4'),
+    getCSSVariable('confetti-5'),
+    getCSSVariable('confetti-6')
+  ];
   const startTime = Date.now();
 
   const create = () => {

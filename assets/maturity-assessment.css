@@ -56,6 +56,22 @@
     --color-success: #32CD32;
     --color-warning: #FFD700;
     --color-danger: #FF6347;
+    --color-info: #9370DB;
+
+    /* Chart Colors */
+    --chart-grid: #c4c4c4;
+    --chart-label: #4a5568;
+    --chart-fill: rgba(120, 120, 120, 0.2);
+    --chart-line: var(--primary-color);
+    --chart-point: var(--primary-color);
+
+    /* Confetti Colors */
+    --confetti-1: var(--primary-color);
+    --confetti-2: var(--primary-dark);
+    --confetti-3: var(--color-warning);
+    --confetti-4: var(--color-danger);
+    --confetti-5: var(--color-success);
+    --confetti-6: var(--color-info);
 
     /* Font Weights */
     --font-weight-medium: 600;
