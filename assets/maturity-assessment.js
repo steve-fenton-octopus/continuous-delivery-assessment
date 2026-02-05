@@ -428,12 +428,11 @@ function renderAdvice() {
       <div class="category-advice">
         <h3>${loadedData.metadata.advice_category_title}: ${cat.name}</h3>
         <p>${cat.advice}</p>
-        <h4>${loadedData.metadata.advice_questions_title}</h4>
       </div>
       <div class="question-advice-grid">
         ${filteredQuestions.map(item => `
           <div class="advice-card question-card">
-            <h5>${item.q.text}</h5>
+            <h4>${item.q.text}</h4>
             <p>${item.q.advice}</p>
           </div>
         `).join('')}

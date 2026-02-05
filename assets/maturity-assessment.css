@@ -153,6 +153,16 @@ legend {
     padding-block-end: var(--spacing-sm);
 }
 
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+h4,
+h5,
+h6 {
+    font-size: var(--font-size-lg);
+}
+
 fieldset {
     border: 0;
 }
