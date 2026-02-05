@@ -792,6 +792,28 @@ function renderAdvice() {
 
   if (!adviceSection || !categoryAdviceEl || !questionAdviceEl || !categoryPages.length) return;
 
+  // 1. Check for max score
+  const allMaxScore = categoryPages.every(cat => {
+    const score = parseFloat(calculateCategoryScore(cat.id));
+    return score === 100;
+  });
+
+  const congratsSection = document.getElementById('congrats-section');
+  if (allMaxScore) {
+    if (congratsSection) {
+      congratsSection.style.display = 'block';
+      const congratsMsg = loadedData.metadata.congrats_message;
+      const congratsTitle = loadedData.metadata.congrats_title;
+      congratsSection.querySelector('p').innerHTML = congratsMsg;
+      congratsSection.querySelector('h2').innerHTML = congratsTitle;
+    }
+    adviceSection.style.display = 'none';
+    triggerConfetti(5000);
+    return;
+  } else {
+    if (congratsSection) congratsSection.style.display = 'none';
+  }
+
   // 1. Find the lowest scoring category
   let lowestCategory = null;
   let lowestScore = Infinity;
@@ -841,4 +863,52 @@ function renderAdvice() {
   questionAdviceEl.innerHTML = questionsHtml;
 
   adviceSection.style.display = 'block';
+}
+
+/**
+ * Trigger a simple confetti effect for a specified duration
+ */
+function triggerConfetti(duration) {
+  const colors = ['#0E83C6', '#274B66', '#FFD700', '#FF6347', '#32CD32', '#9370DB'];
+  const particleCount = 100;
+  const container = document.body;
+  
+  const startTime = Date.now();
+  
+  function createParticle() {
+    if (Date.now() - startTime > duration) return;
+    
+    const particle = document.createElement('div');
+    particle.className = 'confetti-particle';
+    
+    const size = Math.random() * 10 + 5;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const left = Math.random() * 100;
+    const rotation = Math.random() * 360;
+    
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.backgroundColor = color;
+    particle.style.left = `${left}vw`;
+    particle.style.transform = `rotate(${rotation}deg)`;
+    
+    container.appendChild(particle);
+    
+    const animationDuration = Math.random() * 3 + 2;
+    const horizontalShift = (Math.random() - 0.5) * 20;
+    
+    particle.animate([
+      { transform: `translateY(0) rotate(${rotation}deg)`, opacity: 1 },
+      { transform: `translateY(110vh) translateX(${horizontalShift}vw) rotate(${rotation + 360}deg)`, opacity: 0 }
+    ], {
+      duration: animationDuration * 1000,
+      easing: 'cubic-bezier(0, .9, .57, 1)'
+    }).onfinish = () => particle.remove();
+    
+    setTimeout(createParticle, 50);
+  }
+  
+  for (let i = 0; i < 20; i++) {
+    setTimeout(createParticle, Math.random() * 1000);
+  }
 }

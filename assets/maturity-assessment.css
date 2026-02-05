@@ -452,3 +452,39 @@ label:has(input[type="radio"]:checked) {
 .advice-container p {
     margin-block-end: var(--spacing-xl);
 }
+
+/* Congratulations Section */
+#congrats-section {
+    text-align: center;
+    padding: var(--spacing-4xl);
+    background: linear-gradient(135deg, rgba(14, 131, 198, 0.1), rgba(39, 75, 102, 0.1));
+    border-radius: var(--radius-lg);
+    margin-block: var(--spacing-xl);
+    border: 2px solid var(--primary-color);
+    animation: fadeIn 1s ease-out;
+}
+
+#congrats-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: var(--font-size-3xl);
+}
+
+#congrats-section p {
+    font-size: var(--font-size-xl);
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Confetti Particles */
+.confetti-particle {
+    position: fixed;
+    top: -10px;
+    z-index: 9999;
+    pointer-events: none;
+    border-radius: 2px;
+}
