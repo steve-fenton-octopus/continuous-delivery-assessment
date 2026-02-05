@@ -453,6 +453,19 @@ label:has(input[type="radio"]:checked) {
     border-radius: var(--radius-sm);
 }
 
+.advice-group {
+    margin-bottom: var(--spacing-4xl);
+    padding-bottom: var(--spacing-4xl);
+    border-bottom: 2px solid var(--bg-primary-light);
+}
+
+.advice-group:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+
 .advice-container h3,
 .advice-container h4,
 .advice-container h5,

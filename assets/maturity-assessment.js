@@ -637,13 +637,190 @@ let answerState = {};
       // Ensure URL reflects current state (including view)
       saveStateToURL();
     }
-
     draw();
   });
 
   // Initial chart draw
   draw();
+
+  /**
+   * Render targeted advice based on categories with < 100% score
+   */
+  function renderAdvice() {
+    const adviceSection = document.getElementById('advice-section');
+    if (!adviceSection || !categoryPages.length) return;
+
+    // 1. Clean start: empty the advice section
+    adviceSection.innerHTML = '';
+
+    // 2. Check for max score (entire assessment)
+    const allMaxScore = categoryPages.every(cat => {
+      const score = parseFloat(calculateCategoryScore(cat.id));
+      return score === 100;
+    });
+
+    const congratsSection = document.getElementById('congrats-section');
+    if (allMaxScore) {
+      if (congratsSection) {
+        congratsSection.style.display = 'block';
+        const congratsMsg = loadedData.metadata.congrats_message;
+        const congratsTitle = loadedData.metadata.congrats_title;
+        congratsSection.querySelector('p').innerHTML = congratsMsg;
+        congratsSection.querySelector('h2').innerHTML = congratsTitle;
+      }
+      adviceSection.style.display = 'none';
+      triggerConfetti(5000);
+      return;
+    } else {
+      if (congratsSection) congratsSection.style.display = 'none';
+    }
+
+    // 3. Filter and sort categories that need advice (score < 100%)
+    const categoriesToImprove = categoryPages
+      .map(cat => ({
+        ...cat,
+        score: parseFloat(calculateCategoryScore(cat.id))
+      }))
+      .filter(cat => cat.score < 100);
+
+    // Sort by score ascending (lowest score first)
+    categoriesToImprove.sort((a, b) => a.score - b.score);
+
+    if (categoriesToImprove.length === 0) {
+      adviceSection.style.display = 'none';
+      return;
+    }
+
+    // 4. Render main advice title (Targeted Recommendations)
+    const mainAdviceTitle = loadedData.metadata.advice_title || "Targeted Recommendations";
+    const mainHeader = document.createElement('h2');
+    mainHeader.textContent = mainAdviceTitle;
+    adviceSection.appendChild(mainHeader);
+
+    // 5. Render advice for each category
+    const categoryTitleLabel = loadedData.metadata.advice_category_title;
+    const questionsTitleLabel = loadedData.metadata.advice_questions_title;
+
+    categoriesToImprove.forEach(cat => {
+      const adviceGroup = document.createElement('div');
+      adviceGroup.className = 'advice-group';
+
+      // Get filtered and sorted questions for this category (exclude max score)
+      const qScores = cat.questions
+        .map(q => {
+          const val = answerState[q.field_name];
+          return {
+            question: q,
+            score: val ? parseInt(val) : 0
+          };
+        })
+        .filter(item => item.score < maxValue);
+
+      qScores.sort((a, b) => a.score - b.score);
+      const lowestQuestions = qScores.slice(0, 3);
+
+      let questionsHtml = '';
+      lowestQuestions.forEach(item => {
+        questionsHtml += `
+          <div class="advice-card question-card">
+            <h5>${item.question.text}</h5>
+            <p>${item.question.advice}</p>
+          </div>
+        `;
+      });
+
+      adviceGroup.innerHTML = `
+        <div class="category-advice">
+          <h3>${categoryTitleLabel}: ${cat.name}</h3>
+          <p>${cat.advice}</p>
+          <h4>${questionsTitleLabel}</h4>
+        </div>
+        <div class="question-advice-grid">
+          ${questionsHtml}
+        </div>
+      `;
+
+      adviceSection.appendChild(adviceGroup);
+    });
+
+    adviceSection.style.display = 'block';
+  }
+
+  /**
+   * Trigger a simple confetti effect for a specified duration
+   */
+  function triggerConfetti(duration) {
+    const colors = ['#0E83C6', '#274B66', '#FFD700', '#FF6347', '#32CD32', '#9370DB'];
+    const container = document.body;
+    const startTime = Date.now();
+
+    function createParticle() {
+      if (Date.now() - startTime > duration) return;
+
+      const particle = document.createElement('div');
+      particle.className = 'confetti-particle';
+
+      const size = Math.random() * 10 + 5;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const left = Math.random() * 100;
+      const rotation = Math.random() * 360;
+
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.backgroundColor = color;
+      particle.style.left = `${left}vw`;
+      particle.style.transform = `rotate(${rotation}deg)`;
+
+      container.appendChild(particle);
+
+      const animationDuration = Math.random() * 3 + 2;
+      const horizontalShift = (Math.random() - 0.5) * 20;
+
+      particle.animate([
+        { transform: `translateY(0) rotate(${rotation}deg)`, opacity: 1 },
+        { transform: `translateY(110vh) translateX(${horizontalShift}vw) rotate(${rotation + 360}deg)`, opacity: 0 }
+      ], {
+        duration: animationDuration * 1000,
+        easing: 'cubic-bezier(0, .9, .57, 1)'
+      }).onfinish = () => particle.remove();
+
+      setTimeout(createParticle, 50);
+    }
+
+    for (let i = 0; i < 20; i++) {
+      setTimeout(createParticle, Math.random() * 1000);
+    }
+  }
+
+  /**
+   * Show results section
+   */
+  function showResults() {
+    const formSection = document.querySelector('.form-section');
+    const resultsSection = document.getElementById('results-section');
+
+    if (formSection) {
+      formSection.style.display = 'none';
+    }
+
+    if (resultsSection) {
+      resultsSection.style.display = 'block';
+    }
+
+    // Trigger the existing chart and scores calculation
+    window.draw();
+    window.updateScores();
+
+    // Render targeted advice
+    renderAdvice();
+  }
+
+  // Make functions accessible outside
+  window.renderAdvice = renderAdvice;
+  window.showResults = showResults;
 }
+
+
 
 // Render the current page content (global scope for access from pagination functions)
 function renderCurrentPage() {
@@ -775,154 +952,5 @@ window.returnToAssessment = function () {
   window.saveStateToURL();
 };
 
-// Show results section
-function showResults() {
-  const formSection = document.querySelector('.form-section');
-  const resultsSection = document.getElementById('results-section');
 
-  if (formSection) {
-    formSection.style.display = 'none';
-  }
 
-  if (resultsSection) {
-    resultsSection.style.display = 'block';
-  }
-
-  // Trigger the existing chart and scores calculation
-  window.draw();
-  window.updateScores();
-
-  // Render targeted advice
-  renderAdvice();
-}
-
-/**
- * Render targeted advice based on the lowest scoring category
- */
-function renderAdvice() {
-  const adviceSection = document.getElementById('advice-section');
-  const categoryAdviceEl = document.getElementById('category-advice');
-  const questionAdviceEl = document.getElementById('question-advice');
-
-  if (!adviceSection || !categoryAdviceEl || !questionAdviceEl || !categoryPages.length) return;
-
-  // 1. Check for max score
-  const allMaxScore = categoryPages.every(cat => {
-    const score = parseFloat(calculateCategoryScore(cat.id));
-    return score === 100;
-  });
-
-  const congratsSection = document.getElementById('congrats-section');
-  if (allMaxScore) {
-    if (congratsSection) {
-      congratsSection.style.display = 'block';
-      const congratsMsg = loadedData.metadata.congrats_message;
-      const congratsTitle = loadedData.metadata.congrats_title;
-      congratsSection.querySelector('p').innerHTML = congratsMsg;
-      congratsSection.querySelector('h2').innerHTML = congratsTitle;
-    }
-    adviceSection.style.display = 'none';
-    triggerConfetti(5000);
-    return;
-  } else {
-    if (congratsSection) congratsSection.style.display = 'none';
-  }
-
-  // 1. Find the lowest scoring category
-  let lowestCategory = null;
-  let lowestScore = Infinity;
-
-  categoryPages.forEach(cat => {
-    const score = parseFloat(calculateCategoryScore(cat.id));
-    if (score < lowestScore) {
-      lowestScore = score;
-      lowestCategory = cat;
-    }
-  });
-
-  if (!lowestCategory) return;
-
-  // 2. Find the 3 lowest scoring questions in that category
-  const qScores = lowestCategory.questions.map(q => {
-    const val = answerState[q.field_name];
-    return {
-      question: q,
-      score: val ? parseInt(val) : 0
-    };
-  });
-
-  // Sort by score ascending
-  qScores.sort((a, b) => a.score - b.score);
-  const lowestQuestions = qScores.slice(0, 3);
-
-  // 3. Render Category Advice
-  const categoryTitle = loadedData.metadata.advice_category_title;
-  const questionsTitle = loadedData.metadata.advice_questions_title;
-  categoryAdviceEl.innerHTML = `
-    <h3>${categoryTitle}: ${lowestCategory.name}</h3>
-    <p>${lowestCategory.advice}</p>
-    <h4>${questionsTitle}</h4>
-  `;
-
-  // 4. Render Question Advice
-  let questionsHtml = '';
-  lowestQuestions.forEach(item => {
-    questionsHtml += `
-      <div class="advice-card question-card">
-        <h5>${item.question.text}</h5>
-        <p>${item.question.advice}</p>
-      </div>
-    `;
-  });
-  questionAdviceEl.innerHTML = questionsHtml;
-
-  adviceSection.style.display = 'block';
-}
-
-/**
- * Trigger a simple confetti effect for a specified duration
- */
-function triggerConfetti(duration) {
-  const colors = ['#0E83C6', '#274B66', '#FFD700', '#FF6347', '#32CD32', '#9370DB'];
-  const particleCount = 100;
-  const container = document.body;
-
-  const startTime = Date.now();
-
-  function createParticle() {
-    if (Date.now() - startTime > duration) return;
-
-    const particle = document.createElement('div');
-    particle.className = 'confetti-particle';
-
-    const size = Math.random() * 10 + 5;
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const left = Math.random() * 100;
-    const rotation = Math.random() * 360;
-
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    particle.style.backgroundColor = color;
-    particle.style.left = `${left}vw`;
-    particle.style.transform = `rotate(${rotation}deg)`;
-
-    container.appendChild(particle);
-
-    const animationDuration = Math.random() * 3 + 2;
-    const horizontalShift = (Math.random() - 0.5) * 20;
-
-    particle.animate([
-      { transform: `translateY(0) rotate(${rotation}deg)`, opacity: 1 },
-      { transform: `translateY(110vh) translateX(${horizontalShift}vw) rotate(${rotation + 360}deg)`, opacity: 0 }
-    ], {
-      duration: animationDuration * 1000,
-      easing: 'cubic-bezier(0, .9, .57, 1)'
-    }).onfinish = () => particle.remove();
-
-    setTimeout(createParticle, 50);
-  }
-
-  for (let i = 0; i < 20; i++) {
-    setTimeout(createParticle, Math.random() * 1000);
-  }
-}
