@@ -1,4 +1,4 @@
-const { Given, Then, Before, After, BeforeAll, AfterAll, setDefaultTimeout } = require('@cucumber/cucumber');
+const { Given, When, Then, Before, After, BeforeAll, AfterAll, setDefaultTimeout } = require('@cucumber/cucumber');
 const { chromium, expect } = require('@playwright/test');
 const { spawn } = require('child_process');
 
@@ -41,6 +41,29 @@ Given('I open the assessment application', async function () {
 });
 
 Then('I should see the assessment title {string}', async function (title) {
-    const header = await page.locator('h1');
+    const header = await page.locator('h1').filter({ visible: true });
     await expect(header).toHaveText(title);
+});
+
+Given('I select value {string} for question {string}', async function (value, question) {
+    const radio = await page.locator(`input[name="${question}"][value="${value}"]`);
+    await radio.click();
+});
+
+When('I click the next button', async function () {
+    await page.click('#next-btn');
+});
+
+When('I submit the assessment', async function () {
+    await page.click('#submit-btn');
+});
+
+Then('I should see the results page with the spider chart', async function () {
+    const spiderChart = await page.locator('#maturity-spider');
+    await expect(spiderChart).toBeVisible();
+});
+
+Then('I should see advice for {string}', async function (category) {
+    const adviceHeader = await page.locator('h3').filter({ hasText: category });
+    await expect(adviceHeader).toBeVisible();
 });
