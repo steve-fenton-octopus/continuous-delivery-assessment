@@ -118,6 +118,20 @@ Then('I should not see advice for {string}', async function (category) {
     await expect(adviceHeader).not.toBeVisible();
 });
 
+Then('I should see the following advice:', async function (dataTable) {
+    const data = dataTable.hashes();
+    for (const row of data) {
+        const category = row['Category'];
+        const expected = row['Advice'].toLowerCase() === 'yes';
+        const adviceHeader = await page.locator('h3').filter({ hasText: category });
+        if (expected) {
+            await expect(adviceHeader).toBeVisible();
+        } else {
+            await expect(adviceHeader).not.toBeVisible();
+        }
+    }
+});
+
 Then('I should see the congratulations message', async function () {
     const congratsSection = await page.locator('#congrats-section');
     await expect(congratsSection).toBeVisible();

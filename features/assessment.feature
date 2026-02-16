@@ -12,10 +12,12 @@ Feature: Continuous Delivery Assessment
     And I submit a mixed score for "Agility"
     Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
-    And I should see advice for "Deployability"
-    And I should see advice for "Agility"
-    And I should see advice for "Automation"
-    And I should see advice for "Feedback"
+    And I should see the following advice:
+      | Category      | Advice |
+      | Deployability | Yes    |
+      | Agility       | Yes    |
+      | Automation    | Yes    |
+      | Feedback      | Yes    |
 
   Scenario: Deployability and agility need improvement
     Given I open the assessment application
@@ -25,10 +27,12 @@ Feature: Continuous Delivery Assessment
     And I submit a mixed score for "Agility"
     Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
-    And I should see advice for "Deployability"
-    And I should see advice for "Agility"
-    And I should not see advice for "Automation"
-    And I should not see advice for "Feedback"
+    And I should see the following advice:
+      | Category      | Advice |
+      | Deployability | Yes    |
+      | Agility       | Yes    |
+      | Automation    | No     |
+      | Feedback      | No     |
 
   Scenario: Only automation needs improvement
     Given I open the assessment application
@@ -38,10 +42,12 @@ Feature: Continuous Delivery Assessment
     And I submit the best score for "Agility"
     Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
-    And I should see advice for "Automation"
-    And I should not see advice for "Agility"
-    And I should not see advice for "Deployability"
-    And I should not see advice for "Feedback"
+    And I should see the following advice:
+      | Category      | Advice |
+      | Automation    | Yes    |
+      | Agility       | No     |
+      | Deployability | No     |
+      | Feedback      | No     |
 
   Scenario: Complete assessment with maximum scores
     Given I open the assessment application
@@ -51,7 +57,9 @@ Feature: Continuous Delivery Assessment
     And I submit the best score for "Agility"
     Then I should see the assessment title "Assessment results"
     And I should see the congratulations message
-    And I should see advice for "Automation"
-    And I should not see advice for "Agility"
-    And I should not see advice for "Deployability"
-    And I should not see advice for "Feedback"
+    And I should see the following advice:
+      | Category      | Advice |
+      | Automation    | No     |
+      | Agility       | No     |
+      | Deployability | No     |
+      | Feedback      | No     |
