@@ -87,11 +87,11 @@ const setCategoryScore = async (category, scoreType) => {
     }
 };
 
-When('I submit a {string} score for {string}', async function (scoreType, category) {
+When('I submit a {word} score for {string}', async function (scoreType, category) {
     await setCategoryScore(category, scoreType);
 });
 
-When('I submit the {string} score for {string}', async function (scoreType, category) {
+When('I submit the {word} score for {string}', async function (scoreType, category) {
     await setCategoryScore(category, scoreType);
 });
 
