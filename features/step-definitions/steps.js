@@ -59,7 +59,7 @@ const categoryQuestions = {
 
 const mixedScores = {
     'Deployability': ['2', '2', '2', '3', '1', '3', '2'],
-    'Feedback': ['3', '3', '3'],
+    'Feedback': ['3', '1', '2'],
     'Automation': ['1', '2', '3', '3', '3', '3'],
     'Agility': ['1', '2', '2', '3', '3', '3', '3']
 };
@@ -111,6 +111,11 @@ Then('I should see the results page with the spider chart', async function () {
 Then('I should see advice for {string}', async function (category) {
     const adviceHeader = await page.locator('h3').filter({ hasText: category });
     await expect(adviceHeader).toBeVisible();
+});
+
+Then('I should not see advice for {string}', async function (category) {
+    const adviceHeader = await page.locator('h3').filter({ hasText: category });
+    await expect(adviceHeader).not.toBeVisible();
 });
 
 Then('I should see the congratulations message', async function () {
