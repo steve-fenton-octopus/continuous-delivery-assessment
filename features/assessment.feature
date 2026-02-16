@@ -33,7 +33,7 @@ Feature: Continuous Delivery Assessment
     And I select value "3" for question "agility_6"
     And I select value "3" for question "agility_7"
     And I submit the assessment
-    Then I should see the assessment title "Improvement opportunities"
+    Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
     And I should see advice for "Deployability"
     And I should see advice for "Agility"
@@ -68,5 +68,5 @@ Feature: Continuous Delivery Assessment
     And I select value "3" for question "agility_6"
     And I select value "3" for question "agility_7"
     And I submit the assessment
-    Then I should see the assessment title "Improvement opportunities"
+    Then I should see the assessment title "Assessment results"
     And I should see the congratulations message
