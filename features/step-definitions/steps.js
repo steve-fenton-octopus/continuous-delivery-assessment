@@ -67,3 +67,11 @@ Then('I should see advice for {string}', async function (category) {
     const adviceHeader = await page.locator('h3').filter({ hasText: category });
     await expect(adviceHeader).toBeVisible();
 });
+
+Then('I should see the congratulations message', async function () {
+    const congratsSection = await page.locator('#congrats-section');
+    await expect(congratsSection).toBeVisible();
+
+    const heading = await congratsSection.locator('h2');
+    await expect(heading).toHaveText('Congratulations!');
+});
