@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "cucumber.cucumber-gherkin",
+        "ms-playwright.playwright",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}
