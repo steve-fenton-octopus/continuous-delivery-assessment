@@ -45,11 +45,6 @@ Then('I should see the assessment title {string}', async function (title) {
     await expect(header).toHaveText(title);
 });
 
-Given('I select value {string} for question {string}', async function (value, question) {
-    const radio = await page.locator(`input[name="${question}"][value="${value}"]`);
-    await radio.click();
-});
-
 const categoryQuestions = {
     'Deployability': ['deployability_1', 'deployability_2', 'deployability_3', 'deployability_4', 'deployability_5', 'deployability_6', 'deployability_7'],
     'Feedback': ['feedback_1', 'feedback_2', 'feedback_3'],
@@ -95,35 +90,9 @@ When('{string} has the {word} score for questions', async function (category, sc
     await setCategoryScore(category, scoreType);
 });
 
-When('I submit a {word} score for {string}', async function (scoreType, category) {
-    await setCategoryScore(category, scoreType);
-});
-
-When('I submit the {word} score for {string}', async function (scoreType, category) {
-    await setCategoryScore(category, scoreType);
-});
-
-When('I click the next button', async function () {
-    await page.click('#next-btn');
-});
-
-When('I submit the assessment', async function () {
-    await page.click('#submit-btn');
-});
-
 Then('I should see the results page with the spider chart', async function () {
     const spiderChart = await page.locator('#maturity-spider');
     await expect(spiderChart).toBeVisible();
-});
-
-Then('I should see advice for {string}', async function (category) {
-    const adviceHeader = await page.locator('h3').filter({ hasText: category });
-    await expect(adviceHeader).toBeVisible();
-});
-
-Then('I should not see advice for {string}', async function (category) {
-    const adviceHeader = await page.locator('h3').filter({ hasText: category });
-    await expect(adviceHeader).not.toBeVisible();
 });
 
 Then('I should see the following advice:', async function (dataTable) {
