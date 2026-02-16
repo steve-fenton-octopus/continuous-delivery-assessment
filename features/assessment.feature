@@ -6,10 +6,10 @@ Feature: Continuous Delivery Assessment
 
   Scenario: All categories need improvement
     Given I open the assessment application
-    When I submit a mixed score for "Deployability"
-    And I submit a mixed score for "Feedback"
-    And I submit a mixed score for "Automation"
-    And I submit a mixed score for "Agility"
+    When "Deployability" has a mixed score for questions
+    And "Feedback" has a mixed score for questions
+    And "Automation" has a mixed score for questions
+    And "Agility" has a mixed score for questions
     Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
     And I should see the following advice:
@@ -21,10 +21,10 @@ Feature: Continuous Delivery Assessment
 
   Scenario: Deployability and agility need improvement
     Given I open the assessment application
-    When I submit a mixed score for "Deployability"
-    And I submit the best score for "Feedback"
-    And I submit the best score for "Automation"
-    And I submit a mixed score for "Agility"
+    When "Deployability" has a mixed score for questions
+    And "Feedback" has the best score for questions
+    And "Automation" has the best score for questions
+    And "Agility" has a mixed score for questions
     Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
     And I should see the following advice:
@@ -36,10 +36,10 @@ Feature: Continuous Delivery Assessment
 
   Scenario: Only automation needs improvement
     Given I open the assessment application
-    When I submit the best score for "Deployability"
-    And I submit the best score for "Feedback"
-    And I submit a mixed score for "Automation"
-    And I submit the best score for "Agility"
+    When "Deployability" has the best score for questions
+    And "Feedback" has the best score for questions
+    And "Automation" has a mixed score for questions
+    And "Agility" has the best score for questions
     Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
     And I should see the following advice:
@@ -51,10 +51,10 @@ Feature: Continuous Delivery Assessment
 
   Scenario: Complete assessment with maximum scores
     Given I open the assessment application
-    When I submit the best score for "Deployability"
-    And I submit the best score for "Feedback"
-    And I submit the best score for "Automation"
-    And I submit the best score for "Agility"
+    When "Deployability" has the best score for questions
+    And "Feedback" has the best score for questions
+    And "Automation" has the best score for questions
+    And "Agility" has the best score for questions
     Then I should see the assessment title "Assessment results"
     And I should see the congratulations message
     And I should see the following advice:

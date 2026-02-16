@@ -87,6 +87,14 @@ const setCategoryScore = async (category, scoreType) => {
     }
 };
 
+When('{string} has a {word} score for questions', async function (category, scoreType) {
+    await setCategoryScore(category, scoreType);
+});
+
+When('{string} has the {word} score for questions', async function (category, scoreType) {
+    await setCategoryScore(category, scoreType);
+});
+
 When('I submit a {word} score for {string}', async function (scoreType, category) {
     await setCategoryScore(category, scoreType);
 });
