@@ -14,9 +14,9 @@ Feature: Continuous Delivery Assessment
     And I should see the results page with the spider chart
     And I should see the following advice:
       | Category      | Advice |
-      | Deployability | Yes    |
       | Agility       | Yes    |
       | Automation    | Yes    |
+      | Deployability | Yes    |
       | Feedback      | Yes    |
 
   Scenario: Deployability and agility need improvement
@@ -29,9 +29,9 @@ Feature: Continuous Delivery Assessment
     And I should see the results page with the spider chart
     And I should see the following advice:
       | Category      | Advice |
-      | Deployability | Yes    |
       | Agility       | Yes    |
       | Automation    | No     |
+      | Deployability | Yes    |
       | Feedback      | No     |
 
   Scenario: Only automation needs improvement
@@ -44,8 +44,8 @@ Feature: Continuous Delivery Assessment
     And I should see the results page with the spider chart
     And I should see the following advice:
       | Category      | Advice |
-      | Automation    | Yes    |
       | Agility       | No     |
+      | Automation    | Yes    |
       | Deployability | No     |
       | Feedback      | No     |
 
@@ -59,7 +59,7 @@ Feature: Continuous Delivery Assessment
     And I should see the congratulations message
     And I should see the following advice:
       | Category      | Advice |
-      | Automation    | No     |
       | Agility       | No     |
+      | Automation    | No     |
       | Deployability | No     |
       | Feedback      | No     |
