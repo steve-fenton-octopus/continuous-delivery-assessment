@@ -50,6 +50,51 @@ Given('I select value {string} for question {string}', async function (value, qu
     await radio.click();
 });
 
+const categoryQuestions = {
+    'Deployability': ['deployability_1', 'deployability_2', 'deployability_3', 'deployability_4', 'deployability_5', 'deployability_6', 'deployability_7'],
+    'Feedback': ['feedback_1', 'feedback_2', 'feedback_3'],
+    'Automation': ['automation_1', 'automation_2', 'automation_3', 'automation_4', 'automation_5', 'automation_6'],
+    'Agility': ['agility_1', 'agility_2', 'agility_3', 'agility_4', 'agility_5', 'agility_6', 'agility_7']
+};
+
+const mixedScores = {
+    'Deployability': ['2', '2', '2', '3', '1', '3', '2'],
+    'Feedback': ['3', '3', '3'],
+    'Automation': ['1', '2', '3', '3', '3', '3'],
+    'Agility': ['1', '2', '2', '3', '3', '3', '3']
+};
+
+const setCategoryScore = async (category, scoreType) => {
+    const questions = categoryQuestions[category];
+    let scores;
+    if (scoreType === 'best') {
+        scores = questions.map(() => '3');
+    } else if (scoreType === 'low') {
+        scores = questions.map(() => '1');
+    } else if (scoreType === 'mixed') {
+        scores = mixedScores[category];
+    }
+
+    for (let i = 0; i < questions.length; i++) {
+        const radio = await page.locator(`input[name="${questions[i]}"][value="${scores[i]}"]`);
+        await radio.click();
+    }
+
+    if (category === 'Agility') {
+        await page.click('#submit-btn');
+    } else {
+        await page.click('#next-btn');
+    }
+};
+
+When('I submit a {string} score for {string}', async function (scoreType, category) {
+    await setCategoryScore(category, scoreType);
+});
+
+When('I submit the {string} score for {string}', async function (scoreType, category) {
+    await setCategoryScore(category, scoreType);
+});
+
 When('I click the next button', async function () {
     await page.click('#next-btn');
 });
