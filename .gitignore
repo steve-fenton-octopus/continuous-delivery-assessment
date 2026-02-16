@@ -1,4 +1,4 @@
 .DS_Store
-.pnpm-store
+.pnpm-store/
+.tests-results/
 node_modules
-cucumber-report.html
