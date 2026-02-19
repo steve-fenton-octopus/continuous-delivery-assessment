@@ -40,6 +40,12 @@ Given('I open the assessment application', async function () {
     await page.goto('http://localhost:8080');
 });
 
+Given('I open the assessment with the following parameters:', async function (dataTable) {
+    const data = dataTable.rowsHash();
+    const params = new URLSearchParams(data);
+    await page.goto(`http://localhost:8080/?${params.toString()}`);
+});
+
 Then('I should see the assessment title {string}', async function (title) {
     const header = await page.locator('h1').filter({ visible: true });
     await expect(header).toHaveText(title);
@@ -117,4 +123,9 @@ Then('I should see the congratulations message', async function () {
 
     const heading = await congratsSection.locator('h2');
     await expect(heading).toHaveText('Congratulations!');
+});
+
+Then('the radio button for {string} with value {string} should be checked', async function (fieldName, value) {
+    const radio = await page.locator(`input[name="${fieldName}"][value="${value}"]`);
+    await expect(radio).toBeChecked();
 });
