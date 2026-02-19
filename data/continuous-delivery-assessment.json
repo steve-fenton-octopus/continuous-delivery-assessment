@@ -581,6 +581,7 @@
           "id": 1,
           "text": "What tool do you use to build your app or service?",
           "field_name": "build_tool",
+          "field_type": "suggest",
           "options": [
             {
               "value": "jenkins",
@@ -618,6 +619,7 @@
           "id": 2,
           "text": "What tool do you use to deploy your app or service?",
           "field_name": "deploy_tool",
+          "field_type": "suggest",
           "options": [
             {
               "value": "octopus",

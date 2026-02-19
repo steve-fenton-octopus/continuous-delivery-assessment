@@ -367,6 +367,30 @@ fieldset {
     line-height: 1.5;
 }
 
+/** Suggest Input */
+.suggest-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.suggest-input {
+    width: 100%;
+    padding: var(--spacing-lg);
+    background: var(--bg-white);
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border-transparent);
+    font-size: var(--font-size-base);
+    transition: var(--transition-smooth);
+    color: var(--text-primary);
+}
+
+.suggest-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-hover);
+}
+
 /** Pagination Controls */
 .progress-indicator {
     text-align: center;

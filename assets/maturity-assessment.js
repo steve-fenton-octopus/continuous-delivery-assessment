@@ -97,7 +97,7 @@ async function generateFormFromData(data) {
   renderCurrentPage();
   updatePaginationControls();
 
-  document.addEventListener('change', handleRadioChange);
+  document.addEventListener('change', handleInputChange);
   loadStateFromURL();
 }
 
@@ -360,9 +360,19 @@ function renderCurrentPage() {
   let html = `<fieldset><legend data-category="${category.id}">${category.name}</legend>`;
 
   category.questions.forEach(q => {
-    html += `
-      <div class="question-group">
-        <div class="question">${q.text}</div>
+    let inputHtml = '';
+    if (q.field_type === 'suggest') {
+      const listId = `list-${q.field_name}`;
+      inputHtml = `
+        <div class="suggest-wrapper">
+          <input type="text" name="${q.field_name}" list="${listId}" value="${answerState[q.field_name] || ''}" class="suggest-input" placeholder="Type or select an option..." />
+          <datalist id="${listId}">
+            ${q.options.map(opt => `<option value="${opt.level}">${opt.level}</option>`).join('')}
+          </datalist>
+        </div>
+      `;
+    } else {
+      inputHtml = `
         <div class="options">
           ${q.options.map(opt => `
             <label class="option">
@@ -374,6 +384,13 @@ function renderCurrentPage() {
             </label>
           `).join('')}
         </div>
+      `;
+    }
+
+    html += `
+      <div class="question-group">
+        <div class="question">${q.text}</div>
+        ${inputHtml}
       </div>
     `;
   });
@@ -578,8 +595,8 @@ function loadStateFromURL() {
 // Event Handlers & Initialization
 // ============================================================================
 
-function handleRadioChange(e) {
-  if (e.target.type === 'radio') {
+function handleInputChange(e) {
+  if (e.target.type === 'radio' || (e.target.tagName === 'INPUT' && e.target.type === 'text')) {
     answerState[e.target.name] = e.target.value;
     updateScores();
     saveStateToURL();
