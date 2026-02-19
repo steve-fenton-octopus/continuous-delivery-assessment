@@ -49,14 +49,16 @@ const categoryQuestions = {
     'Deployability': ['deployability_1', 'deployability_2', 'deployability_3', 'deployability_4', 'deployability_5', 'deployability_6', 'deployability_7'],
     'Feedback': ['feedback_1', 'feedback_2', 'feedback_3'],
     'Automation': ['automation_1', 'automation_2', 'automation_3', 'automation_4', 'automation_5', 'automation_6'],
-    'Agility': ['agility_1', 'agility_2', 'agility_3', 'agility_4', 'agility_5', 'agility_6', 'agility_7']
+    'Agility': ['agility_1', 'agility_2', 'agility_3', 'agility_4', 'agility_5', 'agility_6', 'agility_7'],
+    'Informational': ['build_tool', 'deploy_tool']
 };
 
 const mixedScores = {
     'Deployability': ['2', '2', '2', '3', '1', '3', '2'],
     'Feedback': ['3', '1', '2'],
     'Automation': ['1', '2', '3', '3', '3', '3'],
-    'Agility': ['1', '2', '2', '3', '3', '3', '3']
+    'Agility': ['1', '2', '2', '3', '3', '3', '3'],
+    'Informational': ['jenkins', 'octopus']
 };
 
 const setCategoryScore = async (category, scoreType) => {
@@ -75,7 +77,7 @@ const setCategoryScore = async (category, scoreType) => {
         await radio.click();
     }
 
-    if (category === 'Agility') {
+    if (category === 'Informational') {
         await page.click('#submit-btn');
     } else {
         await page.click('#next-btn');

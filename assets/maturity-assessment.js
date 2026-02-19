@@ -112,7 +112,7 @@ function initializeMetrics(data) {
   maxValue = 0;
 
   data.categories.forEach(cat => {
-    if (cat.id === 'informational') return;
+    if (cat.informational) return;
     categories[cat.id] = cat.name;
     scores[cat.id] = 0;
     counts[cat.id] = 0;
@@ -414,7 +414,7 @@ function renderAdvice() {
 
   section.innerHTML = '';
   const catScores = categoryPages
-    .filter(cat => cat.id !== 'informational')
+    .filter(cat => !cat.informational)
     .map(cat => ({ ...cat, score: calculateCategoryScore(cat.id) }));
 
   // Handle Congratulations

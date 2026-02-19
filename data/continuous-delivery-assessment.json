@@ -574,12 +574,13 @@
     {
       "id": "informational",
       "name": "Informational",
+      "informational": true,
       "order": 5,
       "questions": [
         {
           "id": 1,
           "text": "What tool do you use to build your app or service?",
-          "field_name": "informational_1",
+          "field_name": "build_tool",
           "options": [
             {
               "value": "jenkins",
@@ -616,7 +617,7 @@
         {
           "id": 2,
           "text": "What tool do you use to deploy your app or service?",
-          "field_name": "informational_2",
+          "field_name": "deploy_tool",
           "options": [
             {
               "value": "octopus",

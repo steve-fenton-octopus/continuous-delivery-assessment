@@ -10,6 +10,7 @@ Feature: Continuous Delivery Assessment
     And "Feedback" has a mixed score for questions
     And "Automation" has a mixed score for questions
     And "Agility" has a mixed score for questions
+    And "Informational" has a mixed score for questions
     Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
     And I should see the following advice:
@@ -25,6 +26,7 @@ Feature: Continuous Delivery Assessment
     And "Feedback" has the best score for questions
     And "Automation" has the best score for questions
     And "Agility" has a mixed score for questions
+    And "Informational" has a mixed score for questions
     Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
     And I should see the following advice:
@@ -40,6 +42,7 @@ Feature: Continuous Delivery Assessment
     And "Feedback" has the best score for questions
     And "Automation" has a mixed score for questions
     And "Agility" has the best score for questions
+    And "Informational" has a mixed score for questions
     Then I should see the assessment title "Assessment results"
     And I should see the results page with the spider chart
     And I should see the following advice:
@@ -55,6 +58,7 @@ Feature: Continuous Delivery Assessment
     And "Feedback" has the best score for questions
     And "Automation" has the best score for questions
     And "Agility" has the best score for questions
+    And "Informational" has a mixed score for questions
     Then I should see the assessment title "Assessment results"
     And I should see the congratulations message
     And I should see the following advice:
