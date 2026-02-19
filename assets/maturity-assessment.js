@@ -112,6 +112,7 @@ function initializeMetrics(data) {
   maxValue = 0;
 
   data.categories.forEach(cat => {
+    if (cat.id === 'informational') return;
     categories[cat.id] = cat.name;
     scores[cat.id] = 0;
     counts[cat.id] = 0;
@@ -412,7 +413,9 @@ function renderAdvice() {
   if (!section || !categoryPages.length) return;
 
   section.innerHTML = '';
-  const catScores = categoryPages.map(cat => ({ ...cat, score: calculateCategoryScore(cat.id) }));
+  const catScores = categoryPages
+    .filter(cat => cat.id !== 'informational')
+    .map(cat => ({ ...cat, score: calculateCategoryScore(cat.id) }));
 
   // Handle Congratulations
   const allMax = catScores.every(c => c.score === 100);

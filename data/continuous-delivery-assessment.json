@@ -570,6 +570,88 @@
         }
       ],
       "advice": "Agility in operation and delivery allows your organization to respond quickly to market changes and user needs."
+    },
+    {
+      "id": "informational",
+      "name": "Informational",
+      "order": 5,
+      "questions": [
+        {
+          "id": 1,
+          "text": "What tool do you use to build your app or service?",
+          "field_name": "informational_1",
+          "options": [
+            {
+              "value": "jenkins",
+              "level": "Jenkins",
+              "description": ""
+            },
+            {
+              "value": "github_actions",
+              "level": "GitHub Actions",
+              "description": ""
+            },
+            {
+              "value": "gitlab_ci",
+              "level": "GitLab CI",
+              "description": ""
+            },
+            {
+              "value": "circleci",
+              "level": "CircleCI",
+              "description": ""
+            },
+            {
+              "value": "azure_devops",
+              "level": "Azure DevOps",
+              "description": ""
+            },
+            {
+              "value": "other",
+              "level": "Other",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "What tool do you use to deploy your app or service?",
+          "field_name": "informational_2",
+          "options": [
+            {
+              "value": "octopus",
+              "level": "Octopus Deploy",
+              "description": ""
+            },
+            {
+              "value": "argocd",
+              "level": "ArgoCD",
+              "description": ""
+            },
+            {
+              "value": "github_actions",
+              "level": "GitHub Actions",
+              "description": ""
+            },
+            {
+              "value": "harness",
+              "level": "Harness",
+              "description": ""
+            },
+            {
+              "value": "flux",
+              "level": "Flux",
+              "description": ""
+            },
+            {
+              "value": "other",
+              "level": "Other",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "advice": ""
     }
   ]
 }

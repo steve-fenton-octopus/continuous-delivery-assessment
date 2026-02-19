@@ -4,8 +4,6 @@ description:
 
 # Testing Workflow
 
-// turbo-all
-
 To test the application efficiently, follow these steps:
 
 1. **Run Automated Tests**:
