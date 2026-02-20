@@ -5,14 +5,12 @@
     "language_native": "English",
     "introTitle": "About Continuous Delivery",
     "intro": [
-      "Continuous Delivery (CD) is the ability to get changes of all types—including new features, configuration changes, bug fixes and experiments into production, or into the hands of users, safely and quickly in a sustainable way.",
-      "This Continuous Delivery assessment provides a framework for reflection and for identifying opportunities for improvement in your delivery process. By evaluating key aspects of your pipeline, we aim to identify bottlenecks and areas for optimization.",
-      "This assessment evaluates four key categories: Deployability, Feedback, Automation, and Agility."
+      "Continuous Delivery (CD) is the ability to get changes of all types—including new features, configuration changes, bug fixes and experiments into production, or into the hands of users, safely and quickly in a sustainable way.\n\nThis Continuous Delivery assessment provides a framework for reflection and for identifying opportunities for improvement in your delivery process. By evaluating key aspects of your pipeline, we aim to identify bottlenecks and areas for optimization.\n\nThis assessment evaluates four key categories: Deployability, Feedback, Automation, and Agility."
     ],
     "results_title": "Assessment results",
     "feedback_message": "Thank you for using our Continuous Delivery assessment! We hope you found it valuable.  While you're here, we'd love to hear your thoughts and feedback to help us improve this tool.\n",
-    "copy_link_text": "\ud83d\udccb Copy Shareable Link",
-    "copy_success": "\ud83d\udccb Copied!",
+    "copy_link_text": "📋 Copy Shareable Link",
+    "copy_success": "📋 Copied!",
     "copy_fail": "Failed! Please copy from address bar.",
     "language_label": "Language:",
     "previous_button_text": "Previous",
