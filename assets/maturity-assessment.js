@@ -94,11 +94,11 @@ async function generateFormFromData(data) {
   currentPage = 0;
 
   initializeMetrics(data);
+  loadStateFromURL();
   renderCurrentPage();
   updatePaginationControls();
 
   document.addEventListener('change', handleInputChange);
-  loadStateFromURL();
 }
 
 /**
@@ -351,10 +351,12 @@ function getCSSVariable(name) {
  * Renders the current assessment page.
  */
 function renderCurrentPage() {
-  if (!maturityForm || !categoryPages.length) return;
+  if (!maturityForm || !categoryPages.length) {
+    return;
+  }
 
   const introSection = document.getElementById("intro-section");
-  if (introSection) introSection.style.display = currentPage === 0 ? "block" : "none";
+  introSection.style.display = introSection && currentPage === 0 ? "block" : "none";
 
   const category = categoryPages[currentPage];
   let html = `<fieldset><legend data-category="${category.id}">${category.name}</legend>`;

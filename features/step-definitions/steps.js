@@ -64,7 +64,7 @@ const mixedScores = {
     'Feedback': ['3', '1', '2'],
     'Automation': ['1', '2', '3', '3', '3', '3'],
     'Agility': ['1', '2', '2', '3', '3', '3', '3'],
-    'Informational': ['jenkins', 'octopus']
+    'Informational': ['Jenkins', 'Octopus Deploy']
 };
 
 const setCategoryScore = async (category, scoreType) => {
@@ -79,8 +79,16 @@ const setCategoryScore = async (category, scoreType) => {
     }
 
     for (let i = 0; i < questions.length; i++) {
-        const radio = await page.locator(`input[name="${questions[i]}"][value="${scores[i]}"]`);
-        await radio.click();
+        const questionName = questions[i];
+        const score = scores[i];
+        
+        if (category === 'Informational') {
+            const input = await page.locator(`input[name="${questionName}"]`);
+            await input.fill(score);
+        } else {
+            const radio = await page.locator(`input[name="${questionName}"][value="${score}"]`);
+            await radio.click();
+        }
     }
 
     if (category === 'Informational') {
