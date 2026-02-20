@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment Editor</title>
+    <link rel="stylesheet" href="./editor.css" />
+</head>
+
+<body>
+    <main class="container">
+        <article class="form-section">
+
+            <!-- ── Header ─────────────────────────────────────── -->
+            <header class="editor-header">
+                <h1>📝 Assessment Editor</h1>
+                <div class="file-selector">
+                    <label for="file-select">Assessment file:</label>
+                    <select id="file-select">
+                        <option value="">— choose a file —</option>
+                        <option value="continuous-delivery-assessment.json">continuous-delivery-assessment.json</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- ── Toolbar ─────────────────────────────────────── -->
+            <div class="toolbar" id="toolbar" style="display:none">
+                <button type="button" id="download-btn" class="btn-download">⬇ Download JSON</button>
+            </div>
+
+            <!-- ── Questions table ──────────────────────────────── -->
+            <div class="questions-table-wrap">
+                <table class="questions-table" id="questions-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>#</th>
+                            <th>Question text</th>
+                            <th>Field name</th>
+                            <th>Type</th>
+                            <th>Options</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="questions-tbody">
+                        <tr>
+                            <td colspan="7" class="empty-state">Select a file above to load the assessment.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </article>
+
+        <!-- ── Metadata editor ────────────────────────────────── -->
+        <article class="form-section metadata-section" id="metadata-section" style="display:none"></article>
+
+    </main>
+
+    <!-- ── Edit modal ───────────────────────────────────────── -->
+    <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Edit Question</h2>
+                <button type="button" class="modal-close" id="modal-close-btn" aria-label="Close">✕</button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="field-group">
+                    <label for="edit-text">Question text</label>
+                    <textarea id="edit-text" rows="4" placeholder="Enter the question…"></textarea>
+                    <p class="field-hint">You can use line breaks — they will be preserved in the JSON.</p>
+                </div>
+
+                <div class="field-group">
+                    <label for="edit-advice">Advice (shown on results page)</label>
+                    <textarea id="edit-advice" rows="3" placeholder="Advice text…"></textarea>
+                </div>
+
+                <div class="field-group">
+                    <label for="edit-field-name">Field name</label>
+                    <input type="text" id="edit-field-name" placeholder="e.g. deployability_1" />
+                    <p class="field-hint">Unique identifier used in the URL hash and form submission.</p>
+                </div>
+
+                <div class="field-group">
+                    <label for="edit-field-type">Field type</label>
+                    <input type="text" id="edit-field-type" placeholder="radio (default) or suggest" />
+                    <p class="field-hint">Leave as <code>radio</code> for standard questions, or use
+                        <code>suggest</code> for a text input with autocomplete.</p>
+                </div>
+
+                <hr class="section-divider" />
+
+                <div class="options-header">
+                    <h3>Options</h3>
+                    <button type="button" class="btn-add-option" id="add-option-btn">+ Add option</button>
+                </div>
+                <p class="field-hint" style="margin-block-end: var(--spacing-md)">
+                    <strong>Value</strong> — numeric score or text key &nbsp;|&nbsp;
+                    <strong>Label</strong> — text shown to the user &nbsp;|&nbsp;
+                    <strong>Description</strong> — optional extra detail
+                </p>
+                <div class="options-list" id="options-list"></div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" id="cancel-question-btn" class="btn-secondary">Cancel</button>
+                <button type="button" id="save-question-btn">💾 Save question</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Toast ────────────────────────────────────────────── -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./editor.js"></script>
+</body>
+
+</html>
