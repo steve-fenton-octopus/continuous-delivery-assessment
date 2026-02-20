@@ -9,6 +9,10 @@ The tool runs from a data file and this can be changed by setting the `data-ques
 ></script>
 ```
 
+TODO:
+
+1. Remove the placeholder HTML and inject it from the JS app
+
 ## Continuous Delivery Assessment
 
 A self-hosted, browser-based questionnaire that helps teams evaluate and improve their Continuous Delivery maturity across four key areas: **Deployability**, **Feedback**, **Automation**, and **Agility**.
