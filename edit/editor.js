@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (select.value) loadFile(select.value);
     });
 
-    document.getElementById('download-btn').addEventListener('click', downloadJSON);
+    document.getElementById('download-btn').addEventListener('click', saveJSON);
     document.getElementById('save-question-btn').addEventListener('click', saveQuestion);
     document.getElementById('cancel-question-btn').addEventListener('click', closeModal);
     document.getElementById('modal-close-btn').addEventListener('click', closeModal);
@@ -168,7 +168,7 @@ function saveQuestion() {
 
     closeModal();
     renderQuestionsTable();
-    showToast('Question saved — don\'t forget to Download!');
+    showToast('Question saved — click "Write to file" when done!');
 }
 
 // ── Options editor ────────────────────────────────────────────────────────────
@@ -326,26 +326,54 @@ function saveMetadata() {
         .map(ta => ta.value)
         .filter(v => v.trim() !== '');
 
-    showToast('Metadata saved — don\'t forget to Download!');
+    showToast('Metadata saved — click "Write to file" when done!');
 }
 
-// ── Download ──────────────────────────────────────────────────────────────────
+// ── Save / Download ───────────────────────────────────────────────────────────
 
-function downloadJSON() {
+/**
+ * Save the JSON back to disk.
+ * Uses the File System Access API (showSaveFilePicker) when available so the
+ * user can navigate directly to data/ and overwrite the source file in place.
+ * Falls back to a plain browser download for Firefox / Safari.
+ */
+async function saveJSON() {
     if (!assessmentData) return;
 
     const json = JSON.stringify(assessmentData, null, 2);
+    const filename = document.getElementById('file-select').value || 'assessment.json';
+
+    if (typeof window.showSaveFilePicker === 'function') {
+        try {
+            const handle = await window.showSaveFilePicker({
+                suggestedName: filename,
+                types: [{
+                    description: 'JSON assessment file',
+                    accept: { 'application/json': ['.json'] },
+                }],
+            });
+            const writable = await handle.createWritable();
+            await writable.write(json);
+            await writable.close();
+            showToast(`Saved to ${handle.name}!`);
+            return;
+        } catch (err) {
+            // User cancelled the picker — do nothing
+            if (err.name === 'AbortError') return;
+            // Any other error: fall through to plain download
+            console.warn('showSaveFilePicker failed, falling back to download:', err);
+        }
+    }
+
+    // Fallback: trigger a browser download
     const blob = new Blob([json], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
-
     const a = document.createElement('a');
-    const filename = document.getElementById('file-select').value || 'assessment.json';
     a.href = url;
     a.download = filename;
     a.click();
-
     setTimeout(() => URL.revokeObjectURL(url), 5000);
-    showToast('Downloaded!');
+    showToast('Downloaded! Move it to data/ manually.');
 }
 
 // ── Utilities ─────────────────────────────────────────────────────────────────
