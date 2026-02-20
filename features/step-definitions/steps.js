@@ -7,15 +7,17 @@ setDefaultTimeout(60 * 1000);
 let browser;
 let page;
 let server;
+const TEST_PORT = 8088;
+const BASE_URL = `http://localhost:${TEST_PORT}`;
 
 BeforeAll(async function () {
-    // Start http-server using spawn
-    server = spawn('npx', ['http-server', '-p', '8080'], {
+    // Start browser-sync using spawn
+    server = spawn('npx', ['browser-sync', 'start', '--server', '--port', TEST_PORT.toString(), '--no-open', '--no-notify-ui', '--no-ui', '--no-ghost-mode'], {
         stdio: 'ignore'
     });
 
-    // Wait a bit for the server to be ready
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Wait for the server to be ready
+    await new Promise(resolve => setTimeout(resolve, 3000));
 });
 
 AfterAll(async function () {
@@ -37,13 +39,13 @@ After(async function () {
 });
 
 Given('I open the assessment application', async function () {
-    await page.goto('http://localhost:8080');
+    await page.goto(BASE_URL);
 });
 
 Given('I open the assessment with the following parameters:', async function (dataTable) {
     const data = dataTable.rowsHash();
     const params = new URLSearchParams(data);
-    await page.goto(`http://localhost:8080/?${params.toString()}`);
+    await page.goto(`${BASE_URL}/?${params.toString()}`);
 });
 
 Then('I should see the assessment title {string}', async function (title) {

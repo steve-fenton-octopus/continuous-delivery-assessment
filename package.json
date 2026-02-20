@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 8080",
+    "start": "browser-sync start --server --files '**/*' --port 8080",
     "prepare": "pnpm exec playwright install chromium",
     "test": "cucumber-js"
   },
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/steve-fenton-octopus/continuous-delivery-assessment#readme",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "browser-sync": "^3.0.4"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.6.0",
