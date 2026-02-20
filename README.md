@@ -1,4 +1,15 @@
-# Continuous Delivery Assessment
+# Assessment tool
+
+The tool runs from a data file and this can be changed by setting the `data-questions` attribute on the script tag.
+
+```html
+<script
+  src="./assets/maturity-assessment.js"
+  data-questions="./data/continuous-delivery-assessment.json"
+></script>
+```
+
+## Continuous Delivery Assessment
 
 A self-hosted, browser-based questionnaire that helps teams evaluate and improve their Continuous Delivery maturity across four key areas: **Deployability**, **Feedback**, **Automation**, and **Agility**.
 
@@ -9,7 +20,11 @@ pnpm install
 pnpm start
 ```
 
-Then open **http://localhost:8080** in your browser.
+Then open [localhost:8080](http://localhost:8080) in your browser.
+
+Or use this [pre-filled results page](http://localhost:8080/?deployability_1=1&deployability_2=1&deployability_3=1&deployability_4=1&deployability_5=1&deployability_6=1&deployability_7=1&feedback_1=2&feedback_2=2&feedback_3=2&automation_1=3&automation_2=3&automation_3=3&automation_4=3&automation_5=3&automation_6=3&agility_1=1&agility_2=2&agility_3=2&agility_4=3&agility_5=3&agility_6=2&agility_7=2&informational_1=jenkins&informational_2=octopus&build_tool=GitLab+CI&deploy_tool=Octopus+Deploy&view=results)
+
+There's an editor for the JSON files at [localhost:8080/edit](http://localhost:8080/edit/).
 
 ## Project structure
 
@@ -28,22 +43,22 @@ features/           # Cucumber end-to-end tests
 
 Assessment content lives in `data/*.json`. Each file defines:
 
-| Key | Description |
-|-----|-------------|
-| `metadata` | Titles, button labels, intro text, congratulations message |
-| `categories[]` | Ordered list of question categories |
-| `categories[].questions[]` | Questions, each with options and advice |
+| Key                        | Description                                                |
+| -------------------------- | ---------------------------------------------------------- |
+| `metadata`                 | Titles, button labels, intro text, congratulations message |
+| `categories[]`             | Ordered list of question categories                        |
+| `categories[].questions[]` | Questions, each with options and advice                    |
 
 ### Field types
 
-| `field_type` | Behaviour |
-|---|---|
-| *(omitted)* or `radio` | Standard multiple-choice radio buttons |
-| `suggest` | Free-text input with datalist autocomplete suggestions |
+| `field_type`           | Behavior                                               |
+| ---------------------- | ------------------------------------------------------ |
+| *(omitted)* or `radio` | Standard multiple-choice radio buttons                 |
+| `suggest`              | Free-text input with datalist autocomplete suggestions |
 
 ## Editor
 
-The `edit/` folder contains a human-friendly visual editor for the JSON data files.
+There's a human-friendly visual editor for the JSON data files at [localhost:8080/edit](http://localhost:8080/edit/).
 
 ### Starting the editor
 
@@ -74,6 +89,14 @@ http://localhost:8080/edit/
 > **Note:** the editor runs entirely in the browser; there is no auto-save. Always download before closing the tab.
 
 ## Running tests
+
+To set up the browser used by Playwright (the browser automation test tool), run:
+
+```bash
+pnpm prepare
+```
+
+Then run the tests:
 
 ```bash
 pnpm test
