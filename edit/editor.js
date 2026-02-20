@@ -261,33 +261,24 @@ function renderMetadataEditor() {
         section.appendChild(group);
     });
 
-    // Intro paragraphs (array)
-    if (Array.isArray(meta.intro)) {
+    // Intro (plain string)
+    if (typeof meta.intro === 'string') {
         const group = document.createElement('div');
         group.className = 'field-group';
 
         const lbl = document.createElement('label');
-        lbl.textContent = 'Intro paragraphs';
+        lbl.textContent = 'Intro text';
 
-        const rowsContainer = document.createElement('div');
-        rowsContainer.className = 'intro-rows';
-        rowsContainer.id = 'intro-rows';
+        const ta = document.createElement('textarea');
+        ta.id = 'intro-text';
+        ta.rows = 6;
+        ta.value = meta.intro;
 
-        meta.intro.forEach((para, idx) => {
-            rowsContainer.appendChild(buildIntroRow(para, idx));
-        });
+        const hint = document.createElement('p');
+        hint.className = 'field-hint';
+        hint.textContent = 'You can use line breaks — they will be preserved in the JSON.';
 
-        const addBtn = document.createElement('button');
-        addBtn.type = 'button';
-        addBtn.className = 'btn-secondary';
-        addBtn.textContent = '+ Add paragraph';
-        addBtn.style.alignSelf = 'flex-start';
-        addBtn.addEventListener('click', () => {
-            const newIdx = document.querySelectorAll('.intro-row').length;
-            rowsContainer.appendChild(buildIntroRow('', newIdx));
-        });
-
-        group.append(lbl, rowsContainer, addBtn);
+        group.append(lbl, ta, hint);
         section.appendChild(group);
     }
 
@@ -299,32 +290,12 @@ function renderMetadataEditor() {
     section.appendChild(saveMetaBtn);
 }
 
-function buildIntroRow(text, idx) {
-    const row = document.createElement('div');
-    row.className = 'intro-row';
-
-    const ta = document.createElement('textarea');
-    ta.rows = 2;
-    ta.value = text;
-    ta.dataset.introIdx = idx;
-
-    const removeBtn = document.createElement('button');
-    removeBtn.type = 'button';
-    removeBtn.className = 'btn-remove-option';
-    removeBtn.title = 'Remove paragraph';
-    removeBtn.textContent = '✕';
-    removeBtn.addEventListener('click', () => row.remove());
-
-    row.append(ta, removeBtn);
-    return row;
-}
 
 function saveMetadata() {
-    // Collect intro paragraphs
-    const introRows = document.querySelectorAll('#intro-rows .intro-row textarea');
-    assessmentData.metadata.intro = Array.from(introRows)
-        .map(ta => ta.value)
-        .filter(v => v.trim() !== '');
+    const introTa = document.getElementById('intro-text');
+    if (introTa) {
+        assessmentData.metadata.intro = introTa.value;
+    }
 
     showToast('Metadata saved — click "Write to file" when done!');
 }

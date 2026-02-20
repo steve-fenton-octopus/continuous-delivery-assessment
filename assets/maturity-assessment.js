@@ -75,18 +75,14 @@ async function generateFormFromData(data) {
   document.querySelectorAll('[data-text]').forEach(elem => {
     const key = elem.getAttribute('data-text');
     if (data.metadata[key]) {
-      if (Array.isArray(data.metadata[key])) {
-        elem.innerHTML = data.metadata[key].map(p => `<p>${p}</p>`).join('');
-      } else {
-        elem.innerHTML = data.metadata[key];
-      }
+      elem.innerHTML = nl2br(data.metadata[key]);
     }
   });
 
   // Intro content
   const introContent = document.getElementById('intro-content');
-  if (introContent && Array.isArray(data.metadata.intro)) {
-    introContent.innerHTML = data.metadata.intro.map(p => `<p>${p}</p>`).join('');
+  if (introContent && data.metadata.intro) {
+    introContent.innerHTML = nl2br(data.metadata.intro);
   }
 
   categoryPages = data.categories.sort((a, b) => a.order - b.order);
@@ -343,6 +339,15 @@ function getCSSVariable(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(`--${name}`).trim();
 }
 
+/**
+ * Converts newline characters (\r\n or \n) in a string to HTML <br> elements.
+ * @param {string} str
+ * @returns {string}
+ */
+function nl2br(str) {
+  return String(str ?? '').replace(/\r\n|\n/g, '<br>');
+}
+
 // ============================================================================
 // UI Rendering & Management
 // ============================================================================
@@ -391,7 +396,7 @@ function renderCurrentPage() {
 
     html += `
       <div class="question-group">
-        <div class="question">${q.text}</div>
+        <div class="question">${nl2br(q.text)}</div>
         ${inputHtml}
       </div>
     `;
@@ -443,8 +448,8 @@ function renderAdvice() {
   if (allMax) {
     if (congrats) {
       congrats.style.display = 'block';
-      congrats.querySelector('p').innerHTML = loadedData.metadata.congrats_message;
-      congrats.querySelector('h2').innerHTML = loadedData.metadata.congrats_title;
+      congrats.querySelector('p').innerHTML = nl2br(loadedData.metadata.congrats_message);
+      congrats.querySelector('h2').innerHTML = nl2br(loadedData.metadata.congrats_title);
     }
     section.style.display = 'none';
     triggerConfetti(5000);
@@ -476,14 +481,14 @@ function renderAdvice() {
 
     group.innerHTML = `
       <div class="category-advice">
-        <h3>${loadedData.metadata.advice_category_title}: ${cat.name} (${cat.score}%)</h3>
-        <p>${cat.advice}</p>
+        <h3>${nl2br(loadedData.metadata.advice_category_title)}: ${cat.name} (${cat.score}%)</h3>
+        <p>${nl2br(cat.advice)}</p>
       </div>
       <div class="question-advice-grid">
         ${filteredQuestions.map(item => `
           <div class="advice-card question-card">
-            <h4>${item.q.text}</h4>
-            <p>${item.q.advice}</p>
+            <h4>${nl2br(item.q.text)}</h4>
+            <p>${nl2br(item.q.advice)}</p>
           </div>
         `).join('')}
       </div>
