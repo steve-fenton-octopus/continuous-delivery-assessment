@@ -583,7 +583,7 @@ function saveStateToURL() {
   if (results?.style.display === 'block') {
     nextParams.set('view', 'results');
   } else {
-    nextParams.set('page', currentPage + 1);
+    nextParams.set('view', currentPage + 1);
   }
 
   window.history.replaceState({}, "", `${window.location.pathname}?${nextParams.toString()}`);
@@ -599,9 +599,12 @@ function loadStateFromURL() {
     if (!['lang', 'view', 'page'].includes(k)) answerState[k] = v;
   }
 
-  const page = parseInt(params.get('page'));
-  if (!isNaN(page) && page > 0 && page <= totalPages) {
-    currentPage = page - 1;
+  const view = params.get('view');
+  if (view && view !== 'results') {
+    const page = parseInt(view, 10);
+    if (!isNaN(page) && page > 0 && page <= totalPages) {
+      currentPage = page - 1;
+    }
   }
 
   updateScores();
