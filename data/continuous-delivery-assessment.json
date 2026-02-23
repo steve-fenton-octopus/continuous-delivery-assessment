@@ -582,33 +582,93 @@
           "field_type": "suggest",
           "options": [
             {
-              "value": "jenkins",
-              "level": "Jenkins",
+              "value": "AppVeyor",
+              "level": "AppVeyor",
               "description": ""
             },
             {
-              "value": "github_actions",
-              "level": "GitHub Actions",
+              "value": "AWS CodeBuild",
+              "level": "AWS CodeBuild",
               "description": ""
             },
             {
-              "value": "gitlab_ci",
-              "level": "GitLab CI",
-              "description": ""
-            },
-            {
-              "value": "circleci",
-              "level": "CircleCI",
-              "description": ""
-            },
-            {
-              "value": "azure_devops",
+              "value": "Azure DevOps",
               "level": "Azure DevOps",
               "description": ""
             },
             {
-              "value": "other",
-              "level": "Other",
+              "value": "Bamboo",
+              "level": "Bamboo",
+              "description": ""
+            },
+            {
+              "value": "Bitbucket Pipelines",
+              "level": "Bitbucket Pipelines",
+              "description": ""
+            },
+            {
+              "value": "Buddy",
+              "level": "Buddy",
+              "description": ""
+            },
+            {
+              "value": "Buildkite",
+              "level": "Buildkite",
+              "description": ""
+            },
+            {
+              "value": "CircleCI",
+              "level": "CircleCI",
+              "description": ""
+            },
+            {
+              "value": "Codefresh",
+              "level": "Codefresh",
+              "description": ""
+            },
+            {
+              "value": "Drone",
+              "level": "Drone",
+              "description": ""
+            },
+            {
+              "value": "GitHub Actions",
+              "level": "GitHub Actions",
+              "description": ""
+            },
+            {
+              "value": "GitLab CI",
+              "level": "GitLab CI",
+              "description": ""
+            },
+            {
+              "value": "GoCD",
+              "level": "GoCD",
+              "description": ""
+            },
+            {
+              "value": "Google Cloud Build",
+              "level": "Google Cloud Build",
+              "description": ""
+            },
+            {
+              "value": "Jenkins",
+              "level": "Jenkins",
+              "description": ""
+            },
+            {
+              "value": "Semaphore",
+              "level": "Semaphore",
+              "description": ""
+            },
+            {
+              "value": "TeamCity",
+              "level": "TeamCity",
+              "description": ""
+            },
+            {
+              "value": "Travis CI",
+              "level": "Travis CI",
               "description": ""
             }
           ]
@@ -620,33 +680,78 @@
           "field_type": "suggest",
           "options": [
             {
-              "value": "octopus",
-              "level": "Octopus Deploy",
-              "description": ""
-            },
-            {
-              "value": "argocd",
+              "value": "ArgoCD",
               "level": "ArgoCD",
               "description": ""
             },
             {
-              "value": "github_actions",
-              "level": "GitHub Actions",
+              "value": "AWS CodeDeploy",
+              "level": "AWS CodeDeploy",
               "description": ""
             },
             {
-              "value": "harness",
-              "level": "Harness",
+              "value": "Azure Pipelines",
+              "level": "Azure Pipelines",
               "description": ""
             },
             {
-              "value": "flux",
+              "value": "Bamboo",
+              "level": "Bamboo",
+              "description": ""
+            },
+            {
+              "value": "Bitbucket Pipelines",
+              "level": "Bitbucket Pipelines",
+              "description": ""
+            },
+            {
+              "value": "Buddy",
+              "level": "Buddy",
+              "description": ""
+            },
+            {
+              "value": "Codefresh",
+              "level": "Codefresh",
+              "description": ""
+            },
+            {
+              "value": "Flux",
               "level": "Flux",
               "description": ""
             },
             {
-              "value": "other",
-              "level": "Other",
+              "value": "GitHub Actions",
+              "level": "GitHub Actions",
+              "description": ""
+            },
+            {
+              "value": "GitLab CI",
+              "level": "GitLab CI",
+              "description": ""
+            },
+            {
+              "value": "Google Cloud Deploy",
+              "level": "Google Cloud Deploy",
+              "description": ""
+            },
+            {
+              "value": "Harness",
+              "level": "Harness",
+              "description": ""
+            },
+            {
+              "value": "Jenkins",
+              "level": "Jenkins",
+              "description": ""
+            },
+            {
+              "value": "Octopus Deploy",
+              "level": "Octopus Deploy",
+              "description": ""
+            },
+            {
+              "value": "Spinnaker",
+              "level": "Spinnaker",
               "description": ""
             }
           ]

@@ -380,7 +380,7 @@ function renderCurrentPage() {
         <div class="suggest-wrapper">
           <input type="text" name="${q.field_name}" list="${listId}" value="${answerState[q.field_name] || ''}" class="suggest-input" placeholder="Type or select an option..." />
           <datalist id="${listId}">
-            ${q.options.map(opt => `<option value="${opt.level}">${opt.level}</option>`).join('')}
+            ${q.options.map(opt => `<option value="${opt.value}">${opt.value}</option>`).join('')}
           </datalist>
         </div>
       `;
