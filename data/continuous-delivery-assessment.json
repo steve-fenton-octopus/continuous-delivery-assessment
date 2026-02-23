@@ -16,6 +16,7 @@
     "submit_button_text": "Submit assessment",
     "back_to_assessment": "← Back to assessment",
     "advice_title": "Targeted Recommendations",
+    "advice_intro": "The following recommendations have been prioritized based on your unique score. The most impactful items appear first.",
     "advice_category_title": "What to improve",
     "congrats_title": "Congratulations!",
     "congrats_message": "You have achieved maximum scores across all categories! Your Continuous Delivery process is well formed and follows industry best practices. Maintain this level of excellence and keep exploring new ways to innovate."

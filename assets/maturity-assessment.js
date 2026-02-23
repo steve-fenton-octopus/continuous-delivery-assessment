@@ -475,6 +475,12 @@ function renderAdvice() {
   h2.textContent = loadedData.metadata.advice_title || "Targeted Recommendations";
   section.appendChild(h2);
 
+  if (loadedData.metadata.advice_intro) {
+    const p = document.createElement('p');
+    p.innerHTML = nl2br(loadedData.metadata.advice_intro);
+    section.appendChild(p);
+  }
+
   items.forEach(cat => {
     const group = document.createElement('div');
     group.className = 'advice-group';

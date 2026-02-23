@@ -227,6 +227,7 @@ function renderMetadataEditor() {
         { key: 'submit_button_text', label: 'Submit button text' },
         { key: 'back_to_assessment', label: 'Back to assessment text' },
         { key: 'advice_title', label: 'Advice title' },
+        { key: 'advice_intro', label: 'Advice intro' },
         { key: 'advice_category_title', label: 'Advice category title' },
         { key: 'congrats_title', label: 'Congratulations title' },
         { key: 'congrats_message', label: 'Congratulations message' },
