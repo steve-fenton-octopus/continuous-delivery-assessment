@@ -41,16 +41,22 @@ function initializeDOMElements() {
 // Core Logic & Data Loading
 // ============================================================================
 
+function getAssessmentType() {
+  const scriptTag = document.querySelector('script[data-questions]');
+  return scriptTag
+    ? scriptTag.getAttribute('data-questions')
+    : './data/continuous-delivery-assessment.json';
+}
+
 /**
  * Loads the assessment data from the JSON file specified in the script tag.
  * @returns {Promise<Object|undefined>} The loaded assessment data.
  */
 async function loadQuestionsData() {
-  const scriptTag = document.querySelector('script[data-questions]');
-  const jsonPath = scriptTag ? scriptTag.getAttribute('data-questions') : './data/questions-en.json';
+  const assessmentType = getAssessmentType();
 
   try {
-    const response = await fetch(jsonPath);
+    const response = await fetch(assessmentType);
     if (response.ok) {
       const data = await response.json();
       if (data.metadata?.language) {
@@ -509,6 +515,7 @@ function showResults() {
   if (res) res.style.display = 'block';
   updateScores();
   renderAdvice();
+  anonymousAnalytics();
 }
 
 /**
@@ -570,20 +577,6 @@ function saveStateToURL() {
   if (results?.style.display === 'block') nextParams.set('view', 'results');
 
   window.history.replaceState({}, "", `${window.location.pathname}?${nextParams.toString()}`);
-  _updateLanguageSwitcher(nextParams);
-}
-
-/**
- * Internal helper to sync language switcher links with current state.
- */
-function _updateLanguageSwitcher(currentParams) {
-  document.querySelectorAll('.languages a').forEach(link => {
-    const url = new URL(link.href, window.location.origin);
-    const lang = new URLSearchParams(url.search).get('lang');
-    const syncParams = new URLSearchParams(currentParams);
-    if (lang) syncParams.set('lang', lang); else syncParams.delete('lang');
-    link.href = `${window.location.pathname}?${syncParams.toString()}`;
-  });
 }
 
 /**
@@ -596,7 +589,35 @@ function loadStateFromURL() {
     if (!['lang', 'view'].includes(k)) answerState[k] = v;
   }
   updateScores();
+  return answerState;
 }
+
+function anonymousAnalytics() {
+  const assessmentType = getAssessmentType();
+  const params = new URLSearchParams(window.location.search);
+  const shared = params.get('share') ?? '';
+  if (shared == 'yes') {
+    return;
+  }
+
+  const assessmentState = loadStateFromURL();
+  const item = {
+    assessment: assessmentType
+  };
+
+  for (let key in assessmentState) {
+    item[key] = assessmentState[key];
+  }
+
+  window.setTimeout(() => {
+    if (typeof plausible != 'undefined') {
+      plausible('Assessment', { props: { assessment: JSON.stringify(item) } });
+    } else {
+      console.log(JSON.stringify(item, null, 2));
+    }
+  }, 500);
+}
+
 
 // ============================================================================
 // Event Handlers & Initialization
