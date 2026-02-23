@@ -580,7 +580,11 @@ function saveStateToURL() {
   Object.entries(answerState).forEach(([k, v]) => nextParams.set(k, v));
 
   const results = document.getElementById('results-section');
-  if (results?.style.display === 'block') nextParams.set('view', 'results');
+  if (results?.style.display === 'block') {
+    nextParams.set('view', 'results');
+  } else {
+    nextParams.set('page', currentPage + 1);
+  }
 
   window.history.replaceState({}, "", `${window.location.pathname}?${nextParams.toString()}`);
 }
@@ -592,8 +596,14 @@ function loadStateFromURL() {
   const params = new URLSearchParams(window.location.search);
   answerState = {};
   for (const [k, v] of params.entries()) {
-    if (!['lang', 'view'].includes(k)) answerState[k] = v;
+    if (!['lang', 'view', 'page'].includes(k)) answerState[k] = v;
   }
+
+  const page = parseInt(params.get('page'));
+  if (!isNaN(page) && page > 0 && page <= totalPages) {
+    currentPage = page - 1;
+  }
+
   updateScores();
   return answerState;
 }
@@ -653,8 +663,8 @@ async function copyURLToClipboard(elem) {
 }
 
 // Expose public API
-window.nextPage = () => { if (currentPage < totalPages - 1) { currentPage++; renderCurrentPage(); updatePaginationControls(); window.scrollTo(0, 0); } };
-window.previousPage = () => { if (currentPage > 0) { currentPage--; renderCurrentPage(); updatePaginationControls(); window.scrollTo(0, 0); } };
+window.nextPage = () => { if (currentPage < totalPages - 1) { currentPage++; renderCurrentPage(); updatePaginationControls(); saveStateToURL(); window.scrollTo(0, 0); } };
+window.previousPage = () => { if (currentPage > 0) { currentPage--; renderCurrentPage(); updatePaginationControls(); saveStateToURL(); window.scrollTo(0, 0); } };
 window.submitAssessment = () => { showResults(); saveStateToURL(); window.scrollTo(0, 0); };
 window.returnToAssessment = () => {
   const form = document.querySelector('.form-section'), res = document.getElementById('results-section');
