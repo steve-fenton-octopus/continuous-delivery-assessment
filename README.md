@@ -17,6 +17,12 @@ TODO:
 
 A self-hosted, browser-based questionnaire that helps teams evaluate and improve their Continuous Delivery maturity across four key areas: **Deployability**, **Feedback**, **Automation**, and **Agility**.
 
+## Try it out
+
+Try out the [Continuous Delivery Assessment](https://steve-fenton-octopus.github.io/continuous-delivery-assessment/).
+
+Jump straight to a [pre-filled results page](https://steve-fenton-octopus.github.io/continuous-delivery-assessment/?deployability_1=1&deployability_2=2&deployability_3=2&deployability_4=1&deployability_5=1&deployability_6=1&deployability_7=1&feedback_1=1&feedback_2=2&feedback_3=2&automation_1=1&automation_2=1&automation_3=3&automation_4=1&automation_5=3&automation_6=3&agility_1=1&agility_2=2&agility_3=3&agility_4=3&agility_5=3&agility_6=2&agility_7=3&build_tool=GitHub+Actions&deploy_tool=Octopus+Deploy&view=results&share=yes).
+
 ## Quick start
 
 ```bash
