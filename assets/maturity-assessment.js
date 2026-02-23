@@ -657,7 +657,9 @@ async function copyURLToClipboard(elem) {
   const meta = loadedData?.metadata;
   const original = elem.innerText;
   try {
-    await navigator.clipboard.writeText(window.location.href);
+    const url = new URL(window.location.href);
+    url.searchParams.set('share', 'yes');
+    await navigator.clipboard.writeText(url.toString());
     elem.innerText = meta?.copy_success || 'Copied!';
   } catch {
     elem.innerText = meta?.copy_fail || 'Failed!';
