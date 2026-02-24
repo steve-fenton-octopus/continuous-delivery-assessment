@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <main class="container">
+  <div class="container">
     <article class="form-section">
       <header>
         <h1 data-text="title">Assessment</h1>
@@ -36,7 +36,7 @@
 
     <article class="chart-section" id="results-section" style="display: none;">
       <header>
-        <h1 data-text="results_title">Assessment Results</h1>
+        <h2 data-text="results_title">Assessment Results</h2>
       </header>
 
       <div class="charts">
@@ -46,8 +46,6 @@
       <div class="charts">
         <table id="maturity-matrix" class="scores"></table>
       </div>
-
-
 
       <div id="congrats-section" style="display: none;">
         <h2 data-text="congrats_title">Congratulations!</h2>
@@ -65,7 +63,7 @@
         <a id="copy-link" data-text="copy_link_text">📋 Copy Shareable Link</a>
       </div>
     </article>
-  </main>
+  </div>
 
   <script type="module" src="./assets/js/main.js" data-questions="./data/continuous-delivery-assessment.json"></script>
 </body>
