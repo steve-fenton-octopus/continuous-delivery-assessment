@@ -163,6 +163,7 @@ legend {
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-medium);
     padding-block-end: var(--spacing-sm);
+    text-align: center;
 }
 
 h3 {
