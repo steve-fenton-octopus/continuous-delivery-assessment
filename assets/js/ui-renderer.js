@@ -8,6 +8,75 @@ import { drawAll } from './charts.js';
 import { anonymousAnalytics } from './analytics.js';
 
 /**
+ * Base template for the assessment UI.
+ */
+const BASE_HTML = `
+    <article class="form-section">
+      <header>
+        <h1 data-text="title">Assessment</h1>
+        <div class="progress-indicator">
+          <span id="page-indicator">Page 1 of 5</span>
+        </div>
+      </header>
+      <div class="intro" id="intro-section">
+        <h2 data-text="introTitle"></h2>
+        <div id="intro-content"></div>
+      </div>
+
+      <form id="maturity-form">
+      </form>
+
+      <div class="pagination-controls">
+        <button type="button" id="prev-btn" disabled>← Previous</button>
+        <button type="button" id="next-btn">Next →</button>
+        <button type="button" id="submit-btn" style="display: none;">Submit
+          Assessment</button>
+      </div>
+    </article>
+
+    <article class="chart-section" id="results-section" style="display: none;">
+      <header>
+        <h1 data-text="title">Assessment</h1>
+        <h2 data-text="results_title">Assessment Results</h2>
+      </header>
+
+      <div class="charts">
+        <canvas id="maturity-spider"></canvas>
+      </div>
+
+      <div class="charts">
+        <table id="maturity-matrix" class="scores"></table>
+      </div>
+
+      <div id="congrats-section" style="display: none;">
+        <h2 data-text="congrats_title">Congratulations!</h2>
+        <p data-text="congrats_message"></p>
+      </div>
+
+      <div id="advice-section" class="advice-container" style="display: none;"></div>
+
+      <div class="action-buttons">
+        <button class="return-button" id="app-return-button">← Back to
+          Assessment</button>
+      </div>
+
+      <div class="share-button">
+        <a id="copy-link" data-text="copy_link_text">📋 Copy Shareable Link</a>
+      </div>
+    </article>
+`;
+
+/**
+ * Injects the base HTML structure into a container.
+ */
+export function injectBaseHTML(containerSelector) {
+    const container = document.querySelector(containerSelector);
+    if (container) {
+        container.innerHTML = BASE_HTML;
+    }
+}
+
+/**
  * Renders the current assessment page.
  */
 export function renderCurrentPage() {

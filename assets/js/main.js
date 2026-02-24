@@ -11,13 +11,16 @@ import {
     renderCurrentPage,
     updatePaginationControls,
     showResults,
-    returnToAssessment
+    returnToAssessment,
+    injectBaseHTML
 } from './ui-renderer.js';
 
 /**
  * DOM Initialization
  */
 function initializeDOMElements() {
+    injectBaseHTML('[data-assessment-container]');
+
     state.elements.canvas = document.getElementById('maturity-spider');
     state.elements.ctx = state.elements.canvas?.getContext('2d');
     state.elements.maturityForm = document.getElementById('maturity-form');
