@@ -27,9 +27,9 @@
       </form>
 
       <div class="pagination-controls">
-        <button type="button" id="prev-btn" onclick="previousPage()" disabled>← Previous</button>
-        <button type="button" id="next-btn" onclick="nextPage()">Next →</button>
-        <button type="button" id="submit-btn" onclick="submitAssessment()" style="display: none;">Submit
+        <button type="button" id="prev-btn" disabled>← Previous</button>
+        <button type="button" id="next-btn">Next →</button>
+        <button type="button" id="submit-btn" style="display: none;">Submit
           Assessment</button>
       </div>
     </article>
@@ -57,17 +57,17 @@
       <div id="advice-section" class="advice-container" style="display: none;"></div>
 
       <div class="action-buttons">
-        <button onclick="returnToAssessment()" class="return-button" id="app-return-button">← Back to
+        <button class="return-button" id="app-return-button">← Back to
           Assessment</button>
       </div>
 
       <div class="share-button">
-        <a onclick="copyURLToClipboard(this)" data-text="copy_link_text">📋 Copy Shareable Link</a>
+        <a id="copy-link" data-text="copy_link_text">📋 Copy Shareable Link</a>
       </div>
     </article>
   </main>
 
-  <script src="./assets/maturity-assessment.js" data-questions="./data/continuous-delivery-assessment.json"></script>
+  <script type="module" src="./assets/js/main.js" data-questions="./data/continuous-delivery-assessment.json"></script>
 </body>
 
 </html>
