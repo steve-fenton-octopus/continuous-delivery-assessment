@@ -2,7 +2,7 @@ Feature: Continuous Delivery Assessment
 
   Scenario: The assessment application loads
     Given I open the assessment application
-    Then I should see the assessment title "Continuous Delivery assessment"
+    Then I should see the page title "Continuous Delivery assessment"
 
   Scenario: All categories need improvement
     Given I open the assessment application
@@ -11,7 +11,7 @@ Feature: Continuous Delivery Assessment
     And "Automation" has a mixed score for questions
     And "Agility" has a mixed score for questions
     And "Informational" has a mixed score for questions
-    Then I should see the assessment title "Assessment results"
+    Then I should see the sub title "Assessment results"
     And I should see the results page with the spider chart
     And I should see the following advice:
       | Category      | Advice |
@@ -27,7 +27,7 @@ Feature: Continuous Delivery Assessment
     And "Automation" has the best score for questions
     And "Agility" has a mixed score for questions
     And "Informational" has a mixed score for questions
-    Then I should see the assessment title "Assessment results"
+    Then I should see the sub title "Assessment results"
     And I should see the results page with the spider chart
     And I should see the following advice:
       | Category      | Advice |
@@ -43,7 +43,7 @@ Feature: Continuous Delivery Assessment
     And "Automation" has a mixed score for questions
     And "Agility" has the best score for questions
     And "Informational" has a mixed score for questions
-    Then I should see the assessment title "Assessment results"
+    Then I should see the sub title "Assessment results"
     And I should see the results page with the spider chart
     And I should see the following advice:
       | Category      | Advice |
@@ -59,7 +59,7 @@ Feature: Continuous Delivery Assessment
     And "Automation" has the best score for questions
     And "Agility" has the best score for questions
     And "Informational" has a mixed score for questions
-    Then I should see the assessment title "Assessment results"
+    Then I should see the sub title "Assessment results"
     And I should see the congratulations message
     And I should see the following advice:
       | Category      | Advice |

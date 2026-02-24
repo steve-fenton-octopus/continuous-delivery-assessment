@@ -48,8 +48,13 @@ Given('I open the assessment with the following parameters:', async function (da
     await page.goto(`${BASE_URL}/?${params.toString()}`);
 });
 
-Then('I should see the assessment title {string}', async function (title) {
-    const header = await page.locator('h1').filter({ visible: true });
+Then('I should see the page title {string}', async function (title) {
+    const header = page.locator('h1').filter({ visible: true });
+    await expect(header).toHaveText(title);
+});
+
+Then('I should see the sub title {string}', async function (title) {
+    const header = page.locator('h2').filter({ visible: true }).first();
     await expect(header).toHaveText(title);
 });
 
@@ -83,7 +88,7 @@ const setCategoryScore = async (category, scoreType) => {
     for (let i = 0; i < questions.length; i++) {
         const questionName = questions[i];
         const score = scores[i];
-        
+
         if (category === 'Informational') {
             const input = await page.locator(`input[name="${questionName}"]`);
             await input.fill(score);
