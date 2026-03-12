@@ -174,7 +174,7 @@
           "options": [
             {
               "value": 1,
-              "level": "No, they need to obtain sigh-off, or raise a ticket, or ask someone else to trigger the deployment",
+              "level": "No, they need to obtain sign-off, or raise a ticket, or ask someone else to trigger the deployment",
               "description": ""
             },
             {
