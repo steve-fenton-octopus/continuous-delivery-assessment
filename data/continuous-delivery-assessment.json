@@ -31,6 +31,7 @@
         {
           "id": 1,
           "text": "You just found a bug in production, when will a fix be deployed to production?",
+          "description": "",
           "advice": "Reducing the time to fix production bugs is critical for maintaining user trust and system reliability.",
           "options": [
             {
@@ -53,6 +54,7 @@
         {
           "id": 2,
           "text": "How often are deployments blocked by an issue with builds or tests",
+          "description": "",
           "advice": "Frequent deployment blocks indicate instability in your CI/CD pipeline or environment management.",
           "options": [
             {
@@ -75,6 +77,7 @@
         {
           "id": 3,
           "text": "How long is a deployment typically blocked when there's an issue with builds or tests?",
+          "description": "",
           "advice": "Reducing the duration of deployment blocks improves developer productivity and delivery predictability.",
           "options": [
             {
@@ -97,6 +100,7 @@
         {
           "id": 4,
           "text": "The build just failed, when does it get fixed?",
+          "description": "",
           "advice": "Prioritizing build failure fixes ensures the team always has a reliable base to work from.",
           "options": [
             {
@@ -119,6 +123,7 @@
         {
           "id": 5,
           "text": "A bug has been found in a pre-production environment that would stop the software version going live, when does it get fixed?",
+          "description": "",
           "advice": "Fixing pre-production bugs early prevents expensive and risky late-stage discoveries.",
           "options": [
             {
@@ -141,6 +146,7 @@
         {
           "id": 6,
           "text": "How many teams outside of development need to sign off a production deployment, for example testing is done by an external team or release management is a separate department?",
+          "description": "",
           "advice": "Reducing external sign-offs increases deployment autonomy and reduces lead time for changes.",
           "options": [
             {
@@ -163,6 +169,7 @@
         {
           "id": 7,
           "text": "Can developers and testers deploy to a pre-live environment on demand?",
+          "description": "",
           "advice": "On-demand deployment to pre-live environments is essential for rapid feedback and thorough testing.",
           "options": [
             {
@@ -193,6 +200,7 @@
         {
           "id": 1,
           "text": "How often does you code get merged into the main branch?",
+          "description": "",
           "advice": "Frequent merging reduces integration pain and ensures the team is always working on the most recent version of the code.",
           "options": [
             {
@@ -215,6 +223,7 @@
         {
           "id": 2,
           "text": "How often do other team members merge into the main branch?",
+          "description": "",
           "advice": "High merge frequency across the team indicates a healthy, collaborative development workflow.",
           "options": [
             {
@@ -237,6 +246,7 @@
         {
           "id": 3,
           "text": "How long after a code commit do you get the results of the build and tests?",
+          "description": "",
           "advice": "Rapid feedback from builds and tests is crucial for maintaining developer momentum and confidence.",
           "options": [
             {
@@ -267,6 +277,7 @@
         {
           "id": 1,
           "text": "How do changes progress through environments?",
+          "description": "",
           "advice": "Consistent automated deployment processes across all environments reduce the risk of environment-specific failures.",
           "options": [
             {
@@ -289,6 +300,7 @@
         {
           "id": 2,
           "text": "If a bug was reported in a specific version of your software, what would happen?",
+          "description": "",
           "advice": "The ability to easily re-deploy specific versions is critical for rapid recovery and debugging.",
           "options": [
             {
@@ -311,6 +323,7 @@
         {
           "id": 3,
           "text": "How much of your deployment pipeline, from code commit to running in production, depends on a manual stage gate? For example, manual testing, security, packaging, moving files around, configuration, etc?",
+          "description": "",
           "advice": "Removing manual stage gates reduces human error and accelerates the delivery pipeline.",
           "options": [
             {
@@ -333,6 +346,7 @@
         {
           "id": 4,
           "text": "Do you have any stages that happen outside of the deployment pipeline, for example security tests running quarterly rather than for every release?",
+          "description": "",
           "advice": "Moving checks into the deployment pipeline ensures they are run consistently and provides immediate feedback.",
           "options": [
             {
@@ -355,6 +369,7 @@
         {
           "id": 5,
           "text": "When do you create build artifacts?",
+          "description": "",
           "advice": "Building artifacts once and promoting them ensures that what you tested is exactly what you deploy to production.",
           "options": [
             {
@@ -372,6 +387,7 @@
         {
           "id": 6,
           "text": "What best describes your deployment process?",
+          "description": "",
           "advice": "Version-controlled deployment processes ensure that your infrastructure and code evolve together reliably.",
           "options": [
             {
@@ -397,6 +413,7 @@
         {
           "id": 1,
           "text": "After you deploy to an environment, how do you verify the software works?",
+          "description": "",
           "advice": "Automated post-deployment verification ensures the application is healthy before users encounter issues.",
           "options": [
             {
@@ -414,6 +431,7 @@
         {
           "id": 2,
           "text": "How do your pre-production environments compare to production?",
+          "description": "",
           "advice": "Keeping environments identical reduces the chance of issues that only appear in production.",
           "options": [
             {
@@ -436,6 +454,7 @@
         {
           "id": 3,
           "text": "How do you manage infrastructure changes?",
+          "description": "",
           "advice": "Using version-controlled configuration for infrastructure ensures consistency and enables rapid recovery.",
           "options": [
             {
@@ -458,6 +477,7 @@
         {
           "id": 4,
           "text": "When do users see new features?",
+          "description": "",
           "advice": "Decoupling deployment from release via keystoning or flags allows for more controlled and safer feature rollouts.",
           "options": [
             {
@@ -480,6 +500,7 @@
         {
           "id": 5,
           "text": "How are new features rolled out?",
+          "description": "",
           "advice": "Gradual feature exposure allows for A/B testing and reduces the blast radius of potential issues.",
           "options": [
             {
@@ -502,6 +523,7 @@
         {
           "id": 6,
           "text": "How can you check what version of each component is deployed to each environment?",
+          "description": "",
           "advice": "Real-time visibility into deployed versions is essential for effective operations and debugging.",
           "options": [
             {
@@ -524,6 +546,7 @@
         {
           "id": 7,
           "text": "How do you know a deployment is taking place?",
+          "description": "",
           "advice": "Observability into active deployments prevents overlapping changes and helps in identifying deployment issues.",
           "options": [
             {
@@ -555,6 +578,7 @@
         {
           "id": 1,
           "text": "What tool do you use to build your app or service?",
+          "description": "",
           "field_type": "suggest",
           "options": [
             {
@@ -652,6 +676,7 @@
         {
           "id": 2,
           "text": "What tool do you use to deploy your app or service?",
+          "description": "",
           "field_type": "suggest",
           "options": [
             {

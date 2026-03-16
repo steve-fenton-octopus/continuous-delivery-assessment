@@ -117,7 +117,8 @@ export function renderCurrentPage() {
 
         html += `
       <div class="question-group">
-        <div class="question">${nl2br(q.text)}</div>
+        <div class="question-text">${nl2br(q.text)}</div>
+        ${q.description ? `<div class="question-description">${nl2br(q.description)}</div>` : ''}
         ${inputHtml}
       </div>
     `;

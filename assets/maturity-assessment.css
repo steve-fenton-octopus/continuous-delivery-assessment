@@ -74,6 +74,7 @@
     /* Font Sizes */
     --font-size-base: 1em;
     --font-size-xl: 1.3em;
+    --font-size-2xl: 1.6em;
     --font-size-3xl: 2.2em;
 
     /* Input Sizes */
@@ -147,8 +148,31 @@
         border: 0;
     }
 
+    legend {
+        font-weight: var(--font-weight-semibold);
+        font-size: var(--font-size-2xl);
+        text-align: center;
+        margin-block-end: var(--spacing-xl);
+    }
+
     /** Questions */
-    .question-group,
+    .question-group {
+        margin-block-end: var(--spacing-3xl);
+        padding: var(--spacing-2xl);
+        background: var(--bg-dark);
+        border-radius: var(--radius-md);
+    }
+
+    .question-text {
+        margin-block-end: var(--spacing-sm);
+        font-size: var(--font-size-xl);
+    }
+
+    .question-description {
+        margin-block-end: var(--spacing-xl);
+        font-style: italic;
+    }
+
     .feedback-message {
         margin-block-end: var(--spacing-3xl);
         padding: var(--spacing-2xl);

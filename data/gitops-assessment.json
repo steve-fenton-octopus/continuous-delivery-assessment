@@ -25,13 +25,14 @@
     {
       "id": "gitops",
       "name": "GitOps principles",
-      "advice": "",
+      "advice": "The research data shows that organizations adopting GitOps principles achieve measurably better outcomes across deployment frequency, lead times, change failure rates, and mean time to recovery compared to those attempting to skip stages or implement practices in isolation.",
       "order": 1,
       "questions": [
         {
           "id": 1,
           "text": "Is the application's configuration described in version-controlled files?",
-          "advice": "Version control is a fundamental principal of GitOps, though a complete set of practices are required to make the use of version control effective. Version control supplies the tools for access control, storage, retrieval, review, history, and audit trail for the desired state and its changes.",
+          "description": "",
+          "advice": "Version control is a fundamental principal of GitOps, though a complete set of practices are required to make the use of version control effective.\n\nVersion control supplies the tools for access control, storage, retrieval, review, history, and audit trail for the desired state and its changes.",
           "options": [
             {
               "value": 1,
@@ -47,8 +48,9 @@
         },
         {
           "id": 2,
-          "text": "Are the configuration files stored in a human-readable format, i.e., a text-based format?",
-          "advice": "The change history and audit trail provided by version control tools loses most value if the configuration files aren't human readable. Instead of having simple diffs to compare, you may end up having to load different versions of the configuration into the original tool for comparison. This may limit the features available for comparing versions, or even make it a spot-the-difference exercise.",
+          "text": "Are the configuration files stored in a human-readable format?",
+          "description": "i.e., a text-based format",
+          "advice": "The change history and audit trail provided by version control tools loses most value if the configuration files aren't human readable.\n\nInstead of having simple diffs to compare, you may end up having to load different versions of the configuration into the original tool for comparison. This may limit the features available for comparing versions, or even make it a spot-the-difference exercise.",
           "options": [
             {
               "value": 1,
@@ -65,7 +67,8 @@
         {
           "id": 3,
           "text": "What best describes the configuration stored in version control?",
-          "advice": "Declarative configuration provides a verifiable target state. In contrast, Imperative configuration requires you to run through steps and understand how they would change baseline state, which means you need to hold the whole process in your mental model to understand the end result. This also leaves room for assumptions and omissions to result in a state that isn't what you imagined. Declarative configuration describes the end state, which is simpler to understand. It pushes the burden of achieving that state onto automation tools.",
+          "description": "",
+          "advice": "Declarative configuration provides a verifiable target state. In contrast, Imperative configuration requires you to run through steps and understand how they would change baseline state, which means you need to hold the whole process in your mental model to understand the end result. This also leaves room for assumptions and omissions to result in a state that isn't what you imagined.\n\nDeclarative configuration describes the end state, which is simpler to understand. It pushes the burden of achieving that state onto automation tools.",
           "options": [
             {
               "value": 1,
@@ -84,13 +87,14 @@
     {
       "id": "review",
       "name": "Code review",
-      "advice": "",
+      "advice": "Responsive code review leads to smaller batches, higher throughput, and a higher chance of making version control the primary interface for system changes.",
       "order": 4,
       "questions": [
         {
           "id": 1,
           "text": "How long does it generally take to complete the code review process for GitOps changes?",
-          "advice": "Fast code reviews keep the flow of changes moving. Slow GitOps reviews delay feedback and encourage feature teams to work in larger batches, which is where many software delivery problems emerge. The slower your GitOps change reviews are, the more likely you'll be to make changes outside of GitOps. Those changes won't be reviewed or appear in the change history. Routinely making changes to the state without using GitOps also pushes you to stop continuous reconciliation.",
+          "description": "",
+          "advice": "Fast code reviews keep the flow of changes moving. Slow GitOps reviews delay feedback and encourage feature teams to work in larger batches, which is where many software delivery problems emerge.\n\nThe slower your GitOps change reviews are, the more likely you'll be to make changes outside of GitOps. Those changes won't be reviewed or appear in the change history. Routinely making changes to the state without using GitOps also pushes you to stop continuous reconciliation.",
           "options": [
             {
               "value": 1,
@@ -119,12 +123,13 @@
     {
       "id": "application",
       "name": "GitOps practice",
-      "advice": "",
+      "advice": "Automatic reconciliation is crucial to GitOps as it keeps the system in the desired state and discourages manual changes to the running application. The ability to recreate the application from the GitOps configuration is a good test that your configuration covers everything needed.",
       "order": 5,
       "questions": [
         {
           "id": 1,
           "text": "How are changes made to the running application?",
+          "description": "",
           "advice": "Using an agent to pull configuration from version control means you don't need to open up access for remote command execution. Instead of a central orchestrator making calls to commands or APIs, the agent collects the configuration regularly from its source.",
           "options": [
             {
@@ -151,8 +156,9 @@
         },
         {
           "id": 2,
-          "text": "Can you recreate the application from the configuration files stored in version control, for example, to recover from a disaster or to create a new test environment?",
-          "advice": "The ability to recreate an application is useful for disaster recovery, cloud migration, and temporary test environments. GitOps improves your ability to recreate applications based on the version-controlled files. However, there is often application state to be restored or elements of the infrastructure you haven't yet automated. This can result in a situation where some initial set up or recovery is performed manually before the automated recreation can take place.",
+          "text": "Can you recreate the application from the configuration files stored in version control?",
+          "description": "For example, to recover from a disaster or to create a new test environment.",
+          "advice": "The ability to recreate an application is useful for disaster recovery, cloud migration, and temporary test environments.\n\nGitOps improves your ability to recreate applications based on the version-controlled files. However, there is often application state to be restored or elements of the infrastructure you haven't yet automated. This can result in a situation where some initial set up or recovery is performed manually before the automated recreation can take place.",
           "options": [
             {
               "value": 1,

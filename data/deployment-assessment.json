@@ -30,7 +30,8 @@
       "questions": [
         {
           "id": 1,
-          "text": "For the application in question, how many people can trigger a Production deployment? Triggering a deployment includes someone instructing a deployment, push-button deployments, or commit-triggered deployments.",
+          "text": "For the application in question, how many people can trigger a Production deployment?",
+          "description": "Triggering a deployment includes someone instructing a deployment, push-button deployments, or commit-triggered deployments.",
           "advice": "Find and train additional deployers to spread the workload. Create a team that can look at improving the deployment process.",
           "options": [
             {
@@ -61,6 +62,7 @@
         {
           "id": 1,
           "text": "For the application in question, how often do you typically deploy to Production?",
+          "description": "",
           "advice": "Reduce batch sizes to increase deployment frequency. Research has found this increases software delivery performance.",
           "options": [
             {
@@ -111,6 +113,7 @@
         {
           "id": 1,
           "text": "For the application in question, how long does it take for a change to move from approved (merged) to Production?",
+          "description": "",
           "advice": "Map your deployment pipeline. Identify queues, blockers, and long-running tasks that you can target to reduce the time to complete a deployment.",
           "options": [
             {
@@ -146,6 +149,7 @@
         {
           "id": 1,
           "text": "For the application in question, how automated are your software deployments?",
+          "description": "",
           "advice": "Identify manual steps in the deployment process and find ways to reduce manual intervention.",
           "options": [
             {
@@ -168,6 +172,7 @@
         {
           "id": 2,
           "text": "For the application in question, how automated are your database deployments?",
+          "description": "",
           "advice": "Automate your database deployments to make updates safer and to keep different environments in sync.",
           "options": [
             {
