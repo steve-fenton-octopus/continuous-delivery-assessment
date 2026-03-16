@@ -40,13 +40,11 @@ const BASE_HTML = `
         <h3 data-text="results_title">Assessment Results</h3>
       </header>
 
-      <div class="assessment-meter">
-        <span style="width: 0%" id="assessment-score"></span>
-      </div>
-
       <div class="charts">
+        <div class="assessment-meter">
+          <div style="width: 0%" id="assessment-score"></div>
+        </div>
         <canvas id="maturity-spider"></canvas>
-
         <table id="maturity-matrix" class="scores"></table>
       </div>
 
@@ -289,6 +287,18 @@ export function showResults() {
     if (resultsSection) resultsSection.style.display = 'block';
 
     updateAllScores();
+
+    const scoreMeter = document.getElementById('assessment-score');
+    if (scoreMeter) {
+        scoreMeter.style.width = `${state.totalScore}%`;
+
+        const scoreText = document.createElement('span');
+        scoreText.innerText = `${state.totalScore}%`;
+
+        scoreMeter.innerHTML = "";
+        scoreMeter.appendChild(scoreText);
+    }
+
     drawAll();
     renderAdvice();
     anonymousAnalytics();

@@ -8,7 +8,6 @@
     --text-primary: #282F38;
 
     /* Background Colors */
-    --bg-dark: #f4f4f4;
     --bg-light: #fdfdfd;
     --bg-white: white;
     --bg-primary-light: rgba(14, 131, 198, 0.05);
@@ -46,10 +45,6 @@
 
     /* Border Colors */
     --border-transparent: transparent;
-
-    /* Shadow Colors */
-    --shadow-light: rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 5px 15px var(--bg-primary-hover);
 
     /* Spacing Values */
     --spacing-xs: 8px;
@@ -111,7 +106,7 @@
     .share-button a:hover {
         background: var(--primary-dark);
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        box-shadow: var(--octo-shadow-medium);
     }
 
     button:disabled {
@@ -159,7 +154,7 @@
     .question-group {
         margin-block-end: var(--spacing-3xl);
         padding: var(--spacing-2xl);
-        background: var(--bg-dark);
+        background: var(--bg-primary-medium);
         border-radius: var(--radius-md);
     }
 
@@ -176,7 +171,7 @@
     .feedback-message {
         margin-block-end: var(--spacing-3xl);
         padding: var(--spacing-2xl);
-        background: var(--bg-dark);
+        background: var(--bg-primary-medium);
         border-radius: var(--radius-md);
     }
 
@@ -200,7 +195,7 @@
 
     .option:hover {
         border-color: var(--primary-color);
-        box-shadow: var(--shadow-hover);
+        box-shadow: var(--octo-shadow-medium);
     }
 
     .option input[type="radio"] {
@@ -223,7 +218,7 @@
 
     label:has(input[type="radio"]:checked) {
         border-color: var(--primary-color);
-        background: var(--bg-primary-medium);
+        background: var(--bg-light);
     }
 
 
@@ -248,7 +243,7 @@
     .suggest-input:focus {
         outline: none;
         border-color: var(--primary-color);
-        box-shadow: var(--shadow-hover);
+        box-shadow: var(--octo-shadow-medium);
     }
 
     /** Charts */
@@ -257,6 +252,9 @@
         flex-direction: column;
         gap: var(--spacing-xl);
         margin-block-end: var(--spacing-4xl);
+        background-color: var(--bg-primary-medium);
+        padding: var(--spacing-2xl);
+        border-radius: var(--radius-sm);
     }
 
     .charts>canvas {
@@ -291,10 +289,11 @@
 
     .charts .scores {
         padding: var(--spacing-xl);
-        background: var(--bg-dark);
+        background: var(--bg-primary-medium);
         border-radius: var(--radius-sm);
         max-width: 600px;
         margin: 0 auto;
+        box-shadow: var(--octo-shadow-medium);
     }
 
     .charts .scores tr td:not(:first-child):not(:last-child) {
@@ -330,7 +329,7 @@
     }
 
     .assessment-meter {
-        width: 100%;
+        margin-inline: 3rem;
         background-color: var(--light-bg);
         border: 1px solid var(--navy-400);
         box-shadow: var(--octo-shadow-medium);
@@ -338,12 +337,18 @@
         overflow: hidden;
     }
 
-    .assessment-score {
+    .assessment-meter div {
         border: none;
-        display: block;
         margin-inline: 0;
         height: 2.2rem;
-        background-image: linear-gradient(75deg, #1fc0ff, #cc3cff);
+        line-height: 2.2rem;
+        text-align: right;
+        background-image: linear-gradient(75deg, var(--primary-dark), var(--primary-color));
+    }
+
+    .assessment-meter span {
+        position: relative;
+        left: 2.5rem;
     }
 
     /** Pagination Controls */
@@ -383,7 +388,7 @@
     .advice-card {
         margin-block: var(--spacing-xl);
         padding: var(--spacing-xl);
-        background: var(--bg-dark);
+        background: var(--bg-primary-medium);
         border-radius: var(--radius-sm);
         max-width: 30vw;
     }

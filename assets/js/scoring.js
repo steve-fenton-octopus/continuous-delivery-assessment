@@ -37,6 +37,22 @@ export function calculateCategoryCount(categoryId) {
 }
 
 /**
+ * Calculates the overall score across all categories.
+ */
+export function calculateTotalScore() {
+    const allAnswers = Object.values(state.answerState)
+        .map(val => parseInt(val))
+        .filter(val => !isNaN(val));
+
+    if (allAnswers.length === 0) {
+        return 0;
+    }
+
+    const average = allAnswers.reduce((a, b) => a + b, 0) / allAnswers.length;
+    return Math.round((average / state.maxValue) * 100);
+}
+
+/**
  * Updates all category scores.
  */
 export function updateAllScores() {
@@ -44,4 +60,5 @@ export function updateAllScores() {
         state.scores[id] = calculateCategoryScore(id);
         state.counts[id] = calculateCategoryCount(id);
     }
+    state.totalScore = calculateTotalScore();
 }

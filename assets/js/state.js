@@ -12,6 +12,7 @@ export const state = {
     scores: {},
     counts: {},
     maxValue: 0,
+    totalScore: 0,
 
     // DOM Elements (initialized in main.js)
     elements: {
@@ -34,4 +35,5 @@ export function resetMetrics() {
     state.scores = {};
     state.counts = {};
     state.maxValue = 0;
+    state.totalScore = 0;
 }
