@@ -23,71 +23,112 @@
   },
   "categories": [
     {
-      "id": "deployability",
-      "name": "Deployability",
-      "advice": "Deployability is the foundation of CD. Improving these metrics reduces the risk of deployment failure and increases the speed at which you can deliver value to users.",
+      "id": "deployers",
+      "name": "Deployers",
+      "advice": "A key finding in our research was that efficiency savings were hard to achieve when a single person was responsible for deployments. This was even the case after automating deployments. A team shouldn't depend on one person for deployments. By sharing the responsibility, you'll find your documentation and process improve, and bottlenecks are less likely.",
       "order": 1,
       "questions": [
         {
           "id": 1,
-          "text": "You just found a bug in production, when will a fix be deployed to production?",
-          "field_name": "deployability_1",
-          "advice": "Reducing the time to fix production bugs is critical for maintaining user trust and system reliability.",
+          "text": "For the application in question, how many people can trigger a Production deployment? Triggering a deployment includes someone instructing a deployment, push-button deployments, or commit-triggered deployments.",
+          "field_name": "deployers_1",
+          "advice": "Find and train additional deployers to spread the workload. Create a team that can look at improving the deployment process.",
           "options": [
             {
               "value": 1,
-              "level": "Next week or beyond",
+              "level": "1 person",
               "description": ""
             },
             {
               "value": 2,
-              "level": "Some time this week",
+              "level": "2-3 people",
               "description": ""
             },
             {
               "value": 3,
-              "level": "Today",
+              "level": "4 or more people",
               "description": ""
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "frequency",
+      "name": "Deployment Frequency",
+      "advice": "When you deploy more often, you reduce deployment risk, increase quality, and get feedback sooner. The longer you leave between deployments, the more change builds up.",
+      "order": 2,
+      "questions": [
         {
-          "id": 2,
-          "text": "How often are deployments blocked by an issue with builds or tests",
-          "field_name": "deployability_2",
-          "advice": "Frequent deployment blocks indicate instability in your CI/CD pipeline or environment management.",
+          "id": 1,
+          "text": "For the application in question, how often do you typically deploy to Production?",
+          "field_name": "frequency_1",
+          "advice": "Reduce batch sizes to increase deployment frequency. Research has found this increases software delivery performance.",
           "options": [
             {
               "value": 1,
-              "level": "Most weeks",
+              "level": "Less often",
+              "description": ""
+            },
+            {
+              "value": 1,
+              "level": "Quarterly",
+              "description": ""
+            },
+            {
+              "value": 1,
+              "level": "Monthly",
               "description": ""
             },
             {
               "value": 2,
-              "level": "A couple of times a month",
+              "level": "Weekly",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Several times a week",
               "description": ""
             },
             {
               "value": 3,
-              "level": "Rarely",
+              "level": "Daily",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Many times a day",
               "description": ""
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "lead_time",
+      "name": "Lead Time",
+      "advice": "Long deployment lead times are usually caused by manual steps, or an approval process that holds up the deployment. If you can reduce your lead times, you'll likely increase your deployment frequency. Short lead times also make it easier to recover by rolling forward to a new version with a fix, or to roll back to the previous version.",
+      "order": 3,
+      "questions": [
         {
-          "id": 3,
-          "text": "How long is a deployment typically blocked when there's an issue with builds or tests?",
-          "field_name": "deployability_3",
-          "advice": "Reducing the duration of deployment blocks improves developer productivity and delivery predictability.",
+          "id": 1,
+          "text": "For the application in question, how long does it take for a change to move from approved (merged) to Production?",
+          "field_name": "lead_time_1",
+          "advice": "Map your deployment pipeline. Identify queues, blockers, and long-running tasks that you can target to reduce the time to complete a deployment.",
           "options": [
             {
               "value": 1,
-              "level": "More than a day",
+              "level": "Longer than a week",
+              "description": ""
+            },
+            {
+              "value": 1,
+              "level": "Less than a week",
               "description": ""
             },
             {
               "value": 2,
-              "level": "More than an hour but less than a day",
+              "level": "Less than a day",
               "description": ""
             },
             {
@@ -96,662 +137,57 @@
               "description": ""
             }
           ]
-        },
-        {
-          "id": 4,
-          "text": "The build just failed, when does it get fixed?",
-          "field_name": "deployability_4",
-          "advice": "Prioritizing build failure fixes ensures the team always has a reliable base to work from.",
-          "options": [
-            {
-              "value": 1,
-              "level": "When we prepare the next software version",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "Once we finish whatever we're working on",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "We pause everything and fix it straight away",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "text": "A bug has been found in a pre-production environment that would stop the software version going live, when does it get fixed?",
-          "field_name": "deployability_5",
-          "advice": "Fixing pre-production bugs early prevents expensive and risky late-stage discoveries.",
-          "options": [
-            {
-              "value": 1,
-              "level": "When we prepare the next software version",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "Once we finish whatever we're working on",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "We pause everything and fix it straight away",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "text": "How many teams outside of development need to sign off a production deployment, for example testing is done by an external team or release management is a separate department?",
-          "field_name": "deployability_6",
-          "advice": "Reducing external sign-offs increases deployment autonomy and reduces lead time for changes.",
-          "options": [
-            {
-              "value": 1,
-              "level": "More than two",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "One or two",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "None",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "text": "Can developers and testers deploy to a pre-live environment on demand?",
-          "field_name": "deployability_7",
-          "advice": "On-demand deployment to pre-live environments is essential for rapid feedback and thorough testing.",
-          "options": [
-            {
-              "value": 1,
-              "level": "No, they need to obtain sign-off, or raise a ticket, or ask someone else to trigger the deployment",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "Yes, if they co-ordinate with others to avoid deploying when someone is using an environment",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "Yes, they can deploy to a pre-live environment on demand without co-ordination or approval",
-              "description": ""
-            }
-          ]
         }
       ]
     },
     {
-      "id": "feedback",
-      "name": "Feedback",
-      "advice": "Shortening feedback loops allows teams to detect and resolve issues faster, leading to higher quality software and faster learning.",
-      "order": 2,
-      "questions": [
-        {
-          "id": 1,
-          "text": "How often does you code get merged into the main branch?",
-          "field_name": "feedback_1",
-          "advice": "Frequent merging reduces integration pain and ensures the team is always working on the most recent version of the code.",
-          "options": [
-            {
-              "value": 1,
-              "level": "Less often than every day",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "Each day",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "Every hour or two",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "How often do other team members merge into the main branch?",
-          "field_name": "feedback_2",
-          "advice": "High merge frequency across the team indicates a healthy, collaborative development workflow.",
-          "options": [
-            {
-              "value": 1,
-              "level": "Less often than every day",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "Each day",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "Every hour or two",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "text": "How long after a code commit do you get the results of the build and tests?",
-          "field_name": "feedback_3",
-          "advice": "Rapid feedback from builds and tests is crucial for maintaining developer momentum and confidence.",
-          "options": [
-            {
-              "value": 1,
-              "level": "Longer than 20 minutes",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "Between 5 and 20 minutes",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "In about 5 minutes or less",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "automation",
+      "id": "software_automation",
       "name": "Automation",
-      "advice": "Automation eliminates manual errors, ensures consistency across environments, and enables team scalability.",
-      "order": 3,
-      "questions": [
-        {
-          "id": 1,
-          "text": "How do changes progress through environments?",
-          "field_name": "automation_1",
-          "advice": "Consistent automated deployment processes across all environments reduce the risk of environment-specific failures.",
-          "options": [
-            {
-              "value": 1,
-              "level": "We deploy manually to all environments",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "We have automated deployments to pre-production environments but a different process is used to deploy to production",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "The exact same automated/push-button process deploys to all environments",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "If a bug was reported in a specific version of your software, what would happen?",
-          "field_name": "automation_2",
-          "advice": "The ability to easily re-deploy specific versions is critical for rapid recovery and debugging.",
-          "options": [
-            {
-              "value": 1,
-              "level": "We would have to build and deploy that version of the software to test it",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "We could manually re-deploy that version from a store of software versions",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "Our automated push-button process could deploy that version to a test environment",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "text": "How much of your deployment pipeline, from code commit to running in production, depends on a manual stage gate? For example, manual testing, security, packaging, moving files around, configuration, etc?",
-          "field_name": "automation_3",
-          "advice": "Removing manual stage gates reduces human error and accelerates the delivery pipeline.",
-          "options": [
-            {
-              "value": 1,
-              "level": "The deployment pipeline is mostly manual",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "The deployment pipeline has some automation and some manual stages",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "We aggressively automate all stages of the deployment pipeline unless we can find no economic way to do it",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "text": "Do you have any stages that happen outside of the deployment pipeline, for example security tests running quarterly rather than for every release?",
-          "field_name": "automation_4",
-          "advice": "Moving checks into the deployment pipeline ensures they are run consistently and provides immediate feedback.",
-          "options": [
-            {
-              "value": 1,
-              "level": "Many stages are out of band, such as security testing, capacity testing, or vulnerability scanning.",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "Most stages are done as part of the deployment pipeline",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "All checks happen as part of the deployment pipeline",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "text": "When do you create build artifacts?",
-          "field_name": "automation_5",
-          "advice": "Building artifacts once and promoting them ensures that what you tested is exactly what you deploy to production.",
-          "options": [
-            {
-              "value": 1,
-              "level": "The build step creates a new package each time the software is promoted to the next environment",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "The package is built once and the same package is used each time the software is promoted to the next environment",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "text": "What best describes your deployment process?",
-          "field_name": "automation_6",
-          "advice": "Version-controlled deployment processes ensure that your infrastructure and code evolve together reliably.",
-          "options": [
-            {
-              "value": 1,
-              "level": "The deployment process might be updated between environments, for example if we find a step was missing or a config value had changed",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "The deployment process is versioned alongside the package to keep it the same on all environments, changes would mean starting from the first environment again",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "agility",
-      "name": "Agility",
-      "advice": "Agility in operation and delivery allows your organization to respond quickly to market changes and user needs.",
+      "advice": "You won't be surprised that we think you should automate deployments. Our deployment survey found that after introducing Octopus, our customers were 2.5x more likely to deploy on demand and 4.7x more likely to deploy in under an hour. Automated deployments are just faster and more frequent. The process is safer and more reliable.",
       "order": 4,
       "questions": [
         {
           "id": 1,
-          "text": "After you deploy to an environment, how do you verify the software works?",
-          "field_name": "agility_1",
-          "advice": "Automated post-deployment verification ensures the application is healthy before users encounter issues.",
+          "text": "For the application in question, how automated are your software deployments?",
+          "field_name": "software_automation_1",
+          "advice": "Identify manual steps in the deployment process and find ways to reduce manual intervention.",
           "options": [
             {
               "value": 1,
-              "level": "We depend on testers to check it's working",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "An automated test or script checks the application is running and its dependencies are available",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "How do your pre-production environments compare to production?",
-          "field_name": "agility_2",
-          "advice": "Keeping environments identical reduces the chance of issues that only appear in production.",
-          "options": [
-            {
-              "value": 1,
-              "level": "Our pre-production environments have significant differences to the production environment",
+              "level": "Manual: The deployment is mostly a manual process.",
               "description": ""
             },
             {
               "value": 2,
-              "level": "Our pre-production environments are mostly the same as production, with non-critical differences, like not needing the application firewall or load-balancers we use in production",
+              "level": "Partly automated: Parts of the process are automated, such as scripts that can be triggered to perform application deployment tasks.",
               "description": ""
             },
             {
               "value": 3,
-              "level": "Our pre-productions are very similar to the production environment",
+              "level": "Fully automated: The application deployment process needs no manual intervention apart from push-button approvals.",
               "description": ""
             }
           ]
         },
-        {
-          "id": 3,
-          "text": "How do you manage infrastructure changes?",
-          "field_name": "agility_3",
-          "advice": "Using version-controlled configuration for infrastructure ensures consistency and enables rapid recovery.",
-          "options": [
-            {
-              "value": 1,
-              "level": "All changes are manual and we're not certain environments are kept in sync when changes are made",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "All changes are manual but we progress changes through our environments like we do code changes to keep them in sync and test our changes",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "Our environments use version-controlled configuration that keeps them identical, though we may use smaller instances for pre-production",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "text": "When do users see new features?",
-          "field_name": "agility_4",
-          "advice": "Decoupling deployment from release via keystoning or flags allows for more controlled and safer feature rollouts.",
-          "options": [
-            {
-              "value": 1,
-              "level": "New features appear when we deploy",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "We use coding techniques that keep new features hidden until they're ready (like keystoning)",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "We use feature flags to control visibility of new features",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "text": "How are new features rolled out?",
-          "field_name": "agility_5",
-          "advice": "Gradual feature exposure allows for A/B testing and reduces the blast radius of potential issues.",
-          "options": [
-            {
-              "value": 1,
-              "level": "All users get a new feature at the same time",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "Users on a specific instance get new features before our general users (for example, a beta instance)",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "We can expose a new feature to specific users or groups of users",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "text": "How can you check what version of each component is deployed to each environment?",
-          "field_name": "agility_6",
-          "advice": "Real-time visibility into deployed versions is essential for effective operations and debugging.",
-          "options": [
-            {
-              "value": 1,
-              "level": "We track this manually, for example on a whiteboard or wiki page",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "This is tracked automatically and we can find a version by looking up that component's deployment information",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "This is tracked automatically and we can see this information for a set of related components all on a single dashboard",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "text": "How do you know a deployment is taking place?",
-          "field_name": "agility_7",
-          "advice": "Observability into active deployments prevents overlapping changes and helps in identifying deployment issues.",
-          "options": [
-            {
-              "value": 1,
-              "level": "We signal this manually, for example in our internal chat tools or by email",
-              "description": ""
-            },
-            {
-              "value": 2,
-              "level": "This is tracked automatically and we can see running deployments by looking up that component's deployment information",
-              "description": ""
-            },
-            {
-              "value": 3,
-              "level": "This is tracked automatically and we can see running deployments for a set of related components all on a single dashboard",
-              "description": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "informational",
-      "name": "Informational",
-      "informational": true,
-      "advice": "",
-      "order": 5,
-      "questions": [
         {
           "id": 1,
-          "text": "What tool do you use to build your app or service?",
-          "field_name": "build_tool",
-          "field_type": "suggest",
+          "text": "For the application in question, how automated are your database deployments?",
+          "field_name": "database_automation_1",
+          "advice": "Automate your database deployments to make updates safer and to keep different environments in sync.",
           "options": [
             {
-              "value": "AppVeyor",
-              "level": "AppVeyor",
+              "value": 1,
+              "level": "Manual: The database deployment is mostly a manual process.",
               "description": ""
             },
             {
-              "value": "AWS CodeBuild",
-              "level": "AWS CodeBuild",
+              "value": 2,
+              "level": "Partly automated: Parts of the process are automated, such as scripts that can be triggered to perform database deployment tasks.",
               "description": ""
             },
             {
-              "value": "Azure DevOps",
-              "level": "Azure DevOps",
-              "description": ""
-            },
-            {
-              "value": "Bamboo",
-              "level": "Bamboo",
-              "description": ""
-            },
-            {
-              "value": "Bitbucket Pipelines",
-              "level": "Bitbucket Pipelines",
-              "description": ""
-            },
-            {
-              "value": "Buddy",
-              "level": "Buddy",
-              "description": ""
-            },
-            {
-              "value": "Buildkite",
-              "level": "Buildkite",
-              "description": ""
-            },
-            {
-              "value": "CircleCI",
-              "level": "CircleCI",
-              "description": ""
-            },
-            {
-              "value": "Codefresh",
-              "level": "Codefresh",
-              "description": ""
-            },
-            {
-              "value": "Drone",
-              "level": "Drone",
-              "description": ""
-            },
-            {
-              "value": "GitHub Actions",
-              "level": "GitHub Actions",
-              "description": ""
-            },
-            {
-              "value": "GitLab CI",
-              "level": "GitLab CI",
-              "description": ""
-            },
-            {
-              "value": "GoCD",
-              "level": "GoCD",
-              "description": ""
-            },
-            {
-              "value": "Google Cloud Build",
-              "level": "Google Cloud Build",
-              "description": ""
-            },
-            {
-              "value": "Jenkins",
-              "level": "Jenkins",
-              "description": ""
-            },
-            {
-              "value": "Semaphore",
-              "level": "Semaphore",
-              "description": ""
-            },
-            {
-              "value": "TeamCity",
-              "level": "TeamCity",
-              "description": ""
-            },
-            {
-              "value": "Travis CI",
-              "level": "Travis CI",
-              "description": ""
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "text": "What tool do you use to deploy your app or service?",
-          "field_name": "deploy_tool",
-          "field_type": "suggest",
-          "options": [
-            {
-              "value": "ArgoCD",
-              "level": "ArgoCD",
-              "description": ""
-            },
-            {
-              "value": "AWS CodeDeploy",
-              "level": "AWS CodeDeploy",
-              "description": ""
-            },
-            {
-              "value": "Azure Pipelines",
-              "level": "Azure Pipelines",
-              "description": ""
-            },
-            {
-              "value": "Bamboo",
-              "level": "Bamboo",
-              "description": ""
-            },
-            {
-              "value": "Bitbucket Pipelines",
-              "level": "Bitbucket Pipelines",
-              "description": ""
-            },
-            {
-              "value": "Buddy",
-              "level": "Buddy",
-              "description": ""
-            },
-            {
-              "value": "Codefresh",
-              "level": "Codefresh",
-              "description": ""
-            },
-            {
-              "value": "Flux",
-              "level": "Flux",
-              "description": ""
-            },
-            {
-              "value": "GitHub Actions",
-              "level": "GitHub Actions",
-              "description": ""
-            },
-            {
-              "value": "GitLab CI",
-              "level": "GitLab CI",
-              "description": ""
-            },
-            {
-              "value": "Google Cloud Deploy",
-              "level": "Google Cloud Deploy",
-              "description": ""
-            },
-            {
-              "value": "Harness",
-              "level": "Harness",
-              "description": ""
-            },
-            {
-              "value": "Jenkins",
-              "level": "Jenkins",
-              "description": ""
-            },
-            {
-              "value": "Octopus Deploy",
-              "level": "Octopus Deploy",
-              "description": ""
-            },
-            {
-              "value": "Spinnaker",
-              "level": "Spinnaker",
+              "value": 3,
+              "level": "Fully automated: The database deployment process needs no manual intervention apart from push-button approvals.",
               "description": ""
             }
           ]
