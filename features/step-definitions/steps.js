@@ -39,13 +39,13 @@ After(async function () {
 });
 
 Given('I open the assessment application', async function () {
-    await page.goto(BASE_URL);
+    await page.goto(`${BASE_URL}/continuous-delivery.html`);
 });
 
 Given('I open the assessment with the following parameters:', async function (dataTable) {
     const data = dataTable.rowsHash();
     const params = new URLSearchParams(data);
-    await page.goto(`${BASE_URL}/?${params.toString()}`);
+    await page.goto(`${BASE_URL}/continuous-delivery.html?${params.toString()}`);
 });
 
 Then('I should see the page title {string}', async function (title) {

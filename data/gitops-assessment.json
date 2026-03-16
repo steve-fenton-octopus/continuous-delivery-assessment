@@ -1,0 +1,762 @@
+{
+  "metadata": {
+    "title": "Continuous Delivery assessment",
+    "language": "en",
+    "language_native": "English",
+    "introTitle": "About Continuous Delivery",
+    "intro": "Continuous Delivery (CD) is the ability to get changes of all types—including new features, configuration changes, bug fixes and experiments into production, or into the hands of users, safely and quickly in a sustainable way.\n\nThis Continuous Delivery assessment provides a framework for reflection and for identifying opportunities for improvement in your delivery process. By evaluating key aspects of your pipeline, we aim to identify bottlenecks and areas for optimization.\n\nThis assessment evaluates four key categories: Deployability, Feedback, Automation, and Agility.",
+    "results_title": "Assessment results",
+    "feedback_message": "Thank you for using our Continuous Delivery assessment! We hope you found it valuable.  While you're here, we'd love to hear your thoughts and feedback to help us improve this tool.\n",
+    "copy_link_text": "📋 Copy Shareable Link",
+    "copy_success": "📋 Copied!",
+    "copy_fail": "Failed! Please copy from address bar.",
+    "language_label": "Language:",
+    "previous_button_text": "Previous",
+    "next_button_text": "Next",
+    "submit_button_text": "Submit assessment",
+    "back_to_assessment": "← Back to assessment",
+    "advice_title": "Targeted Recommendations",
+    "advice_intro": "The following recommendations have been prioritized based on your unique score. The most impactful items appear first.",
+    "advice_category_title": "What to improve",
+    "congrats_title": "Congratulations!",
+    "congrats_message": "You have achieved maximum scores across all categories! Your Continuous Delivery process is well formed and follows industry best practices. Maintain this level of excellence and keep exploring new ways to innovate."
+  },
+  "categories": [
+    {
+      "id": "deployability",
+      "name": "Deployability",
+      "advice": "Deployability is the foundation of CD. Improving these metrics reduces the risk of deployment failure and increases the speed at which you can deliver value to users.",
+      "order": 1,
+      "questions": [
+        {
+          "id": 1,
+          "text": "You just found a bug in production, when will a fix be deployed to production?",
+          "field_name": "deployability_1",
+          "advice": "Reducing the time to fix production bugs is critical for maintaining user trust and system reliability.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Next week or beyond",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Some time this week",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Today",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "How often are deployments blocked by an issue with builds or tests",
+          "field_name": "deployability_2",
+          "advice": "Frequent deployment blocks indicate instability in your CI/CD pipeline or environment management.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Most weeks",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "A couple of times a month",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Rarely",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "How long is a deployment typically blocked when there's an issue with builds or tests?",
+          "field_name": "deployability_3",
+          "advice": "Reducing the duration of deployment blocks improves developer productivity and delivery predictability.",
+          "options": [
+            {
+              "value": 1,
+              "level": "More than a day",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "More than an hour but less than a day",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Less than an hour",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "text": "The build just failed, when does it get fixed?",
+          "field_name": "deployability_4",
+          "advice": "Prioritizing build failure fixes ensures the team always has a reliable base to work from.",
+          "options": [
+            {
+              "value": 1,
+              "level": "When we prepare the next software version",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Once we finish whatever we're working on",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "We pause everything and fix it straight away",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "text": "A bug has been found in a pre-production environment that would stop the software version going live, when does it get fixed?",
+          "field_name": "deployability_5",
+          "advice": "Fixing pre-production bugs early prevents expensive and risky late-stage discoveries.",
+          "options": [
+            {
+              "value": 1,
+              "level": "When we prepare the next software version",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Once we finish whatever we're working on",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "We pause everything and fix it straight away",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "text": "How many teams outside of development need to sign off a production deployment, for example testing is done by an external team or release management is a separate department?",
+          "field_name": "deployability_6",
+          "advice": "Reducing external sign-offs increases deployment autonomy and reduces lead time for changes.",
+          "options": [
+            {
+              "value": 1,
+              "level": "More than two",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "One or two",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "None",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "text": "Can developers and testers deploy to a pre-live environment on demand?",
+          "field_name": "deployability_7",
+          "advice": "On-demand deployment to pre-live environments is essential for rapid feedback and thorough testing.",
+          "options": [
+            {
+              "value": 1,
+              "level": "No, they need to obtain sign-off, or raise a ticket, or ask someone else to trigger the deployment",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Yes, if they co-ordinate with others to avoid deploying when someone is using an environment",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Yes, they can deploy to a pre-live environment on demand without co-ordination or approval",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "name": "Feedback",
+      "advice": "Shortening feedback loops allows teams to detect and resolve issues faster, leading to higher quality software and faster learning.",
+      "order": 2,
+      "questions": [
+        {
+          "id": 1,
+          "text": "How often does you code get merged into the main branch?",
+          "field_name": "feedback_1",
+          "advice": "Frequent merging reduces integration pain and ensures the team is always working on the most recent version of the code.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Less often than every day",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Each day",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Every hour or two",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "How often do other team members merge into the main branch?",
+          "field_name": "feedback_2",
+          "advice": "High merge frequency across the team indicates a healthy, collaborative development workflow.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Less often than every day",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Each day",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Every hour or two",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "How long after a code commit do you get the results of the build and tests?",
+          "field_name": "feedback_3",
+          "advice": "Rapid feedback from builds and tests is crucial for maintaining developer momentum and confidence.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Longer than 20 minutes",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Between 5 and 20 minutes",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "In about 5 minutes or less",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automation",
+      "name": "Automation",
+      "advice": "Automation eliminates manual errors, ensures consistency across environments, and enables team scalability.",
+      "order": 3,
+      "questions": [
+        {
+          "id": 1,
+          "text": "How do changes progress through environments?",
+          "field_name": "automation_1",
+          "advice": "Consistent automated deployment processes across all environments reduce the risk of environment-specific failures.",
+          "options": [
+            {
+              "value": 1,
+              "level": "We deploy manually to all environments",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "We have automated deployments to pre-production environments but a different process is used to deploy to production",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "The exact same automated/push-button process deploys to all environments",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "If a bug was reported in a specific version of your software, what would happen?",
+          "field_name": "automation_2",
+          "advice": "The ability to easily re-deploy specific versions is critical for rapid recovery and debugging.",
+          "options": [
+            {
+              "value": 1,
+              "level": "We would have to build and deploy that version of the software to test it",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "We could manually re-deploy that version from a store of software versions",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Our automated push-button process could deploy that version to a test environment",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "How much of your deployment pipeline, from code commit to running in production, depends on a manual stage gate? For example, manual testing, security, packaging, moving files around, configuration, etc?",
+          "field_name": "automation_3",
+          "advice": "Removing manual stage gates reduces human error and accelerates the delivery pipeline.",
+          "options": [
+            {
+              "value": 1,
+              "level": "The deployment pipeline is mostly manual",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "The deployment pipeline has some automation and some manual stages",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "We aggressively automate all stages of the deployment pipeline unless we can find no economic way to do it",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Do you have any stages that happen outside of the deployment pipeline, for example security tests running quarterly rather than for every release?",
+          "field_name": "automation_4",
+          "advice": "Moving checks into the deployment pipeline ensures they are run consistently and provides immediate feedback.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Many stages are out of band, such as security testing, capacity testing, or vulnerability scanning.",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Most stages are done as part of the deployment pipeline",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "All checks happen as part of the deployment pipeline",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "text": "When do you create build artifacts?",
+          "field_name": "automation_5",
+          "advice": "Building artifacts once and promoting them ensures that what you tested is exactly what you deploy to production.",
+          "options": [
+            {
+              "value": 1,
+              "level": "The build step creates a new package each time the software is promoted to the next environment",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "The package is built once and the same package is used each time the software is promoted to the next environment",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "text": "What best describes your deployment process?",
+          "field_name": "automation_6",
+          "advice": "Version-controlled deployment processes ensure that your infrastructure and code evolve together reliably.",
+          "options": [
+            {
+              "value": 1,
+              "level": "The deployment process might be updated between environments, for example if we find a step was missing or a config value had changed",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "The deployment process is versioned alongside the package to keep it the same on all environments, changes would mean starting from the first environment again",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agility",
+      "name": "Agility",
+      "advice": "Agility in operation and delivery allows your organization to respond quickly to market changes and user needs.",
+      "order": 4,
+      "questions": [
+        {
+          "id": 1,
+          "text": "After you deploy to an environment, how do you verify the software works?",
+          "field_name": "agility_1",
+          "advice": "Automated post-deployment verification ensures the application is healthy before users encounter issues.",
+          "options": [
+            {
+              "value": 1,
+              "level": "We depend on testers to check it's working",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "An automated test or script checks the application is running and its dependencies are available",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "How do your pre-production environments compare to production?",
+          "field_name": "agility_2",
+          "advice": "Keeping environments identical reduces the chance of issues that only appear in production.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Our pre-production environments have significant differences to the production environment",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Our pre-production environments are mostly the same as production, with non-critical differences, like not needing the application firewall or load-balancers we use in production",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Our pre-productions are very similar to the production environment",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "How do you manage infrastructure changes?",
+          "field_name": "agility_3",
+          "advice": "Using version-controlled configuration for infrastructure ensures consistency and enables rapid recovery.",
+          "options": [
+            {
+              "value": 1,
+              "level": "All changes are manual and we're not certain environments are kept in sync when changes are made",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "All changes are manual but we progress changes through our environments like we do code changes to keep them in sync and test our changes",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Our environments use version-controlled configuration that keeps them identical, though we may use smaller instances for pre-production",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "text": "When do users see new features?",
+          "field_name": "agility_4",
+          "advice": "Decoupling deployment from release via keystoning or flags allows for more controlled and safer feature rollouts.",
+          "options": [
+            {
+              "value": 1,
+              "level": "New features appear when we deploy",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "We use coding techniques that keep new features hidden until they're ready (like keystoning)",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "We use feature flags to control visibility of new features",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "text": "How are new features rolled out?",
+          "field_name": "agility_5",
+          "advice": "Gradual feature exposure allows for A/B testing and reduces the blast radius of potential issues.",
+          "options": [
+            {
+              "value": 1,
+              "level": "All users get a new feature at the same time",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Users on a specific instance get new features before our general users (for example, a beta instance)",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "We can expose a new feature to specific users or groups of users",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "text": "How can you check what version of each component is deployed to each environment?",
+          "field_name": "agility_6",
+          "advice": "Real-time visibility into deployed versions is essential for effective operations and debugging.",
+          "options": [
+            {
+              "value": 1,
+              "level": "We track this manually, for example on a whiteboard or wiki page",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "This is tracked automatically and we can find a version by looking up that component's deployment information",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "This is tracked automatically and we can see this information for a set of related components all on a single dashboard",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "text": "How do you know a deployment is taking place?",
+          "field_name": "agility_7",
+          "advice": "Observability into active deployments prevents overlapping changes and helps in identifying deployment issues.",
+          "options": [
+            {
+              "value": 1,
+              "level": "We signal this manually, for example in our internal chat tools or by email",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "This is tracked automatically and we can see running deployments by looking up that component's deployment information",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "This is tracked automatically and we can see running deployments for a set of related components all on a single dashboard",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "informational",
+      "name": "Informational",
+      "informational": true,
+      "advice": "",
+      "order": 5,
+      "questions": [
+        {
+          "id": 1,
+          "text": "What tool do you use to build your app or service?",
+          "field_name": "build_tool",
+          "field_type": "suggest",
+          "options": [
+            {
+              "value": "AppVeyor",
+              "level": "AppVeyor",
+              "description": ""
+            },
+            {
+              "value": "AWS CodeBuild",
+              "level": "AWS CodeBuild",
+              "description": ""
+            },
+            {
+              "value": "Azure DevOps",
+              "level": "Azure DevOps",
+              "description": ""
+            },
+            {
+              "value": "Bamboo",
+              "level": "Bamboo",
+              "description": ""
+            },
+            {
+              "value": "Bitbucket Pipelines",
+              "level": "Bitbucket Pipelines",
+              "description": ""
+            },
+            {
+              "value": "Buddy",
+              "level": "Buddy",
+              "description": ""
+            },
+            {
+              "value": "Buildkite",
+              "level": "Buildkite",
+              "description": ""
+            },
+            {
+              "value": "CircleCI",
+              "level": "CircleCI",
+              "description": ""
+            },
+            {
+              "value": "Codefresh",
+              "level": "Codefresh",
+              "description": ""
+            },
+            {
+              "value": "Drone",
+              "level": "Drone",
+              "description": ""
+            },
+            {
+              "value": "GitHub Actions",
+              "level": "GitHub Actions",
+              "description": ""
+            },
+            {
+              "value": "GitLab CI",
+              "level": "GitLab CI",
+              "description": ""
+            },
+            {
+              "value": "GoCD",
+              "level": "GoCD",
+              "description": ""
+            },
+            {
+              "value": "Google Cloud Build",
+              "level": "Google Cloud Build",
+              "description": ""
+            },
+            {
+              "value": "Jenkins",
+              "level": "Jenkins",
+              "description": ""
+            },
+            {
+              "value": "Semaphore",
+              "level": "Semaphore",
+              "description": ""
+            },
+            {
+              "value": "TeamCity",
+              "level": "TeamCity",
+              "description": ""
+            },
+            {
+              "value": "Travis CI",
+              "level": "Travis CI",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "What tool do you use to deploy your app or service?",
+          "field_name": "deploy_tool",
+          "field_type": "suggest",
+          "options": [
+            {
+              "value": "ArgoCD",
+              "level": "ArgoCD",
+              "description": ""
+            },
+            {
+              "value": "AWS CodeDeploy",
+              "level": "AWS CodeDeploy",
+              "description": ""
+            },
+            {
+              "value": "Azure Pipelines",
+              "level": "Azure Pipelines",
+              "description": ""
+            },
+            {
+              "value": "Bamboo",
+              "level": "Bamboo",
+              "description": ""
+            },
+            {
+              "value": "Bitbucket Pipelines",
+              "level": "Bitbucket Pipelines",
+              "description": ""
+            },
+            {
+              "value": "Buddy",
+              "level": "Buddy",
+              "description": ""
+            },
+            {
+              "value": "Codefresh",
+              "level": "Codefresh",
+              "description": ""
+            },
+            {
+              "value": "Flux",
+              "level": "Flux",
+              "description": ""
+            },
+            {
+              "value": "GitHub Actions",
+              "level": "GitHub Actions",
+              "description": ""
+            },
+            {
+              "value": "GitLab CI",
+              "level": "GitLab CI",
+              "description": ""
+            },
+            {
+              "value": "Google Cloud Deploy",
+              "level": "Google Cloud Deploy",
+              "description": ""
+            },
+            {
+              "value": "Harness",
+              "level": "Harness",
+              "description": ""
+            },
+            {
+              "value": "Jenkins",
+              "level": "Jenkins",
+              "description": ""
+            },
+            {
+              "value": "Octopus Deploy",
+              "level": "Octopus Deploy",
+              "description": ""
+            },
+            {
+              "value": "Spinnaker",
+              "level": "Spinnaker",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
