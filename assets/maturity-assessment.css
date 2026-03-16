@@ -1,20 +1,16 @@
-:root {
+[data-assessment-container] {
     /* Primary Colors */
-    --primary-color: #0E83C6;
+    --primary-color: var(--octo-blue);
+    --highlight: var(--octo-blue);
     --primary-dark: #274B66;
-    --highlight: #0E83C6;
 
     /* Text Colors */
     --text-primary: #282F38;
-    --text-heading: #274B66;
 
     /* Background Colors */
     --bg-dark: #f4f4f4;
     --bg-light: #fdfdfd;
     --bg-white: white;
-    --bg-gradient-start: #0E83C6;
-    --bg-gradient-end: #274B66;
-    --bg-white-translucent: rgba(255, 255, 255, 0.90);
     --bg-primary-light: rgba(14, 131, 198, 0.05);
     --bg-primary-medium: rgba(14, 131, 198, 0.1);
     --bg-primary-hover: rgba(14, 131, 198, 0.2);
@@ -49,12 +45,10 @@
     --confetti-6: #9370DB;
 
     /* Border Colors */
-    --border-silver: silver;
     --border-transparent: transparent;
 
     /* Shadow Colors */
     --shadow-light: rgba(0, 0, 0, 0.1);
-    --shadow-card: 0 20px 40px var(--shadow-light);
     --shadow-hover: 0 5px 15px var(--bg-primary-hover);
 
     /* Spacing Values */
@@ -79,15 +73,8 @@
 
     /* Font Sizes */
     --font-size-base: 1em;
-    --font-size-lg: 1.1em;
     --font-size-xl: 1.3em;
-    --font-size-2xl: 1.5em;
     --font-size-3xl: 2.2em;
-
-    /* Layout Values */
-    --container-max-width: 1000px;
-    --chart-height: 700px;
-    --table-width: 100%;
 
     /* Input Sizes */
     --radio-size: 20px;
@@ -242,17 +229,16 @@
 
     /** Charts */
     .charts {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
         gap: var(--spacing-xl);
+        margin-block-end: var(--spacing-4xl);
     }
 
     .charts>canvas {
         display: block;
         width: 100%;
-        max-width: 100%;
+        max-width: 600px;
         margin: 0 auto;
         aspect-ratio: 1/1;
     }
@@ -279,38 +265,43 @@
         width: 40px;
     }
 
-    .scores {
+    .charts .scores {
         padding: var(--spacing-xl);
         background: var(--bg-dark);
         border-radius: var(--radius-sm);
-        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    .score-cell,
-    .score-header {
+    .charts .scores tr td:not(:first-child):not(:last-child) {
+        border: 1px solid var(--highlight);
+    }
+
+    .charts .score-cell,
+    .charts .score-header {
         text-align: right;
         font-weight: var(--font-weight-semibold);
         padding-inline: var(--spacing-md);
         color: var(--primary-color);
     }
 
-    .heat_1 {
+    .charts .heat_1 {
         background-color: var(--heat-1);
     }
 
-    .heat_2 {
+    .charts .heat_2 {
         background-color: var(--heat-2);
     }
 
-    .heat_3 {
+    .charts .heat_3 {
         background-color: var(--heat-3);
     }
 
-    .heat_4 {
+    .charts .heat_4 {
         background-color: var(--heat-4);
     }
 
-    .heat_5 {
+    .charts .heat_5 {
         background-color: var(--heat-5);
     }
 
@@ -343,9 +334,9 @@
     }
 
     .question-advice-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
         gap: var(--spacing-xl);
+        justify-content: center;
     }
 
     .advice-card {
@@ -353,6 +344,7 @@
         padding: var(--spacing-xl);
         background: var(--bg-dark);
         border-radius: var(--radius-sm);
+        max-width: 30vw;
     }
 
     .advice-group {
@@ -374,41 +366,42 @@
     .advice-container p {
         margin-block-end: var(--spacing-xl);
     }
-}
 
-/* Congratulations Section */
-#congrats-section {
-    text-align: center;
-    padding: var(--spacing-4xl);
-    background: linear-gradient(135deg, rgba(14, 131, 198, 0.1), rgba(39, 75, 102, 0.1));
-    border-radius: var(--radius-lg);
-    margin-block: var(--spacing-xl);
-    border: 2px solid var(--primary-color);
-    animation: fadeIn 1s ease-out;
-}
-
-#congrats-section h2 {
-    color: var(--primary-color);
-    margin-top: 0;
-    font-size: var(--font-size-3xl);
-}
-
-#congrats-section p {
-    font-size: var(--font-size-xl);
-    line-height: 1.6;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    /* Congratulations Section */
+    #congrats-section {
+        text-align: center;
+        padding: var(--spacing-4xl);
+        background: linear-gradient(135deg, rgba(14, 131, 198, 0.1), rgba(39, 75, 102, 0.1));
+        border-radius: var(--radius-lg);
+        margin-block: var(--spacing-xl);
+        border: 2px solid var(--primary-color);
+        animation: fadeIn 1s ease-out;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    #congrats-section h2 {
+        color: var(--primary-color);
+        margin-top: 0;
+        font-size: var(--font-size-3xl);
+    }
+
+    #congrats-section p {
+        font-size: var(--font-size-xl);
+        line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
+
 
 /* Confetti Particles */
 .confetti-particle {

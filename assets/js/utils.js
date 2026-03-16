@@ -7,7 +7,8 @@
  * @param {string} name Variable name without -- prefix.
  */
 export function getCSSVariable(name) {
-    return getComputedStyle(document.documentElement).getPropertyValue(`--${name}`).trim();
+    const container = document.querySelector('[data-assessment-container]');
+    return getComputedStyle(container || document.documentElement).getPropertyValue(`--${name}`).trim();
 }
 
 /**
