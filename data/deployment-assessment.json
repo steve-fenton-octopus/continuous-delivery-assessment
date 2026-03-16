@@ -39,12 +39,12 @@
               "description": ""
             },
             {
-              "value": 2,
+              "value": 3,
               "level": "2-3 people",
               "description": ""
             },
             {
-              "value": 3,
+              "value": 5,
               "level": "4 or more people",
               "description": ""
             }
@@ -74,27 +74,27 @@
               "description": ""
             },
             {
-              "value": 1,
+              "value": 2,
               "level": "Monthly",
               "description": ""
             },
             {
-              "value": 2,
+              "value": 3,
               "level": "Weekly",
               "description": ""
             },
             {
-              "value": 2,
+              "value": 4,
               "level": "Several times a week",
               "description": ""
             },
             {
-              "value": 3,
+              "value": 4,
               "level": "Daily",
               "description": ""
             },
             {
-              "value": 3,
+              "value": 5,
               "level": "Many times a day",
               "description": ""
             }
@@ -119,17 +119,17 @@
               "description": ""
             },
             {
-              "value": 1,
+              "value": 3,
               "level": "Less than a week",
               "description": ""
             },
             {
-              "value": 2,
+              "value": 4,
               "level": "Less than a day",
               "description": ""
             },
             {
-              "value": 3,
+              "value": 5,
               "level": "Less than an hour",
               "description": ""
             }
@@ -154,12 +154,12 @@
               "description": ""
             },
             {
-              "value": 2,
+              "value": 3,
               "level": "Partly automated: Parts of the process are automated, such as scripts that can be triggered to perform application deployment tasks.",
               "description": ""
             },
             {
-              "value": 3,
+              "value": 5,
               "level": "Fully automated: The application deployment process needs no manual intervention apart from push-button approvals.",
               "description": ""
             }
@@ -176,12 +176,12 @@
               "description": ""
             },
             {
-              "value": 2,
+              "value": 3,
               "level": "Partly automated: Parts of the process are automated, such as scripts that can be triggered to perform database deployment tasks.",
               "description": ""
             },
             {
-              "value": 3,
+              "value": 5,
               "level": "Fully automated: The database deployment process needs no manual intervention apart from push-button approvals.",
               "description": ""
             }
