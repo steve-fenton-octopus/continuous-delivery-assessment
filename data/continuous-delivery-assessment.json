@@ -1,6 +1,5 @@
 {
   "metadata": {
-    "title": "Continuous Delivery assessment",
     "language": "en",
     "language_native": "English",
     "introTitle": "About Continuous Delivery",
@@ -145,8 +144,8 @@
         },
         {
           "id": 6,
-          "text": "How many teams outside of development need to sign off a production deployment, for example testing is done by an external team or release management is a separate department?",
-          "description": "",
+          "text": "How many teams outside of development need to sign off a production deployment?",
+          "description": "For example testing is done by an external team or release management is a separate department.",
           "advice": "Reducing external sign-offs increases deployment autonomy and reduces lead time for changes.",
           "options": [
             {
@@ -322,8 +321,8 @@
         },
         {
           "id": 3,
-          "text": "How much of your deployment pipeline, from code commit to running in production, depends on a manual stage gate? For example, manual testing, security, packaging, moving files around, configuration, etc?",
-          "description": "",
+          "text": "How much of your deployment pipeline, from code commit to running in production, depends on a manual stage gate?",
+          "description": "For example, manual testing, security, packaging, moving files around, configuration, etc?",
           "advice": "Removing manual stage gates reduces human error and accelerates the delivery pipeline.",
           "options": [
             {
@@ -345,8 +344,8 @@
         },
         {
           "id": 4,
-          "text": "Do you have any stages that happen outside of the deployment pipeline, for example security tests running quarterly rather than for every release?",
-          "description": "",
+          "text": "Do you have any stages that happen outside of the deployment pipeline?",
+          "description": "For example security tests running quarterly rather than for every release.",
           "advice": "Moving checks into the deployment pipeline ensures they are run consistently and provides immediate feedback.",
           "options": [
             {
@@ -578,7 +577,7 @@
         {
           "id": 1,
           "text": "What tool do you use to build your app or service?",
-          "description": "",
+          "description": "You can choose from the list or type in your own answer.",
           "field_type": "suggest",
           "options": [
             {
@@ -676,7 +675,7 @@
         {
           "id": 2,
           "text": "What tool do you use to deploy your app or service?",
-          "description": "",
+          "description": "You can choose from the list or type in your own answer.",
           "field_type": "suggest",
           "options": [
             {

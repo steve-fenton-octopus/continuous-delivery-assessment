@@ -10,9 +10,7 @@
     /* Background Colors */
     --bg-light: #fdfdfd;
     --bg-white: white;
-    --bg-primary-light: rgba(14, 131, 198, 0.05);
-    --bg-primary-medium: rgba(14, 131, 198, 0.1);
-    --bg-primary-hover: rgba(14, 131, 198, 0.2);
+    --bg-primary-medium: var(--lightest-blue);
 
     /* Heat Map Colors */
     --heat-1: rgba(14, 131, 198, 0.15);
@@ -128,15 +126,6 @@
 
     .share-button {
         text-align: center;
-    }
-
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        text-align: center;
-        padding: 0 0 var(--spacing-3xl) 0;
     }
 
     fieldset {
@@ -365,7 +354,7 @@
         align-items: center;
         margin-top: var(--spacing-4xl);
         padding-top: var(--spacing-xl);
-        border-top: 2px solid var(--bg-primary-light);
+        border-top: 2px solid var(--bg-primary-medium);
     }
 
     @media (max-width: 600px) {
@@ -396,21 +385,13 @@
     .advice-group {
         margin-bottom: var(--spacing-4xl);
         padding-bottom: var(--spacing-4xl);
-        border-bottom: 2px solid var(--bg-primary-light);
+        border-bottom: 2px solid var(--bg-primary-medium);
     }
 
     .advice-group:last-child {
         margin-bottom: 0;
         padding-bottom: 0;
         border-bottom: none;
-    }
-
-
-    .advice-container h3,
-    .advice-container h4,
-    .advice-container h5,
-    .advice-container p {
-        margin-block-end: var(--spacing-xl);
     }
 
     /* Congratulations Section */
@@ -422,12 +403,6 @@
         margin-block: var(--spacing-xl);
         border: 2px solid var(--primary-color);
         animation: fadeIn 1s ease-out;
-    }
-
-    #congrats-section h2 {
-        color: var(--primary-color);
-        margin-top: 0;
-        font-size: var(--font-size-3xl);
     }
 
     #congrats-section p {
@@ -447,7 +422,6 @@
         }
     }
 }
-
 
 /* Confetti Particles */
 .confetti-particle {

@@ -12,12 +12,9 @@ import { anonymousAnalytics } from './analytics.js';
  */
 const BASE_HTML = `
     <article class="assessment-form-section">
-      <header>
-        <h2 data-text="title">Assessment</h2>
-        <div class="progress-indicator">
-          <span id="page-indicator">Page 1 of 5</span>
-        </div>
-      </header>
+      <div class="progress-indicator">
+        <span id="page-indicator">Page 1 of 5</span>
+      </div>
       <div class="hint" id="intro-section">
         <h2 data-text="introTitle"></h2>
         <div id="intro-content"></div>
@@ -36,8 +33,7 @@ const BASE_HTML = `
 
     <article class="assessment-chart-section" id="results-section" style="display: none;">
       <header>
-        <h2 data-text="title">Assessment</h2>
-        <h3 data-text="results_title">Assessment Results</h3>
+        <h2 data-text="results_title">Assessment Results</h2>
       </header>
 
       <div class="charts">

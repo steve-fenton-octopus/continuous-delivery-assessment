@@ -1,6 +1,5 @@
 {
   "metadata": {
-    "title": "Deployment capability assessment",
     "language": "en",
     "language_native": "English",
     "introTitle": "Using the deployment capability assessment",
@@ -54,9 +53,9 @@
       ]
     },
     {
-      "id": "frequency",
-      "name": "Deployment Frequency",
-      "advice": "When you deploy more often, you reduce deployment risk, increase quality, and get feedback sooner. The longer you leave between deployments, the more change builds up.",
+      "id": "throughput",
+      "name": "Throughput",
+      "advice": "When you deploy more often, you reduce deployment risk, increase quality, and get feedback sooner. The longer you leave between deployments, the more change builds up.\n\nLong deployment lead times are usually caused by manual steps, or an approval process that holds up the deployment. If you can reduce your lead times, you'll likely increase your deployment frequency. Short lead times also make it easier to recover by rolling forward to a new version with a fix, or to roll back to the previous version.",
       "order": 2,
       "questions": [
         {
@@ -101,17 +100,9 @@
               "description": ""
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "lead_time",
-      "name": "Lead Time",
-      "advice": "Long deployment lead times are usually caused by manual steps, or an approval process that holds up the deployment. If you can reduce your lead times, you'll likely increase your deployment frequency. Short lead times also make it easier to recover by rolling forward to a new version with a fix, or to roll back to the previous version.",
-      "order": 3,
-      "questions": [
+        },
         {
-          "id": 1,
+          "id": 2,
           "text": "For the application in question, how long does it take for a change to move from approved (merged) to Production?",
           "description": "",
           "advice": "Map your deployment pipeline. Identify queues, blockers, and long-running tasks that you can target to reduce the time to complete a deployment.",
