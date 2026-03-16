@@ -11,14 +11,14 @@ import { anonymousAnalytics } from './analytics.js';
  * Base template for the assessment UI.
  */
 const BASE_HTML = `
-    <article class="form-section">
+    <article class="assessment-form-section">
       <header>
-        <h1 data-text="title">Assessment</h1>
+        <h2 data-text="title">Assessment</h2>
         <div class="progress-indicator">
           <span id="page-indicator">Page 1 of 5</span>
         </div>
       </header>
-      <div class="intro" id="intro-section">
+      <div class="hint" id="intro-section">
         <h2 data-text="introTitle"></h2>
         <div id="intro-content"></div>
       </div>
@@ -34,17 +34,15 @@ const BASE_HTML = `
       </div>
     </article>
 
-    <article class="chart-section" id="results-section" style="display: none;">
+    <article class="assessment-chart-section" id="results-section" style="display: none;">
       <header>
-        <h1 data-text="title">Assessment</h1>
-        <h2 data-text="results_title">Assessment Results</h2>
+        <h2 data-text="title">Assessment</h2>
+        <h3 data-text="results_title">Assessment Results</h3>
       </header>
 
       <div class="charts">
         <canvas id="maturity-spider"></canvas>
-      </div>
 
-      <div class="charts">
         <table id="maturity-matrix" class="scores"></table>
       </div>
 
@@ -58,10 +56,9 @@ const BASE_HTML = `
       <div class="action-buttons">
         <button class="return-button" id="app-return-button">← Back to
           Assessment</button>
-      </div>
-
-      <div class="share-button">
-        <a id="copy-link" data-text="copy_link_text">📋 Copy Shareable Link</a>
+        <div class="share-button">
+          <a id="copy-link" data-text="copy_link_text">📋 Copy Shareable Link</a>
+        </div>
       </div>
     </article>
 `;
@@ -280,7 +277,7 @@ export function renderAdvice() {
  * Shows the results section and hides the form.
  */
 export function showResults() {
-    const formSection = document.querySelector('.form-section');
+    const formSection = document.querySelector('.assessment-form-section');
     const resultsSection = state.elements.resultsSection;
 
     if (formSection) formSection.style.display = 'none';
@@ -296,7 +293,7 @@ export function showResults() {
  * Returns to the assessment form from results.
  */
 export function returnToAssessment() {
-    const formSection = document.querySelector('.form-section');
+    const formSection = document.querySelector('.assessment-form-section');
     const resultsSection = state.elements.resultsSection;
 
     if (resultsSection) resultsSection.style.display = 'none';
