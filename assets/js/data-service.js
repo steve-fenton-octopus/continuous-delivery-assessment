@@ -22,6 +22,13 @@ export async function loadQuestionsData() {
             if (data.metadata?.language) {
                 document.documentElement.lang = data.metadata.language;
             }
+            // Auto-generate field_name from category id + question id so JSON
+            // files don't need to store it explicitly.
+            data.categories?.forEach(cat => {
+                cat.questions?.forEach(q => {
+                    q.field_name = `${cat.id}_${q.id}`;
+                });
+            });
             return data;
         }
     } catch (error) {

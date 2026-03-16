@@ -31,7 +31,6 @@
         {
           "id": 1,
           "text": "For the application in question, how many people can trigger a Production deployment? Triggering a deployment includes someone instructing a deployment, push-button deployments, or commit-triggered deployments.",
-          "field_name": "deployers_1",
           "advice": "Find and train additional deployers to spread the workload. Create a team that can look at improving the deployment process.",
           "options": [
             {
@@ -62,7 +61,6 @@
         {
           "id": 1,
           "text": "For the application in question, how often do you typically deploy to Production?",
-          "field_name": "frequency_1",
           "advice": "Reduce batch sizes to increase deployment frequency. Research has found this increases software delivery performance.",
           "options": [
             {
@@ -113,7 +111,6 @@
         {
           "id": 1,
           "text": "For the application in question, how long does it take for a change to move from approved (merged) to Production?",
-          "field_name": "lead_time_1",
           "advice": "Map your deployment pipeline. Identify queues, blockers, and long-running tasks that you can target to reduce the time to complete a deployment.",
           "options": [
             {
@@ -149,7 +146,6 @@
         {
           "id": 1,
           "text": "For the application in question, how automated are your software deployments?",
-          "field_name": "software_automation_1",
           "advice": "Identify manual steps in the deployment process and find ways to reduce manual intervention.",
           "options": [
             {
@@ -170,9 +166,8 @@
           ]
         },
         {
-          "id": 1,
+          "id": 2,
           "text": "For the application in question, how automated are your database deployments?",
-          "field_name": "database_automation_1",
           "advice": "Automate your database deployments to make updates safer and to keep different environments in sync.",
           "options": [
             {
