@@ -329,6 +329,23 @@
         background-color: var(--heat-5);
     }
 
+    .assessment-meter {
+        width: 100%;
+        background-color: var(--light-bg);
+        border: 1px solid var(--navy-400);
+        box-shadow: var(--octo-shadow-medium);
+        border-radius: var(--octo-rounded-large);
+        overflow: hidden;
+    }
+
+    .assessment-score {
+        border: none;
+        display: block;
+        margin-inline: 0;
+        height: 2.2rem;
+        background-image: linear-gradient(75deg, #1fc0ff, #cc3cff);
+    }
+
     /** Pagination Controls */
     .progress-indicator {
         text-align: center;

@@ -40,6 +40,10 @@ const BASE_HTML = `
         <h3 data-text="results_title">Assessment Results</h3>
       </header>
 
+      <div class="assessment-meter">
+        <span style="width: 0%" id="assessment-score"></span>
+      </div>
+
       <div class="charts">
         <canvas id="maturity-spider"></canvas>
 

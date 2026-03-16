@@ -41,7 +41,7 @@ There's an editor for the JSON files at [localhost:8080/edit](http://localhost:8
 ```
 index.html          # The assessment app
 assets/
-  maturity-assessment.css   # Styles and design tokens
+  assessment.css   # Styles and design tokens
   maturity-assessment.js    # Assessment logic
 data/
   *.json            # Assessment definition files
