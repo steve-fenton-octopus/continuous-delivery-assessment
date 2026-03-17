@@ -76,9 +76,16 @@ export function drawSpiderChart() {
 
     // Data Polygon
     if (Object.values(state.scores).some(s => s > 0)) {
-        ctx.strokeStyle = getCSSVariable('chart-line');
-        ctx.fillStyle = getCSSVariable('chart-fill');
-        ctx.lineWidth = 3;
+        ctx.strokeStyle = getCSSVariable('chart-line') || '#0D79CE';
+        
+        // Premium Gradient Fill
+        const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+        gradient.addColorStop(0, 'rgba(13, 121, 206, 0.4)');
+        gradient.addColorStop(1, 'rgba(13, 121, 206, 0.1)');
+        ctx.fillStyle = gradient;
+        
+        ctx.lineWidth = 4;
+        ctx.lineJoin = 'round';
         ctx.beginPath();
 
         const points = entries.map(([id], i) => {
@@ -94,13 +101,12 @@ export function drawSpiderChart() {
             ctx.moveTo(points[0].x, points[0].y);
 
             for (let i = 0; i < points.length; i++) {
-                const p0 = points[(i - 1 + points.length) % points.length];
                 const p1 = points[i];
                 const p2 = points[(i + 1) % points.length];
                 const p3 = points[(i + 2) % points.length];
 
-                const cp1x = p1.x + (p2.x - p0.x) / 6;
-                const cp1y = p1.y + (p2.y - p0.y) / 6;
+                const cp1x = p1.x + (p2.x - points[(i - 1 + points.length) % points.length].x) / 6;
+                const cp1y = p1.y + (p2.y - points[(i - 1 + points.length) % points.length].y) / 6;
 
                 const cp2x = p2.x - (p3.x - p1.x) / 6;
                 const cp2y = p2.y - (p3.y - p1.y) / 6;
@@ -113,14 +119,25 @@ export function drawSpiderChart() {
         ctx.fill();
         ctx.stroke();
 
-        // Points
-        ctx.fillStyle = getCSSVariable('chart-point');
+        // Points with Glow
         entries.forEach(([id], i) => {
             const angle = (i * 2 * Math.PI) / entries.length - Math.PI / 2;
             const distance = ((state.scores[id] || 0) / 100) * radius;
+            const px = centerX + Math.cos(angle) * distance;
+            const py = centerY + Math.sin(angle) * distance;
+
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = 'rgba(13, 121, 206, 0.5)';
+            ctx.fillStyle = '#FFFFFF';
+            ctx.strokeStyle = getCSSVariable('chart-line') || '#0D79CE';
+            ctx.lineWidth = 2;
+            
             ctx.beginPath();
-            ctx.arc(centerX + Math.cos(angle) * distance, centerY + Math.sin(angle) * distance, 5, 0, 2 * Math.PI);
+            ctx.arc(px, py, 6, 0, 2 * Math.PI);
             ctx.fill();
+            ctx.stroke();
+            
+            ctx.shadowBlur = 0; // Reset shadow
         });
     }
 }

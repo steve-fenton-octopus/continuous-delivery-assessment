@@ -123,6 +123,11 @@ export function renderCurrentPage() {
     });
 
     maturityForm.innerHTML = html + `</fieldset>`;
+    
+    // Trigger fade-in animation
+    maturityForm.classList.remove('fade-in');
+    void maturityForm.offsetWidth; // Trigger reflow
+    maturityForm.classList.add('fade-in');
 }
 
 /**
@@ -177,7 +182,8 @@ export function triggerConfetti(duration) {
 
         Object.assign(p.style, {
             width: `${size}px`, height: `${size}px`, backgroundColor: color,
-            left: `${left}vw`, transform: `rotate(${rot}deg)`
+            left: `${left}vw`, transform: `rotate(${rot}deg)`,
+            borderRadius: '50%', opacity: '0.8', boxShadow: '0 0 10px rgba(255,255,255,0.5)'
         });
 
         document.body.appendChild(p);
