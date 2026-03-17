@@ -9,10 +9,6 @@ The tool runs from a data file and this can be changed by setting the `data-ques
 ></script>
 ```
 
-TODO:
-
-1. Remove the placeholder HTML and inject it from the JS app
-
 ## Continuous Delivery Assessment
 
 A self-hosted, browser-based questionnaire that helps teams evaluate and improve their Continuous Delivery maturity across four key areas: **Deployability**, **Feedback**, **Automation**, and **Agility**.
@@ -41,8 +37,8 @@ Or use this [pre-filled results page](http://localhost:8080/continuous-delivery.
 ```
 index.html          # The assessment app
 assets/
-  assessment.css   # Styles and design tokens
-  maturity-assessment.js    # Assessment logic
+  assessment.css    # Styles and design tokens
+js/                 # Assessment logic
 data/
   *.json            # Assessment definition files
 features/           # Cucumber end-to-end tests
