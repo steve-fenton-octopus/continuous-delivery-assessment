@@ -43,6 +43,7 @@
 
     button,
     .share-button a {
+        display: inline-block;
         background: var(--primary-color);
         color: var(--white);
         border: none;
@@ -56,9 +57,12 @@
         box-shadow: var(--premium-shadow);
         position: relative;
         overflow: hidden;
+        text-decoration: none;
+        text-align: center;
     }
 
-    button::after {
+    button::after,
+    .share-button a::after {
         content: '';
         position: absolute;
         top: 0;
@@ -76,7 +80,8 @@
         box-shadow: 0 15px 35px -5px rgba(13, 121, 206, 0.25);
     }
 
-    button:active:not(:disabled) {
+    button:active:not(:disabled),
+    .share-button a:active {
         transform: translateY(0);
     }
 
@@ -84,25 +89,6 @@
         background: var(--navy-200);
         color: var(--grey);
         cursor: not-allowed;
-        box-shadow: none;
-    }
-
-    .share-button a {
-        display: inline-block;
-        padding: var(--spacing-sm) var(--spacing-xl);
-    }
-
-    button:hover:not(:disabled),
-    .share-button a:hover {
-        background: var(--primary-dark);
-        transform: translateY(-2px);
-        box-shadow: var(--octo-shadow-medium);
-    }
-
-    button:disabled {
-        background: var(--color-disabled);
-        cursor: not-allowed;
-        transform: none;
         box-shadow: none;
     }
 
@@ -439,21 +425,21 @@
     }
 
     .advice-card {
-        padding: 2rem;
+        padding: 2.5rem;
         background: var(--bg-white);
         border-radius: var(--radius-premium);
         box-shadow: var(--premium-shadow);
-        border-top: 4px solid var(--primary-color);
+        border: 1px solid var(--navy-200);
         transition: var(--transition-premium);
     }
 
     .advice-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        border-color: var(--navy-400);
+        box-shadow: 0 15px 40px -15px rgba(0, 0, 0, 0.12);
     }
 
     .advice-card h4 {
-        margin-top: 0;
+        padding-top: 0;
         font-family: var(--heading-font);
         color: var(--blue-midnight);
     }
