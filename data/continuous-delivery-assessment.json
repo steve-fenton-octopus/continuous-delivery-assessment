@@ -198,7 +198,7 @@
       "questions": [
         {
           "id": 1,
-          "text": "How often does you code get merged into the main branch?",
+          "text": "How often does your code get merged into the main branch?",
           "description": "",
           "advice": "Frequent merging reduces integration pain and ensures the team is always working on the most recent version of the code.",
           "options": [
