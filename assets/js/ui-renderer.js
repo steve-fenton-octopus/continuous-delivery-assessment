@@ -15,9 +15,9 @@ const BASE_HTML = `
       <div class="progress-indicator">
         <span id="page-indicator">Page 1 of 5</span>
       </div>
-      <div class="hint" id="intro-section">
+      <div class="hint">
         <h2 data-text="introTitle"></h2>
-        <div id="intro-content"></div>
+        <div data-text="intro"></div>
       </div>
 
       <form id="maturity-form">
@@ -32,7 +32,7 @@ const BASE_HTML = `
 
     <article class="assessment-chart-section" id="results-section" style="display: none;">
       <header>
-        <h2 data-text="results_title">Assessment Results</h2>
+        <h2 data-text="results_title">Results</h2>
       </header>
 
       <div class="charts">
@@ -51,9 +51,9 @@ const BASE_HTML = `
       <div id="advice-section" class="advice-container" style="display: none;"></div>
 
       <div class="action-buttons">
-        <a id="app-return-button" data-text="back_to_assessment"></a>
-        <a id="copy-link" data-text="copy_link_text"></a>
-        <a id="download-results" data-text="download_results"></a>
+        <a id="app-return-button" data-text="back_to_assessment">←</a>
+        <a id="copy-link" data-text="copy_link_text">Share</a>
+        <a id="download-results" data-text="download_results">Download</a>
       </div>
     </article>
 `;
@@ -72,9 +72,10 @@ export function injectBaseHTML(containerSelector) {
  * Renders the current assessment page.
  */
 export function renderCurrentPage() {
-  const { maturityForm, introSection } = state.elements;
+  const { maturityForm } = state.elements;
   if (!maturityForm || !state.categoryPages.length) return;
 
+  const introSection = document.querySelector('[data-text=intro')?.parentNode;
   if (introSection) {
     introSection.style.display = state.currentPage === 0 ? "block" : "none";
   }

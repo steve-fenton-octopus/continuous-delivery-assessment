@@ -26,7 +26,6 @@ function initializeDOMElements() {
     state.elements.ctx = state.elements.canvas?.getContext('2d');
     state.elements.maturityForm = document.getElementById('maturity-form');
     state.elements.matrix = document.getElementById('maturity-matrix');
-    state.elements.introSection = document.getElementById("intro-section");
     state.elements.pageIndicator = document.getElementById('page-indicator');
     state.elements.adviceSection = document.getElementById('advice-section');
     state.elements.resultsSection = document.getElementById('results-section');
@@ -136,12 +135,6 @@ async function init() {
             elem.innerHTML = nl2br(data.metadata[key]);
         }
     });
-
-    // Intro content
-    const introContent = document.getElementById('intro-content');
-    if (introContent && data.metadata.intro) {
-        introContent.innerHTML = nl2br(data.metadata.intro);
-    }
 
     state.categoryPages = [...data.categories].sort((a, b) => a.order - b.order);
     state.totalPages = state.categoryPages.length;
