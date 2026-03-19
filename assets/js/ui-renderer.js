@@ -349,6 +349,10 @@ export async function downloadResultsImage() {
     const actionButtons = resultsSection.querySelector('.action-buttons');
     if (actionButtons) actionButtons.style.display = 'none';
 
+    // Add temporary padding for the download
+    const originalPadding = resultsSection.style.padding;
+    resultsSection.style.padding = '40px';
+
     try {
       const canvas = await window.html2canvas(resultsSection, {
         scale: 2, // better resolution
@@ -363,7 +367,8 @@ export async function downloadResultsImage() {
       a.download = 'assessment-results.png';
       a.click();
     } finally {
-      // Restore action buttons
+      // Restore styles
+      resultsSection.style.padding = originalPadding;
       if (actionButtons) actionButtons.style.display = '';
     }
   } catch (e) {
