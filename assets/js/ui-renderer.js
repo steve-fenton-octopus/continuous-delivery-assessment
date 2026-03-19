@@ -24,10 +24,9 @@ const BASE_HTML = `
       </form>
 
       <div class="pagination-controls">
-        <button type="button" id="prev-btn" disabled>← Previous</button>
-        <button type="button" id="next-btn">Next →</button>
-        <button type="button" id="submit-btn" style="display: none;">Submit
-          Assessment</button>
+        <button type="button" id="prev-btn" data-text="previous_button_text">←</button>
+        <button type="button" id="next-btn" data-text="next_button_text">→</button>
+        <button type="button" id="submit-btn" data-text="submit-button-text" style="display: none;">Submit</button>
       </div>
     </article>
 
