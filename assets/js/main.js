@@ -12,6 +12,7 @@ import {
     updatePaginationControls,
     showResults,
     returnToAssessment,
+    downloadResultsImage,
     injectBaseHTML
 } from './ui-renderer.js';
 
@@ -74,6 +75,10 @@ function exposeGlobalAPI() {
         window.scrollTo(0, 0);
     };
 
+    window.downloadResultsImage = () => {
+        downloadResultsImage();
+    };
+
     window.copyURLToClipboard = async (elem) => {
         const meta = state.loadedData?.metadata;
         const original = elem.innerText;
@@ -104,6 +109,7 @@ function setupEventListeners() {
     document.getElementById('next-btn')?.addEventListener('click', () => window.nextPage());
     document.getElementById('submit-btn')?.addEventListener('click', () => window.submitAssessment());
     document.getElementById('app-return-button')?.addEventListener('click', () => window.returnToAssessment());
+    document.getElementById('download-results')?.addEventListener('click', () => window.downloadResultsImage());
     document.getElementById('copy-link')?.addEventListener('click', (e) => {
         e.preventDefault();
         window.copyURLToClipboard(e.currentTarget);

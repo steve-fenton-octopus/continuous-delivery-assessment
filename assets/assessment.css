@@ -42,7 +42,7 @@
     color: var(--text-main);
 
     button,
-    .share-button a {
+    .action-buttons a {
         display: inline-block;
         background: var(--primary-color);
         color: var(--white);
@@ -62,7 +62,7 @@
     }
 
     button::after,
-    .share-button a::after {
+    .action-buttons a::after {
         content: '';
         position: absolute;
         top: 0;
@@ -74,14 +74,14 @@
     }
 
     button:hover:not(:disabled),
-    .share-button a:hover {
+    .action-buttons a:hover {
         background: var(--primary-hover);
         transform: translateY(-2px);
         box-shadow: 0 15px 35px -5px rgba(13, 121, 206, 0.25);
     }
 
     button:active:not(:disabled),
-    .share-button a:active {
+    .action-buttons a:active {
         transform: translateY(0);
     }
 
@@ -100,10 +100,6 @@
         gap: 1.5rem;
         align-items: center;
         justify-content: center;
-    }
-
-    .share-button {
-        text-align: center;
     }
 
     fieldset {
