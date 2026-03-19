@@ -6,6 +6,7 @@ import { nl2br, getCSSVariable } from './utils.js';
 import { calculateCategoryScore, updateAllScores } from './scoring.js';
 import { drawAll } from './charts.js';
 import { anonymousAnalytics } from './analytics.js';
+import { getShareableURL } from './url-state.js';
 
 /**
  * Base template for the assessment UI.
@@ -274,6 +275,8 @@ export function renderAdvice() {
   });
 
   section.style.display = 'block';
+
+  renderQRCode();
 }
 
 /**
@@ -368,5 +371,40 @@ export async function downloadResultsImage() {
     alert('Failed to generate the image. Please try again.');
   } finally {
     if (btn) btn.innerText = originalText;
+  }
+}
+
+/**
+ * Dynamically loads qrcode.js and renders a QR code of the shareable URL.
+ */
+export async function renderQRCode() {
+  const section = state.elements.adviceSection;
+  if (!section) return;
+
+  // Check if QR code container already exists, if so clear it, otherwise create it
+  let qrContainer = document.getElementById('qr-code-section');
+  if (qrContainer) {
+    qrContainer.innerHTML = '';
+  } else {
+    qrContainer = document.createElement('div');
+    qrContainer.id = 'qr-code-section';
+    qrContainer.className = 'advice-group';
+    qrContainer.style.justifyItems = 'center';
+    section.appendChild(qrContainer);
+  }
+
+  try {
+    const { QRCode } = await import('./qr.js');
+    const url = getShareableURL();
+    new QRCode(qrContainer, {
+      text: url,
+      width: 256,
+      height: 256,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  } catch (e) {
+    console.error('Failed to render QR Code:', e);
   }
 }

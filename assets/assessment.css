@@ -446,12 +446,6 @@
         border-bottom: 1px solid var(--navy-200);
     }
 
-    .advice-group:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-    }
-
     /* Congratulations Section */
     #congrats-section {
         text-align: center;
