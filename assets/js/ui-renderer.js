@@ -353,9 +353,14 @@ export async function downloadResultsImage() {
     const actionButtons = resultsSection.querySelector('.action-buttons');
     if (actionButtons) actionButtons.style.display = 'none';
 
-    // Add temporary padding and heading styles for the download
+    // Add temporary padding, width and heading styles for the download
     const originalPadding = resultsSection.style.padding;
+    const originalWidth = resultsSection.style.width;
+    const originalMaxWidth = resultsSection.style.maxWidth;
+
     resultsSection.style.padding = '40px';
+    resultsSection.style.width = '1024px';
+    resultsSection.style.maxWidth = 'none';
 
     // Fix headings for html2canvas
     const headings = resultsSection.querySelectorAll('h2, h3, h4');
@@ -404,6 +409,8 @@ export async function downloadResultsImage() {
     } finally {
       // Restore styles
       resultsSection.style.padding = originalPadding;
+      resultsSection.style.width = originalWidth;
+      resultsSection.style.maxWidth = originalMaxWidth;
       if (actionButtons) actionButtons.style.display = '';
 
       headings.forEach((h) => {
