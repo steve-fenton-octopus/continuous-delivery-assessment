@@ -327,11 +327,15 @@ export function returnToAssessment() {
  */
 export async function downloadResultsImage() {
   const resultsSection = state.elements.resultsSection;
-  if (!resultsSection) return;
+  if (!resultsSection) {
+    return;
+  }
 
   const btn = document.getElementById('download-results');
   const originalText = btn ? btn.innerText : '';
-  if (btn) btn.innerText = 'Downloading...';
+  if (btn) {
+    btn.innerText = 'Downloading...';
+  }
 
   try {
     // Load html2canvas if not already loaded
@@ -349,15 +353,38 @@ export async function downloadResultsImage() {
     const actionButtons = resultsSection.querySelector('.action-buttons');
     if (actionButtons) actionButtons.style.display = 'none';
 
-    // Add temporary padding for the download
+    // Add temporary padding and heading styles for the download
     const originalPadding = resultsSection.style.padding;
     resultsSection.style.padding = '40px';
 
+    // Fix headings for html2canvas
+    const headings = resultsSection.querySelectorAll('h2, h3, h4');
+    const originalStyles = new Map();
+
+    headings.forEach((h, index) => {
+      originalStyles.set(h, {
+        color: h.style.color,
+        backgroundClip: h.style.backgroundClip,
+        webkitBackgroundClip: h.style.webkitBackgroundClip,
+        webkitTextFillColor: h.style.webkitTextFillColor,
+        display: h.style.display
+      });
+
+      // Force explicit styles that html2canvas can handle
+      const computed = window.getComputedStyle(h);
+      h.style.color = computed.color;
+      h.style.backgroundClip = 'padding-box';
+      h.style.webkitBackgroundClip = 'padding-box';
+      h.style.webkitTextFillColor = 'initial';
+      h.style.display = 'block';
+    });
+
     try {
       const canvas = await window.html2canvas(resultsSection, {
-        scale: 2, // better resolution
+        scale: 2,
         backgroundColor: getCSSVariable('body-bg') || '#ffffff',
-        logging: false
+        logging: false,
+        useCORS: true
       });
 
       // Trigger download
@@ -370,6 +397,17 @@ export async function downloadResultsImage() {
       // Restore styles
       resultsSection.style.padding = originalPadding;
       if (actionButtons) actionButtons.style.display = '';
+
+      headings.forEach((h) => {
+        const style = originalStyles.get(h);
+        if (style) {
+          h.style.color = style.color;
+          h.style.backgroundClip = style.backgroundClip;
+          h.style.webkitBackgroundClip = style.webkitBackgroundClip;
+          h.style.webkitTextFillColor = style.webkitTextFillColor;
+          h.style.display = style.display;
+        }
+      });
     }
   } catch (e) {
     console.error('Failed to capture results image:', e);
