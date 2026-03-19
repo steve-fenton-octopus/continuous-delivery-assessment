@@ -364,6 +364,10 @@ export async function downloadResultsImage() {
     headings.forEach((h, index) => {
       originalStyles.set(h, {
         color: h.style.color,
+        fontSize: h.style.fontSize,
+        fontWeight: h.style.fontWeight,
+        fontFamily: h.style.fontFamily,
+        lineHeight: h.style.lineHeight,
         backgroundClip: h.style.backgroundClip,
         webkitBackgroundClip: h.style.webkitBackgroundClip,
         webkitTextFillColor: h.style.webkitTextFillColor,
@@ -373,6 +377,10 @@ export async function downloadResultsImage() {
       // Force explicit styles that html2canvas can handle
       const computed = window.getComputedStyle(h);
       h.style.color = computed.color;
+      h.style.fontSize = computed.fontSize;
+      h.style.fontWeight = computed.fontWeight;
+      h.style.fontFamily = computed.fontFamily;
+      h.style.lineHeight = computed.lineHeight;
       h.style.backgroundClip = 'padding-box';
       h.style.webkitBackgroundClip = 'padding-box';
       h.style.webkitTextFillColor = 'initial';
@@ -402,6 +410,10 @@ export async function downloadResultsImage() {
         const style = originalStyles.get(h);
         if (style) {
           h.style.color = style.color;
+          h.style.fontSize = style.fontSize;
+          h.style.fontWeight = style.fontWeight;
+          h.style.fontFamily = style.fontFamily;
+          h.style.lineHeight = style.lineHeight;
           h.style.backgroundClip = style.backgroundClip;
           h.style.webkitBackgroundClip = style.webkitBackgroundClip;
           h.style.webkitTextFillColor = style.webkitTextFillColor;
