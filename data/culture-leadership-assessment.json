@@ -1,0 +1,695 @@
+{
+  "metadata": {
+    "language": "en",
+    "language_native": "English",
+    "introTitle": "Culture & leadership",
+    "intro": "This assessment reflects question styles used in Google's DORA State of DevOps research: Westrum-style organizational culture, psychological safety, and transformational leadership. Rate each statement from Strongly disagree (1) to Strongly agree (7). Higher agreement on these items is associated in DORA's research with stronger software delivery and organizational outcomes.\n\nComplete it individually or as a team—the conversation often matters as much as the scores.",
+    "results_title": "Assessment results",
+    "feedback_message": "Thank you for using our culture and leadership assessment! We hope you found it valuable. While you're here, we'd love your feedback to help us improve this tool.\n",
+    "copy_link_text": "📋 Copy Shareable Link",
+    "copy_success": "📋 Copied!",
+    "copy_fail": "Failed! Please copy from address bar.",
+    "download_results": "📥 Download Results",
+    "language_label": "Language:",
+    "previous_button_text": "← Previous",
+    "next_button_text": "Next →",
+    "submit_button_text": "Submit assessment",
+    "back_to_assessment": "← Back to assessment",
+    "advice_title": "Targeted Recommendations",
+    "advice_intro": "The following recommendations are prioritized based on your scores. The most impactful items appear first.",
+    "advice_category_title": "What to improve",
+    "congrats_title": "Congratulations!",
+    "congrats_message": "You reported strong agreement across culture and leadership dimensions. Keep investing in trust, learning, and clarity—and revisit this assessment as your context changes."
+  },
+  "categories": [
+    {
+      "id": "generative_culture",
+      "name": "Generative culture (Westrum)",
+      "order": 1,
+      "advice": "DORA's research ties generative (performance-oriented) culture to software delivery performance. These items mirror the Westrum-style measures DORA uses: information flow, blameless responses to bad news, shared responsibility, collaboration, learning from failure, and openness to new ideas. See DORA's capability article on generative organizational culture for context.",
+      "questions": [
+        {
+          "id": 1,
+          "text": "On my team, information is actively sought.",
+          "description": "",
+          "advice": "Run retrospectives and incident reviews that reward surfacing risks and unknowns early.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "Messengers are not punished when they deliver news of failures or other bad news.",
+          "description": "",
+          "advice": "Explicitly thank people who escalate failures; remove incentives that hide problems.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "On my team, responsibilities are shared.",
+          "description": "",
+          "advice": "Rotate roles, pair on critical work, and document shared ownership of outcomes—not just tasks.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "text": "On my team, cross-functional collaboration is encouraged and rewarded.",
+          "description": "",
+          "advice": "Make collaboration part of goals and reviews; remove siloed metrics that pit teams against each other.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "text": "On my team, failures are treated primarily as opportunities to improve the system.",
+          "description": "",
+          "advice": "Use blameless postmortems and track remediation items like product work.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "text": "On my team, new ideas are welcomed.",
+          "description": "",
+          "advice": "Allocate time for experiments and celebrate learning from attempts that do not pan out.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "psychological_safety",
+      "name": "Team climate & psychological safety",
+      "order": 2,
+      "advice": "State of DevOps surveys ask how people experience their team and workplace. Psychological safety—believing you will not be punished for speaking up—is linked to delivery performance and well-being in DORA's findings.",
+      "questions": [
+        {
+          "id": 1,
+          "text": "I am accepted by the members of my team.",
+          "description": "",
+          "advice": "Invest in working agreements and feedback habits so everyone is explicitly included.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "I feel comfortable sharing a perspective on work issues that might be different from my team members.",
+          "description": "",
+          "advice": "Model curiosity when someone disagrees; avoid rushing to consensus.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "When I speak up in my team, my opinion is valued.",
+          "description": "",
+          "advice": "Acknowledge contributions in meetings and follow up on input you receive.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "text": "I belong in my team.",
+          "description": "",
+          "advice": "Check inclusion for remote or part-time members; address exclusion patterns quickly.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transformational_leadership",
+      "name": "Transformational leadership",
+      "order": 3,
+      "advice": "DORA measures leadership using dimensions such as vision, inspirational communication, intellectual stimulation, support, and recognition (see DORA's transformational leadership capability). Effective leaders often improve outcomes indirectly by helping teams adopt strong technical and product practices.",
+      "questions": [
+        {
+          "id": 1,
+          "text": "My leader communicates a clear sense of where our team is headed and what we are trying to achieve.",
+          "description": "",
+          "advice": "Ask for a visible roadmap and measurable delivery goals tied to user or business outcomes.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "My leader speaks positively about the team and helps us see change as an opportunity.",
+          "description": "",
+          "advice": "Request regular forums where context and strategy are shared candidly.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "My leader encourages me to question assumptions and think about problems in new ways.",
+          "description": "",
+          "advice": "Bring hypotheses and options to your leader; ask for sponsorship of safe experiments.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "text": "My leader is considerate of team members' circumstances and needs.",
+          "description": "",
+          "advice": "Normalize sustainable pace and clarity about expectations during stress.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "text": "My leader recognizes strong work and acknowledges improvement when they see it.",
+          "description": "",
+          "advice": "Make recognition specific and tied to behaviors you want repeated.",
+          "options": [
+            {
+              "value": 1,
+              "level": "Strongly disagree",
+              "description": ""
+            },
+            {
+              "value": 2,
+              "level": "Disagree",
+              "description": ""
+            },
+            {
+              "value": 3,
+              "level": "Somewhat disagree",
+              "description": ""
+            },
+            {
+              "value": 4,
+              "level": "Neither agree nor disagree",
+              "description": ""
+            },
+            {
+              "value": 5,
+              "level": "Somewhat agree",
+              "description": ""
+            },
+            {
+              "value": 6,
+              "level": "Agree",
+              "description": ""
+            },
+            {
+              "value": 7,
+              "level": "Strongly agree",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
