@@ -3,7 +3,7 @@
     "language": "en",
     "language_native": "English",
     "introTitle": "Culture & leadership",
-    "intro": "This assessment reflects question styles used in Google's DORA State of DevOps research: Westrum-style organizational culture, psychological safety, and transformational leadership. Rate each statement from Strongly disagree (1) to Strongly agree (7). Higher agreement on these items is associated in DORA's research with stronger software delivery and organizational outcomes.\n\nComplete it individually or as a team—the conversation often matters as much as the scores.",
+    "intro": "This assessment reflects question styles used in Google's DORA State of DevOps research: Westrum-style organizational culture, psychological safety, and transformational leadership. Rate each statement from Strongly disagree (1) to Strongly agree (7). In DORA's research, higher agreement on these items is associated with stronger software delivery and organizational outcomes.\n\nComplete it individually or as a team—the conversation often matters as much as the scores.",
     "results_title": "Assessment results",
     "feedback_message": "Thank you for using our culture and leadership assessment! We hope you found it valuable. While you're here, we'd love your feedback to help us improve this tool.\n",
     "copy_link_text": "📋 Copy Shareable Link",
@@ -26,7 +26,7 @@
       "id": "generative_culture",
       "name": "Generative culture (Westrum)",
       "order": 1,
-      "advice": "DORA's research ties generative (performance-oriented) culture to software delivery performance. These items mirror the Westrum-style measures DORA uses: information flow, blameless responses to bad news, shared responsibility, collaboration, learning from failure, and openness to new ideas. See DORA's capability article on generative organizational culture for context.",
+      "advice": "DORA's research ties generative (performance-oriented) culture to software delivery performance. These items mirror the Westrum-style measures DORA uses: information flow, blameless responses to failures, shared responsibility, collaboration, learning from failure, and openness to new ideas. See DORA's capability article on generative organizational culture for context.",
       "questions": [
         {
           "id": 1,
@@ -73,7 +73,7 @@
         },
         {
           "id": 2,
-          "text": "Messengers are not punished when they deliver news of failures or other bad news.",
+          "text": "Messengers are not punished when they report failures or other problems.",
           "description": "",
           "advice": "Explicitly thank people who escalate failures; remove incentives that hide problems.",
           "options": [
@@ -296,7 +296,7 @@
       "questions": [
         {
           "id": 1,
-          "text": "I am accepted by the members of my team.",
+          "text": "I feel accepted by the other members of my team.",
           "description": "",
           "advice": "Invest in working agreements and feedback habits so everyone is explicitly included.",
           "options": [
@@ -339,7 +339,7 @@
         },
         {
           "id": 2,
-          "text": "I feel comfortable sharing a perspective on work issues that might be different from my team members.",
+          "text": "I feel comfortable sharing a perspective on work issues that differs from the rest of my team.",
           "description": "",
           "advice": "Model curiosity when someone disagrees; avoid rushing to consensus.",
           "options": [
