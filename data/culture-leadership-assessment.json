@@ -3,7 +3,7 @@
     "language": "en",
     "language_native": "English",
     "introTitle": "Culture & leadership",
-    "intro": "This assessment reflects question styles used in Google's DORA State of DevOps research: Westrum-style organizational culture, psychological safety, and transformational leadership. Rate each statement from Strongly disagree (1) to Strongly agree (7). In DORA's research, higher agreement on these items is associated with stronger software delivery and organizational outcomes.\n\nComplete it individually or as a team—the conversation often matters as much as the scores.",
+    "intro": "This assessment reflects question styles used in Google's DORA State of DevOps research: Westrum-style organizational culture, psychological safety, and transformational leadership. Rate each statement from Strongly disagree (1) to Strongly agree (7). In DORA's research, higher agreement on these items is associated with stronger software delivery and organizational outcomes.\n\nComplete it individually or as a team. The conversation often matters as much as the scores.",
     "results_title": "Assessment results",
     "feedback_message": "Thank you for using our culture and leadership assessment! We hope you found it valuable. While you're here, we'd love your feedback to help us improve this tool.\n",
     "copy_link_text": "📋 Copy Shareable Link",
@@ -19,20 +19,20 @@
     "advice_intro": "The following recommendations are prioritized based on your scores. The most impactful items appear first.",
     "advice_category_title": "What to improve",
     "congrats_title": "Congratulations!",
-    "congrats_message": "You reported strong agreement across culture and leadership dimensions. Keep investing in trust, learning, and clarity—and revisit this assessment as your context changes."
+    "congrats_message": "You reported strong agreement across culture and leadership dimensions. Keep investing in trust, learning, and clarity, and revisit this assessment as your context changes."
   },
   "categories": [
     {
       "id": "generative_culture",
       "name": "Generative culture (Westrum)",
       "order": 1,
-      "advice": "DORA's research ties generative (performance-oriented) culture to software delivery performance. These items mirror the Westrum-style measures DORA uses: information flow, blameless responses to failures, shared responsibility, collaboration, learning from failure, and openness to new ideas. See DORA's capability article on generative organizational culture for context.",
+      "advice": "DORA's research ties generative (performance-oriented) culture to software delivery performance. These items mirror the Westrum-style measures DORA uses: information flow, blameless responses to failures, shared responsibility, collaboration, learning from failure, and openness to new ideas.\n\nLow scores here often show up as hidden risks, slow incident response, and teams avoiding change. Start with the lowest-scoring items below. Small shifts in how you respond to problems and ideas can have an outsized effect on trust. See DORA's capability article on generative organizational culture for background.",
       "questions": [
         {
           "id": 1,
           "text": "On my team, information is actively sought.",
           "description": "",
-          "advice": "Run retrospectives and incident reviews that reward surfacing risks and unknowns early.",
+          "advice": "When teams don't actively seek information, assumptions go unchallenged and problems surface late. When people don't have the opportunity to flag issues early, you're most likely to find out about them in production.\n\nRun retrospectives and incident reviews that explicitly reward surfacing risks, unknowns, and early warnings. Ask \"what don't we know yet?\" in planning and stand-ups. Make it normal for anyone to flag gaps in understanding without needing a complete solution.",
           "options": [
             {
               "value": 1,
@@ -75,7 +75,7 @@
           "id": 2,
           "text": "Messengers are not punished when they report failures or other problems.",
           "description": "",
-          "advice": "Explicitly thank people who escalate failures; remove incentives that hide problems.",
+          "advice": "If people fear punishment for raising failures, they stop reporting them. Small problems then go unaddressed until they become big ones.\n\nHold blameless postmortems and thank people who escalate issues early, even when the news is uncomfortable. Examine KPIs and review rituals for hidden incentives to hide problems, such as blame for outages or rewards only for uninterrupted delivery. Leaders should model the behavior by sharing their own mistakes.",
           "options": [
             {
               "value": 1,
@@ -118,7 +118,7 @@
           "id": 3,
           "text": "On my team, responsibilities are shared.",
           "description": "",
-          "advice": "Rotate roles, pair on critical work, and document shared ownership of outcomes—not just tasks.",
+          "advice": "When responsibilities sit with one person, outages become bottlenecks and knowledge walks out the door with leavers.\n\nRotate on-call and critical roles, pair on high-risk work, and document shared ownership of outcomes, not just tasks. Use runbooks and clear service ownership so the team, not individuals, is accountable for reliability.",
           "options": [
             {
               "value": 1,
@@ -161,7 +161,7 @@
           "id": 4,
           "text": "On my team, cross-functional collaboration is encouraged and rewarded.",
           "description": "",
-          "advice": "Make collaboration part of goals and reviews; remove siloed metrics that pit teams against each other.",
+          "advice": "Siloed teams optimize locally while the system suffers. Handoffs multiply defects and slow delivery.\n\nMake cross-functional collaboration part of goals and performance reviews. Bring roles together for planning, incidents, and retrospectives. Remove metrics that pit teams against each other, such as local velocity targets that ignore downstream impact.",
           "options": [
             {
               "value": 1,
@@ -204,7 +204,7 @@
           "id": 5,
           "text": "On my team, failures are treated primarily as opportunities to improve the system.",
           "description": "",
-          "advice": "Use blameless postmortems and track remediation items like product work.",
+          "advice": "Teams that blame individuals after failure learn to hide mistakes rather than fix systems.\n\nUse blameless postmortems focused on systemic causes, and track remediation items with the same priority as product work. Celebrate improvements to the system that come from incidents, not just the absence of incidents.",
           "options": [
             {
               "value": 1,
@@ -247,7 +247,7 @@
           "id": 6,
           "text": "On my team, new ideas are welcomed.",
           "description": "",
-          "advice": "Allocate time for experiments and celebrate learning from attempts that do not pan out.",
+          "advice": "When new ideas are dismissed, teams stick to familiar approaches and miss better solutions.\n\nAllocate time for experiments and spikes, and make it safe to propose alternatives in design reviews. Celebrate learning from attempts that don't pan out, not just successful launches, so people keep bringing forward ideas.",
           "options": [
             {
               "value": 1,
@@ -292,13 +292,13 @@
       "id": "psychological_safety",
       "name": "Team climate & psychological safety",
       "order": 2,
-      "advice": "State of DevOps surveys ask how people experience their team and workplace. Psychological safety—believing you will not be punished for speaking up—is linked to delivery performance and well-being in DORA's findings.",
+      "advice": "State of DevOps surveys ask how people experience their team and workplace. Psychological safety, which means believing you will not be punished or humiliated for speaking up, is linked to delivery performance and well-being in DORA's findings.\n\nThese items reflect whether people feel they belong and can contribute honestly. Improvements usually start with leadership behavior in meetings and how feedback is handled day to day.",
       "questions": [
         {
           "id": 1,
           "text": "I feel accepted by the other members of my team.",
           "description": "",
-          "advice": "Invest in working agreements and feedback habits so everyone is explicitly included.",
+          "advice": "Feeling excluded erodes collaboration and makes people less likely to share concerns or ideas.\n\nInvest in team working agreements and regular feedback habits so everyone is explicitly included. Watch for cliques, in-jokes, or decision-making that leaves some voices out, especially newer members, remote colleagues, or people in different roles.",
           "options": [
             {
               "value": 1,
@@ -341,7 +341,7 @@
           "id": 2,
           "text": "I feel comfortable sharing a perspective on work issues that differs from the rest of my team.",
           "description": "",
-          "advice": "Model curiosity when someone disagrees; avoid rushing to consensus.",
+          "advice": "When dissent feels risky, teams converge too quickly and miss better options or early warnings.\n\nLeaders should model curiosity when someone disagrees: ask clarifying questions rather than defending a position. Build in time for alternative viewpoints in design reviews and retrospectives, and avoid rushing to consensus before quieter voices have been heard.",
           "options": [
             {
               "value": 1,
@@ -384,7 +384,7 @@
           "id": 3,
           "text": "When I speak up in my team, my opinion is valued.",
           "description": "",
-          "advice": "Acknowledge contributions in meetings and follow up on input you receive.",
+          "advice": "If speaking up leads nowhere, people stop contributing, and the team loses valuable input.\n\nAcknowledge contributions in meetings, even when you can't act on them immediately. Follow up on input you receive: explain what changed, or why something was deferred. This closes the loop and shows that opinions matter.",
           "options": [
             {
               "value": 1,
@@ -427,7 +427,7 @@
           "id": 4,
           "text": "I belong in my team.",
           "description": "",
-          "advice": "Check inclusion for remote or part-time members; address exclusion patterns quickly.",
+          "advice": "A weak sense of belonging increases turnover and reduces the willingness to take interpersonal risks.\n\nCheck inclusion deliberately for remote, part-time, or cross-site members who may miss informal conversations. Address exclusion patterns quickly when they appear. Social dynamics rarely fix themselves without attention.",
           "options": [
             {
               "value": 1,
@@ -472,13 +472,13 @@
       "id": "transformational_leadership",
       "name": "Transformational leadership",
       "order": 3,
-      "advice": "DORA measures leadership using dimensions such as vision, inspirational communication, intellectual stimulation, support, and recognition (see DORA's transformational leadership capability). Effective leaders often improve outcomes indirectly by helping teams adopt strong technical and product practices.",
+      "advice": "DORA measures leadership using dimensions such as vision, inspirational communication, intellectual stimulation, support, and recognition (see DORA's transformational leadership capability). Effective leaders often improve outcomes indirectly by helping teams adopt strong technical and product practices.\n\nThese items describe whether leaders provide direction, encouragement, and support, not whether they micromanage. If scores are low, consider a candid conversation about what the team needs to perform.",
       "questions": [
         {
           "id": 1,
           "text": "My leader communicates a clear sense of where our team is headed and what we are trying to achieve.",
           "description": "",
-          "advice": "Ask for a visible roadmap and measurable delivery goals tied to user or business outcomes.",
+          "advice": "Without a clear direction, teams optimize locally and struggle to prioritize work that matters.\n\nAsk your leader for a visible roadmap and measurable goals tied to user or business outcomes, not just output metrics. Regular check-ins to reconnect daily work to purpose help people make better trade-offs when things get busy.",
           "options": [
             {
               "value": 1,
@@ -521,7 +521,7 @@
           "id": 2,
           "text": "My leader speaks positively about the team and helps us see change as an opportunity.",
           "description": "",
-          "advice": "Request regular forums where context and strategy are shared candidly.",
+          "advice": "How leaders talk about change and the team shapes whether people see disruption as threat or opportunity.\n\nRequest regular forums where context and strategy are shared candidly, including constraints and uncertainties. Leaders who acknowledge difficulty while pointing to purpose help teams stay motivated through change.",
           "options": [
             {
               "value": 1,
@@ -564,7 +564,7 @@
           "id": 3,
           "text": "My leader encourages me to question assumptions and think about problems in new ways.",
           "description": "",
-          "advice": "Bring hypotheses and options to your leader; ask for sponsorship of safe experiments.",
+          "advice": "When leaders discourage questioning, teams repeat the same patterns and miss innovation.\n\nBring hypotheses and options to your leader rather than single solutions, and ask for sponsorship of safe experiments with bounded scope. Leaders who reward thoughtful challenge, not just compliance, help teams learn faster.",
           "options": [
             {
               "value": 1,
@@ -607,7 +607,7 @@
           "id": 4,
           "text": "My leader is considerate of team members' circumstances and needs.",
           "description": "",
-          "advice": "Normalize sustainable pace and clarity about expectations during stress.",
+          "advice": "Leaders who ignore people's circumstances burn out teams and erode trust over time.\n\nNormalize sustainable pace and be explicit about expectations during stress. Be clear about what can move and what cannot. Small acts of consideration, such as adjusting deadlines or protecting focus time, signal that the team is supported, not just resourced.",
           "options": [
             {
               "value": 1,
@@ -650,7 +650,7 @@
           "id": 5,
           "text": "My leader recognizes strong work and acknowledges improvement when they see it.",
           "description": "",
-          "advice": "Make recognition specific and tied to behaviors you want repeated.",
+          "advice": "Recognition shapes what behaviors get repeated; vague praise has little effect.\n\nMake recognition specific and tied to behaviors you want repeated, such as collaboration, careful risk-taking, or mentoring, not just heroic effort. Acknowledge improvement as well as peak performance so people know growth is valued.",
           "options": [
             {
               "value": 1,
